@@ -125,9 +125,10 @@ ul.login li a span{
 	background:#fff;
 	border: 1px solid #ddd;
 	position: relative;
-	width: 47%;
+	width: 67%;
 	float: right;
 	margin: 1.2em 0 0;
+	left: 40px;
 }
 .search input[type="text"] {
 	border: none;
