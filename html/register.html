@@ -23,153 +23,76 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body> 
 	
-		<div class="bottom-header">
-			<div class="container">
-				<div class="header-bottom-left">
-					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=" " /></a>
-					</div>
-					<div class="search">
-						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-						<input type="submit"  value="SEARCH">
+	<div class="bottom-header" style="position: fixed; width: 100%; margin: 0; z-index: 500; background-color: coral;">
+		<div class="container">
+			<div class="header-bottom-left">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" style="width: 10%; height: 15%; top: -1%; margin: 0; padding: 0; position: fixed;" alt=" " /></a>
+				</div>
+				<div class="search">
+					<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+					<input type="submit"  value="SEARCH">
 
-					</div>
-					<div class="clearfix"> </div>
 				</div>
-				<div class="header-bottom-right">					
-						<div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
-							<ul class="login">
-								<li><a href="login.html"><span> </span>LOGIN</a></li> |
-								<li ><a href="register.html">SIGNUP</a></li>
-							</ul>
-						<div class="cart"><a href="#"><span> </span>CART</a></div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>	
+				<div class="clearfix"> </div>
 			</div>
+			<div class="header-bottom-right">					
+					<div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
+						<ul class="login">
+							<li><a href="login.html"><span> </span>LOGIN</a></li> |
+							<li ><a href="register.html">SIGNUP</a></li>
+						</ul>
+					<div class="cart"><a href="#"><span> </span>CART</a></div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>	
 		</div>
 	</div>
+</div>
+
 	<!---->
-	<div class="container"> 
+	<div class="container" style="position: relative; padding-top: 5%;"> 
 			         
 		<div class="register">
 		  	  <form> 
 				 <div class="  register-top-grid">
-					<h3>PERSONAL INFORMATION</h3>
-					<div class="mation">
+					<h3 class="text-center">PERSONAL INFORMATION</h3>
+					<div class="aaa">
 						<span>First Name<label>*</label></span>
 						<input type="text"> 
 					
 						<span>Last Name<label>*</label></span>
 						<input type="text"> 
 					 
-						 <span>Email Address<label>*</label></span>
+						 <span>Phone Number<label>*</label></span>
 						 <input type="text"> 
+						 <span>Username<label>*</label></span>
+						<input type="text"> 
+						<span>Password<label>*</label></span>
+						<input type="text"> 
+						<span>E-mail <label>*</label></span>
+						<input type="text"> 
+						
 					</div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
 					   </a>
 					 </div>
-				     <div class="  register-bottom-grid">
-						    <h3>LOGIN INFORMATION</h3>
-							<div class="mation">
-								<span>Password<label>*</label></span>
-								<input type="text">
-								<span>Confirm Password<label>*</label></span>
-								<input type="text">
-							</div>
+				     <div class="  register-bottom-grid text-center">
+						    <h3>Create Account With ...</h3>
+							<button type="button" class="btn btn-primary btn-lg btn-block">sign up with ...</button>
 					 </div>
 				</form>
 				<div class="clearfix"> </div>
-				<div class="register-but">
+				<div class="register-but text-center">
 				   <form>
 					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>
 		   </div>
-		   <div class="sub-cate">
-				<div class=" top-nav rsidebar span_1_of_left">
-					<h3 class="cate">CATEGORIES</h3>
-		 <ul class="menu">
-		<li class="item1"><a href="#">Curabitur sapien<img class="arrow-img" src="images/arrow1.png" alt=""/> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-		<li class="item2"><a href="#">Dignissim purus <img class="arrow-img " src="images/arrow1.png" alt=""/></a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-		<li class="item3"><a href="#">Ultrices id du<img class="arrow-img img-arrow" src="images/arrow1.png" alt=""/> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-			</ul>
-		</li>
-		<li class="item4"><a href="#">Cras iacaus rhone <img class="arrow-img img-left-arrow" src="images/arrow1.png" alt=""/></a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-				<li>
-			<ul class="kid-menu">
-				<li><a href="product.html">Tempus pretium</a></li>
-				<li ><a href="product.html">Dignissim neque</a></li>
-				<li ><a href="product.html">Ornared id aliquet</a></li>
-			</ul>
-		</li>
-		<ul class="kid-menu ">
-				<li><a href="product.html">Commodo sit</a></li>
-				<li ><a href="product.html">Urna ac tortor sc</a></li>
-				<li><a href="product.html">Ornared id aliquet</a></li>
-				<li><a href="product.html">Urna ac tortor sc</a></li>
-				<li ><a href="product.html">Eget nisi laoreet</a></li>
-				<li><a href="product.html">Faciisis ornare</a></li>
-				<li class="menu-kid-left"><a href="contact.html">Contact us</a></li>
-			</ul>
-		
-	</ul>
-					</div>
-				<!--initiate accordion-->
-		<script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
-			
-			});
-		</script>
-					<div class=" chain-grid menu-chain">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>	   		     		
-	   		     		<div class="grid-chain-bottom chain-watch">
-		   		     		<span class="actual dolor-left-grid">300$</span>
-		   		     		<span class="reducedfrom">500$</span>  
-		   		     		<h6>Lorem ipsum dolor</h6>  		     			   		     										
-	   		     		</div>
-	   		     	</div>
-	   		     	 <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a> 	
-			</div>      
+		        
 	</div>
 	<!---->
 	<div class="footer">

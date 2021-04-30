@@ -630,10 +630,11 @@ p.m_text {
 
 /*--product--*/
 /*-- start w_content --*/
-.women-product,.account_grid,.register,.single_top,.main{
+.women-product,.account_grid,.single_top,.main{
 	width: 70%;
 	float: right;
 }
+
 .women_main{
 	padding:2em 0;
 }
@@ -1001,7 +1002,7 @@ a.forgot {
 	padding: 1em 0;
 }
 .register {
-	padding: 4em 0 2em;
+	padding: 4em 0 0em;
 }
 /*--footer--*/
 .footer-top{
