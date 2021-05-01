@@ -51,7 +51,7 @@ nav{
 	list-style: none;
 	background: none;
 	overflow: hidden;
-	padding: 0;
+	padding: 1%;
 	
 	text-align: right;
 	background-color: orangered;
@@ -74,7 +74,7 @@ nav{
   }
   nav ul li{
 		display: inline-block;
-		padding: 1%;
+		padding: 0%;
   }
   
   nav ul li a{
@@ -163,11 +163,20 @@ ul.support li a {
 	text-align: center;
 	padding-top:1.7em;
 }
-.swap{
-	float:left;
-	background-color: #00BFF0;
-	width: 30%;
-	height: 50%;
+.swap {
+    background-color: #00BFF0;
+    width: 10vw;
+    height: 2vw;
+    position: fixed;
+    float: right;
+    text-align: center;
+    right: 22vw;
+    top: 0.5vw;
+}
+.swap a{
+	padding: 1%;
+	text-align: center;
+	text-decoration: none;
 }
 .account,.cart{
 	float:left;
@@ -1410,6 +1419,13 @@ a.get-cart {
 
 		height: 3vw;
 
+	}
+	.swap {
+		width: 10vw;
+		height: 3vw;
+		text-align: center;
+		right: 12vw;
+		top: 1.5vw;
 	}
 	.logo {
 		position: fixed;
