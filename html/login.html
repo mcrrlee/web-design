@@ -18,10 +18,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script src="js/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>firebase.auth().onAuthStateChanged(function(user) {
+	if (user) {
+	  // User is signed in.
+  
+	
+  
+	  var user = firebase.auth().currentUser;
+  
+	  if(user != null){
+  
+		var email_id = user.email;
+		console.log(user.email)
+		window.location.href = 'index.html';
+	  }
+  
+	} else {
+	  // No user is signed in.
+  
+	
+  
+	}
+  });
+  
+  function login(){
+  
+	var userEmail = document.getElementById("email_field").value;
+	var userPass = document.getElementById("password_field").value;
+  
+	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+  
+	  window.alert("Error : " + errorMessage);
+  
+	  // ...
+	});
+  
+  }</script>
 </head>
 <body> 
 	
@@ -66,14 +108,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<form>
 				  <div>
 					<span>Email Address<label>*</label></span>
-					<input type="text"> 
+					<input  id="email_field" type="text"> 
 				  </div>
 				  <div>
 					<span>Password<label>*</label></span>
-					<input type="text"> 
+					<input id="password_field" type="text"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
+				  <button onclick="login()">Login</button>
+				  <button onclick="logout()">Logout</button>
 			    </form>
 				<input type="submit" value="Login with ...">
 			   </div>	
