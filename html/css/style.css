@@ -1476,7 +1476,7 @@ a.get-cart {
 	width: 10%;height: 10%; top: 0%; margin: 0; padding: 0; position: fixed; text-align: left;
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 991px) {
 	.search {
 		top: 0vw;
 		left: 20vw;
