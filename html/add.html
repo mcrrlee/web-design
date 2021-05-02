@@ -82,15 +82,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!---->
 	<div class="container" style="position: relative; padding-top: 5%;"> 
 			         
-		<div class="register">
+		<div class="register" >
 		  	  <form> 
 				 <div class="  register-top-grid">
-					<h3 class="text-center">Add Trade</h3>
+					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
 					<div class="aaa">
-						<span>Product Name<label>*</label></span>
+						<span>ชื่อสินค้า<label>*</label></span>
 						<input type="text"> 
 					
-						<span>Tag<label>*</label></span>
+						<span>แท็ก<label>*</label></span>
 						<div class="input-group">
                             <select class="custom-select" id="inputGroupSelect04">
                               <option selected>Choose...</option>
@@ -102,8 +102,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               <button class="btn btn-outline-secondary" type="button">Button</button>
                             </div>
                           </div>
-					 
-						 <span>Want in<label>*</label></span>
+						  <span>อัพรูปภาพ<label>*</label></span>
+						  <form id="styleImageForm1" method= "post" action="../imageUpload/productStyle.json" enctype="multipart/form-data">
+							<input type="file" id="my-element1" name="commonsMultipartFile[]" value="" multiple />
+						 </form>
+						 <span>ความต้องการ<label>*</label></span>
 						 <div class="input-group">
                             <select class="custom-select" id="inputGroupSelect04">
                               <option selected>Choose...</option>
@@ -115,7 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               <button class="btn btn-outline-secondary" type="button">Button</button>
                             </div>
                           </div>
-						 <span>Details<label>*</label></span>
+						 <span>รายละเอียด<label>*</label></span>
 						<input type="text"> 
 						
 						
@@ -125,10 +128,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
 					   </a>
 					 </div>
-				     <div class="  register-bottom-grid text-center">
-						    <h3>Create Account With ...</h3>
-							<button type="button" class="btn btn-primary btn-lg btn-block">sign up with ...</button>
-					 </div>
+				     
 				</form>
 				<div class="clearfix"> </div>
 				<div class="register-but text-center">
