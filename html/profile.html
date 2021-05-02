@@ -11,6 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!--theme-style-->
+
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,11 +23,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+	ul li a{
+		font-size: 0.5vw;
+	}
 
+	nav.color ul li a{
+	opacity: 1;
+	color: #000;
+	font-size: 1vw;
+	transition: 1s;
+  
+  }
+
+</style>
 </head>
 <body> 
 	
-	<div class="wrapper">
+	
+    <div class="wrapper">
 
 		<nav>
 
@@ -43,14 +58,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			  <div class="search">
 				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-				  <input type="submit"  value="SEARCH">
+				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
+				  
+				  </button>
 
-				  <div  class="swap">
+				  <div  class="swap btn-3">
 				  
 					  <a href="add.html" >swap </a>
-					  <img src="images/search.png" class="img_swap">	
+						  
 				  
 				  </div>
+
+				  
 	  
 			  
 			  </div>
@@ -74,7 +93,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		  </div>
   </nav>
-
 	<!--ปุ่มข้างบน-->
 	<div class="container" style="position: relative; padding-top: 10%;"> 
 			         
