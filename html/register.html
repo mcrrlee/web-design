@@ -24,6 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="js/jquery.min.js"></script>
 <script>
+	var data = firebase.database();
 	firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 	  // User is signed in.
@@ -35,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  if(user != null){
   
 		var email_id = user.email;
-		console.log(user.email)
+		console.log(user.email);
 		window.location.href = 'index.html';
 	  }
   
@@ -46,20 +47,45 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   
 	}
   });
+  function test(){
+	var lastnamet = document.getElementById("lastname").value;
+  var firstnamet = document.getElementById("firstname").value;
+  var phonet = document.getElementById("phone").value;
+  var usernamet = document.getElementById("username").value;
+  var useraEmailt = document.getElementById("email_field").value;
+  var userPasst = document.getElementById("password_field").value;
+  
+ 	 data.ref('userlist/'+firstnamet+lastnamet).set({
+		firstname : firstnamet,
+		lastname: lastnamet,
+		Email : useraEmailt,
+		phone:phonet
+
+	});
+  }
   function register(){
   console.log(1);
+  var lastname = document.getElementById("lastname").value;
+  var firstname = document.getElementById("firstname").value;
+  var phone = document.getElementById("phone").value;
+  var username = document.getElementById("username").value;
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-
+  
+  test();
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPass)
   .then((userCredential) => {
     // Signed in 
-    var user = userCredential.user;
+	
+	
+	
+	
     // ...
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+	data.ref('userlist/'+useraEmailt).remove();
     // ..
   });
 
@@ -128,16 +154,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <div class="  register-top-grid">
 					<h3 class="text-center">PERSONAL INFORMATION</h3>
 					<div class="aaa">
-						<span>First Name<label>*</label></span>
-						<input type="text"> 
+						<span  >First Name<label>*</label></span>
+						<input id= "firstname" type="text"> 
 					
 						<span>Last Name<label>*</label></span>
-						<input type="text"> 
+						<input id= "lastname" type="text"> 
 					 
 						 <span>Phone Number<label>*</label></span>
-						 <input type="text"> 
+						 <input id="phone" type="text"> 
 						 <span>Username<label>*</label></span>
-						<input type="text"> 
+						<input id="username" type="text"> 
 						<span>Password<label>*</label></span>
 						<input id="password_field" type="text"> 
 						<span>E-mail <label>*</label></span>
