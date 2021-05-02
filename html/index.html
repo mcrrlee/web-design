@@ -79,25 +79,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 						<input type="submit"  value="SEARCH">
-						<div class="swap">
-							<a href="http:// " >swap </a>	
+
+						<div  class="swap">
+						
+							<a href="http:// " >swap </a>
+							<img src="images/search.png" class="img_swap">	
+						
 						</div>
+			
 					
 					</div>
+
+					
 
 						
 					<ul >
 						
-						
-						<li><a href="#one"  class="btn"> ACCOUNT </a> </li>
-						<li><div   id="user_para" class="btn">  </div> </li>
 
-						<li> <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
+						<li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
+						<!-- <li><div   id="user_para" class="btn">  </div> </li> -->
 
-						<li> <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
+						<li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
-						<li> <a href="#"  class="btn" > CART </a> </li>        
-						<li><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>         
+						<li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
+
+						<li > <a href="#"  class="btn" > CART </a> </li>        
+						<!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
 					</ul>
 
 				</div>
@@ -603,6 +610,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   $("nav ul").toggleClass("showing");
             });
       });
+
+	  $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('color');
+            }
+
+            else {
+                  $('nav').removeClass('color');
+            }
+      })
 
 	</script>
 </body>
