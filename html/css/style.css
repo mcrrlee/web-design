@@ -32,6 +32,18 @@ body a{
 	-ms-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 }
+.reviews{
+  	width: 500px;
+  	border: 2px solid black;
+  	padding: 50px;
+ 	margin-left:20px;
+ 	display: inline-block;
+ 	display: flex;
+ 	justify-content: center;
+}
+.titlereview{
+	margin-left: 332px;
+}
 .logo {
 	line-height: 60px;
 	position: fixed;
