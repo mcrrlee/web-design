@@ -69,7 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 </head>
 <body> 
-	
+
 	<div class="wrapper">
 
 		<nav>
@@ -107,7 +107,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				  <div  class="profile_">
 				  
-					  <a href="profile.html"  id="user_para"><img src="images/user.png" > </a>
+					  <a href="profile.html"  ><img src="images/user.png" > </a>
 						   
 				  
 				  </div>
@@ -123,18 +123,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <ul >
 				  
 
-				  <!-- <li ><a href="profile.html"  class="btn">  </a> </li>
-				   <li><a href="profile.html"  class="btn">  </a> </li>  -->
+				   <li><a href="profile.html"  class="btn" id="user_para">  </a> </li> 
 
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
  
-				  <li ><button id="logout" style="display: none;" onclick="logout()" class="btn">Logout</button></li>         
+				  <li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
 			  </ul>
 
 		  </div>
   </nav>
+
+
 
 	<!---->
 	<div class="container" style="position: relative; padding-top: 5%;"> 
@@ -148,24 +149,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="text"> 
 					
 					<div class="container p-y-1">
-  <div class="row m-b-1">
-    <div class="col-sm-6 offset-sm-3">
-      <button type="button" class="btn btn-primary btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
-      <div class="form-group inputDnD">
-        <label class="sr-only" for="inputFile">File Upload</label>
-        <input type="file" class="form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
-      </div>
-    </div>
-  </div>
-   <div class="row m-b-1">
-    <div class="col-sm-6 offset-sm-3">
-      <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
-      <div class="form-group inputDnD">
-        <label class="sr-only" for="inputFile">File Upload</label>
-        <input type="file" class="form-control-file text-success font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
-      </div>
-    </div>
-  </div>
+ 
+   
     <div class="row m-b-1">
     <div class="col-sm-6 offset-sm-3">
       <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
@@ -175,15 +160,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
     </div>
   </div>
-    <div class="row m-b-1">
-    <div class="col-sm-6 offset-sm-3">
-      <button type="button" class="btn btn-danger btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
-      <div class="form-group inputDnD">
-        <label class="sr-only" for="inputFile">File Upload</label>
-        <input type="file" class="form-control-file text-danger font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
-      </div>
-    </div>
-  </div>
+    
 </div>						 <span>รายละเอียด<label>*</label></span>
 						<input type="text"> 
 						

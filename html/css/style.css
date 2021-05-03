@@ -134,6 +134,9 @@ body a{
 	-webkit-align-items: center;
 	align-items: center;
 }
+#logout{
+	background-color: none;
+}
 
 .swiper-slide img{
 	width: 100%;
@@ -331,6 +334,7 @@ ul.login{
 	width:36%;
 	margin:0;
 }
+
 ul.login li{
 	display:inline-block;
 }
@@ -1195,7 +1199,7 @@ p.m_text {
 	text-transform: uppercase;
 }
 .login-right input[type="text"] {
-	border: 1px solid #DDDBDB;
+	
 	outline-color:#fb4d01;
 	width: 96%;
 	font-size:0.9em;
