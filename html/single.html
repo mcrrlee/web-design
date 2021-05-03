@@ -114,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<!---->
 	
-	 <div class="container" style="position: relative; padding-top: 5%;"> 
+	 <div class="container" id="container_single"> 
 	 	
 	 	<div class=" single_top">
 	      <div class="single_grid">
@@ -144,21 +144,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  <div class="desc1 span_3_of_2">
 				  
 					
-					<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+					<h4 style="font-size: 2vw;">ชื่อสินค้า</h4>
 				<div class="cart-b">
-					<div class="left-n ">$329.58</div>
-				    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
+					<div class="left-n ">สิ่งของที่ต้องการ
+
+						<div style="color: black; font-size: 1vw;" id="want">อยากได้A 
+						
+						</div>
+
+					</div> 
+					
+				    <a class="now-get get-cart-in btn-3" style="border-radius: 3em / 3em;" href="offer.html">ยืนข้อเสนอ</a> 
 				    <div class="clearfix"></div>
 				 </div>
-				 <h6>100 items in stock</h6>
+				 <h6>รายละเอียดสินค้า</h6>
 			   	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 			   	<div class="share">
-							<h5>Share Product :</h5>
+					   		<h5 style="font-size: 1vw;">สถานที่สะดวกนัดรับ</h5>
+
+							   <li>บ้าน</li>
+
+
+							<h5 style="font-size: 1vw;">ลงโดย</h5>
 							<ul class="share_nav">
 								<li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>
-								<li><a href="#"><img src="images/twitter.png" title="Twiiter"></a></li>
-								<li><a href="#"><img src="images/rss.png" title="Rss"></a></li>
-								<li><a href="#"><img src="images/gpluse.png" title="Google+"></a></li>
+								<li style="font-size: 1vw;">ชื่อยูเซอร์ที่ลง</li>
+								
 				    		</ul>
 						</div>
 			   
@@ -209,89 +220,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           	   </div>
           	   
           	   <!---->
-<div class="sub-cate">
-				<div class=" top-nav rsidebar span_1_of_left">
-					<h3 class="cate">CATEGORIES</h3>
-		  <ul class="menu">
-		<li class="item1"><a href="#">Curabitur sapien<img class="arrow-img" src="images/arrow1.png" alt=""/> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-		<li class="item2"><a href="#">Dignissim purus <img class="arrow-img " src="images/arrow1.png" alt=""/></a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-		<li class="item3"><a href="#">Ultrices id du<img class="arrow-img img-arrow" src="images/arrow1.png" alt=""/> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-			</ul>
-		</li>
-		<li class="item4"><a href="#">Cras iacaus rhone <img class="arrow-img img-left-arrow" src="images/arrow1.png" alt=""/></a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-				<li>
-			<ul class="kid-menu">
-				<li><a href="product.html">Tempus pretium</a></li>
-				<li ><a href="product.html">Dignissim neque</a></li>
-				<li ><a href="product.html">Ornared id aliquet</a></li>
-			</ul>
-		</li>
-		<ul class="kid-menu ">
-				<li><a href="product.html">Commodo sit</a></li>
-				<li ><a href="product.html">Urna ac tortor sc</a></li>
-				<li><a href="product.html">Ornared id aliquet</a></li>
-				<li><a href="product.html">Urna ac tortor sc</a></li>
-				<li ><a href="product.html">Eget nisi laoreet</a></li>
-				<li><a href="product.html">Faciisis ornare</a></li>
-				<li class="menu-kid-left"><a href="contact.html">Contact us</a></li>
-			</ul>
+
 		
-	</ul>
-					</div>
-				<!--initiate accordion-->
-		<script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
-			
-			});
-		</script>
-					<div class=" chain-grid menu-chain">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>	   		     		
-	   		     		<div class="grid-chain-bottom chain-watch">
-		   		     		<span class="actual dolor-left-grid">300$</span>
-		   		     		<span class="reducedfrom">500$</span>  
-		   		     		<h6>Lorem ipsum dolor</h6>  		     			   		     										
-	   		     		</div>
-	   		     	</div>
-	   		     	 <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a> 	
-			</div>
-			<div class="clearfix"> </div>			
-		</div>
 	<!---->
 	
 	<script>

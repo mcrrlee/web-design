@@ -150,7 +150,7 @@ nav{
 	background: none;
 	overflow: hidden;
 	padding-top: 1%;
-	padding-bottom: 3%;
+	padding-bottom: 2%;
 	
 	text-align: right;
 	background-color: #EFB167;
@@ -216,6 +216,14 @@ nav{
   .btn:hover{
 	letter-spacing: 4px;
 	font-weight:bold;
+  }
+
+  #container_single{
+	position: relative; 
+	justify-content: center;
+	justify-items: center;
+	padding-top: 6%;
+	right: 10%;
   }
 
 .top-header-left{
@@ -426,7 +434,6 @@ ul.login li a span{
 
 
 .swap {
-    background-color: #FFE4B5;
     cursor: pointer;
 	width: 8vw;
 	height: 2.5vw;
@@ -441,6 +448,23 @@ ul.login li a span{
 	top: -2.5vw;
 
 }
+
+.Offer_ {
+    cursor: pointer;
+	width: 8vw;
+	height: 2.5vw;
+	border-radius: 3em / 3em;
+	font-size: 1.5vw;
+    text-align: center;
+	position: relative;
+	left: 42vw;
+	border-bottom: none;
+	border-top: none;
+	border-right: none;
+	top: -2.5vw;
+
+}
+
 
 
 
@@ -628,11 +652,7 @@ a.now-get{
 	font-size: 1.1em;
 	color:#fff;
 	padding:0.6em 0.8em;
-	background:#323A45;
 	text-decoration: none;
-}
-a.now-get:hover{
-	background: #0D3F84;
 }
 .wmuSlider {
 	position: relative;
@@ -944,8 +964,9 @@ p.m_text {
 }
 
 .etalage_zoom_area div {
-    width:460px !important;
-    height:500px !important;
+
+    width:50vw !important;
+    height:40vw !important;
 }
 
 /*--product--*/
@@ -1635,6 +1656,11 @@ a.get-cart {
 
 		top: -5.5vw;
 	}
+
+	.container_single{
+		right: 10vw;
+
+	}
 	
 
 	.profile_ {
@@ -1706,7 +1732,7 @@ nav.color ul {
 
 
 }
-@media(max-width:768px){
+@media(max-width:769px){
 .top-down {
 	padding: 0 0em 0 0em;
 }
@@ -1714,6 +1740,10 @@ nav.color ul {
 	width: 5vw;
 	left: 54vw;
 	top: -8vw;
+}
+#container_single{
+	right: 0%;
+
 }
 
 .profile_ {
@@ -1888,6 +1918,10 @@ nav ul li {
 		height: 2vw;
 		left: 65vw;
 		top: -11.5vw;
+	}
+	#container_single{
+		right: 0%;
+	
 	}
 
 	.swap a{
