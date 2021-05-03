@@ -97,11 +97,18 @@ body a{
 .swiper-container {
 	width: 80vw;
 	height: 10vw;
-	top: 12vw;
+	top: 14vw;
   }
 
-   .container{
-	position: relative; padding-top: 5%; flex-wrap: wrap; top: 15vw; background-color: bisque; padding: 2vw;
+   .container_index {
+    width: 90vw;
+    position: relative;
+    padding-top: 5%;
+    flex-wrap: wrap;
+    top: 15vw;
+    right: -5vw;
+    background-color: bisque;
+    padding: 2vw;
 }
 .swiper-pagination{
 	top: 0vw;
@@ -132,7 +139,13 @@ body a{
 	width: 100%;
 	height: 100%;
 }
-
+.txt_category{
+	position: absolute;
+	top: 10vw;
+	font-size: 2vw;
+	left: 10vw;
+	color: #EFB167;
+}
 nav{
 
 	z-index: 5000;
@@ -144,7 +157,7 @@ nav{
 	background: none;
 	overflow: hidden;
 	padding-top: 1%;
-	padding-bottom: 3%;
+	padding-bottom: 2%;
 	
 	text-align: right;
 	background-color: #EFB167;
@@ -210,6 +223,14 @@ nav{
   .btn:hover{
 	letter-spacing: 4px;
 	font-weight:bold;
+  }
+
+  #container_single{
+	position: relative; 
+	justify-content: center;
+	justify-items: center;
+	padding-top: 6%;
+	right: 10%;
   }
 
 .top-header-left{
@@ -420,7 +441,6 @@ ul.login li a span{
 
 
 .swap {
-    background-color: #FFE4B5;
     cursor: pointer;
 	width: 8vw;
 	height: 2.5vw;
@@ -435,6 +455,7 @@ ul.login li a span{
 	top: -2.5vw;
 
 }
+
 
 
 
@@ -621,12 +642,9 @@ ul.cute li{
 a.now-get{
 	font-size: 1.1em;
 	color:#fff;
+
 	padding:0.6em 0.8em;
-	background:#323A45;
 	text-decoration: none;
-}
-a.now-get:hover{
-	background: #0D3F84;
 }
 .wmuSlider {
 	position: relative;
@@ -708,13 +726,13 @@ width: 49%;
 }
 .products{
 	width: 100%;
-	border: 1px solid #ddd;
+	
 	float:left;
 	margin: 1.5em 0;
 	padding: 0.7em 1em ;
 }
 .grid-chain-bottom {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #fff;
 }
 .latest-product,.dolor-grid{
 	float:left;
@@ -741,7 +759,7 @@ a.all-product{
 }
 h5.latest-product{
 	margin: 6px 0 0;
-	font-size: 1.3em;
+	font-size: 1.5vw;
 	color: #000;
 	font-weight: 700;
 }
@@ -757,7 +775,7 @@ h5.latest-product{
 	color:#F97E76;
 }
 .chain-grid{
-	border: 1px solid #ddd;
+
 	position: relative;	
 	width: 30.7%;
 	margin: 0 3% 0 0;
@@ -938,8 +956,9 @@ p.m_text {
 }
 
 .etalage_zoom_area div {
-    width:460px !important;
-    height:500px !important;
+
+    width:50vw !important;
+    height:40vw !important;
 }
 
 /*--product--*/
@@ -1629,6 +1648,11 @@ a.get-cart {
 
 		top: -5.5vw;
 	}
+
+	.container_single{
+		right: 10vw;
+
+	}
 	
 
 	.profile_ {
@@ -1700,7 +1724,7 @@ nav.color ul {
 
 
 }
-@media(max-width:768px){
+@media(max-width:769px){
 .top-down {
 	padding: 0 0em 0 0em;
 }
@@ -1708,6 +1732,10 @@ nav.color ul {
 	width: 5vw;
 	left: 54vw;
 	top: -8vw;
+}
+#container_single{
+	right: 0%;
+
 }
 
 .profile_ {
@@ -1882,6 +1910,10 @@ nav ul li {
 		height: 2vw;
 		left: 65vw;
 		top: -11.5vw;
+	}
+	#container_single{
+		right: 0%;
+	
 	}
 
 	.swap a{
@@ -2405,7 +2437,7 @@ img.banner-bag {
 	padding: 0 0 0 6.2em;
 }
 
-.container{
+.container_index{
 	top: 25vw;
 
 	
