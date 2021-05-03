@@ -211,14 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				//var wantlist = document.getElementById("wantlist").value;
 				var imglist = document.getElementById("imglist");
 				//var storageRef = firebase.storage().child("img");
-				
-				for (i = 0; i <= imglist.files.length; i++)	{
-					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem+datauser.runid+"/"+i)
-					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
-				}
-				;
-				
-				data.ref("ItemTrading/"+user.email.replace(/\./, '')).set({
+				data.ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+datauser.runid).set({
 					owrname:datauser.username,
 					runid: datauser.runid,
 					nameitem:nameitem,
@@ -227,6 +220,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				});
 				data.ref('userlist/'+user.email.replace(/\./, '')+"/runid").set(datauser.runid+1);
+
+				for (i = 0; i <= imglist.files.length; i++)	{
+					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+(datauser.runid-1)+"/"+i)
+					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
+				}
+				;
+				
+				
 
 			}
 			$('#contactForm').submit(function () {
