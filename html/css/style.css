@@ -71,7 +71,30 @@ body a{
 
 
 
+#me_2{
+	width: 5vw; 
+	height: 5vw; 
+	margin-left: 1vw; 
+	border-radius: 50%;
 
+
+}
+
+#B_1{
+	position: absolute;
+	right: 1vw;
+    top: 1vw;
+}
+
+#product_img2{
+	position: absolute;
+	top: 2vw;
+	right: 3vw;
+	width: 5vw; 
+	height: 5vw; 
+	margin-left: 1vw; 
+	border-radius: 50%; 
+}
 .reviews{
   	width: 500px;
   	border: 2px solid black;
@@ -1991,6 +2014,7 @@ nav ul li {
 	  padding: 24px;
 	  text-align: center;
 }
+
 
 .menu-icon {
 	  display: block;
