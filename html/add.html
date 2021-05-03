@@ -163,10 +163,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					if (user != null) {
 						//console.log(1);
 						var email_id = user.email;
-						var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+						var ref = firebase.database().ref("userlist/" + email_id.replaceAll(/\./, ''));
 						ref.on("value", (snapshot) => {
 							if (snapshot.exists()) {
-								console.log("userlist/" + email_id.replace(/\./, ''));
+								console.log("userlist/" + email_id.replaceAll(/\./, ''));
 								var data = snapshot.val();
 								console.log(user.email);
 								console.log(data.username);
@@ -196,7 +196,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var datauser = '';
 				var user = firebase.auth().currentUser;
 				data = firebase.database();
-				var ref = firebase.database().ref("userlist/" + user.email.replace(/\./, ''));
+				var ref = firebase.database().ref("userlist/" + user.email.replaceAll(/\./, ''));
 				ref.on("value", (snapshot) => {if (snapshot.exists()) { datauser = snapshot.val(); 
 					console.log('load DB');
 					console.log(datauser.username+datauser.runid);
@@ -211,7 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				//var wantlist = document.getElementById("wantlist").value;
 				var imglist = document.getElementById("imglist");
 				//var storageRef = firebase.storage().child("img");
-				data.ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+datauser.runid).set({
+				data.ref("ItemTrading/"+user.email.replaceAll(/\./, '')+"/"+nameitem.replaceAll(/\./, '')+datauser.runid).set({
 					owrname:datauser.username,
 					runid: datauser.runid,
 					nameitem:nameitem,
@@ -219,10 +219,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					Detail:Detail
 
 				});
-				data.ref('userlist/'+user.email.replace(/\./, '')+"/runid").set(datauser.runid+1);
+				data.ref('userlist/'+user.email.replaceAll(/\./, '')+"/runid").set(datauser.runid+1);
 
 				for (i = 0; i <= imglist.files.length; i++)	{
-					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+(datauser.runid-1)+"/"+i)
+					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replaceAll(/\./, '')+"/"+nameitem.replaceAll(/\./, '')+(datauser.runid-1)+"/"+i)
 					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
 				}
 				;
