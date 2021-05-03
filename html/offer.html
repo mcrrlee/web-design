@@ -1,0 +1,271 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+	firebase.auth().onAuthStateChanged(function(user) {
+	if (user) {
+	  // User is signed in.
+  
+	
+  
+	  var user = firebase.auth().currentUser;
+  
+	  if(user != null){
+  
+		var email_id = user.email;
+		console.log(user.email)
+		window.location.href = 'index.html';
+	  }
+  
+	} else {
+	  // No user is signed in.
+  
+	
+  
+	}
+  });
+  function register(){
+  console.log(1);
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+
+}
+
+</script>
+
+</head>
+<body> 
+	
+	<div class="wrapper" >
+
+		<nav>
+
+			  <div class="menu-icon">
+				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
+			  </div>
+
+			  <div class="logo">
+				  <a href="index.html">
+				  <img src="images/logo.png"  alt=" " /></a></li>
+			  </div>
+
+			  <a href="add.html" > </a>
+
+			  <div class="search">
+				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+				  <input type="submit"  value="SEARCH">
+
+				  <div  class="swap">
+				  
+					  <a href="add.html" >swap </a>
+					  <img src="images/search.png" class="img_swap">	
+				  
+				  </div>
+	  
+			  
+			  </div>
+
+			  
+
+				  
+			  <ul >
+				  
+
+				  <li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
+				  <!-- <li><div   id="user_para" class="btn">  </div> </li> -->
+
+				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
+
+				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
+
+				  <li > <a href="#"  class="btn" > CART </a> </li>        
+				  <!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
+			  </ul>
+
+		  </div>
+  </nav>
+
+
+	<!---->
+	<div class="container" style="position: relative; padding-top: 5%;"> 
+			         
+		<div class="register">
+		  	  <form> 
+				 <div class="  register-top-grid">
+					<h2 class="text-center">ยื่นข้อเสนอ</h2>
+					<div class="aaa  ">
+						<span>มอบบริการ<label>*</label></span>
+						<input type="text"> 
+					
+						<span>รายละเอียด<label>*</label></span>
+						<input type="text"> 
+						<span>เพิ่มรูปภาพ<label>*</label></span>
+						<form id="styleImageForm1" method= "post" action="../imageUpload/productStyle.json" enctype="multipart/form-data">
+						  <input type="file" id="my-element1" name="commonsMultipartFile[]" value="" multiple />
+					   </form>
+						 
+						
+					</div>
+					 <div class="clearfix"> </div>
+					   <a class="news-letter" href="#">
+						 <label class="checkbox "><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
+					   </a>
+					 </div>
+				     
+				</form>
+				<div class="clearfix"> </div>
+				<div class="register-but  text-center">
+				   
+					  <!-- <input type="submit" value="submit">-->
+					   <button type="button" onclick="register()" class="btn btn-primary btn-lg ">submit</button>
+					   <div class="clearfix"> </div>
+				   
+				</div>
+		   </div>
+		        
+	</div>
+	<!---->
+	<div class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="latter">
+					<h6>NEWS-LETTER</h6>
+					<div class="sub-left-right">
+						<form>
+							<input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
+							<input type="submit" value="SUBSCRIBE" />
+						</form>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="latter-right">
+					<p>FOLLOW US</p>
+					<ul class="face-in-to">
+						<li><a href="#"><span> </span></a></li>
+						<li><a href="#"><span class="facebook-in"> </span></a></li>
+						<div class="clearfix"> </div>
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="footer-bottom-cate">
+					<h6>CATEGORIES</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a></li>
+						<li><a href="#">Dignissim purus</a></li>
+						<li><a href="#">Tempus pretium</a></li>
+						<li ><a href="#">Dignissim neque</a></li>
+						<li ><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Ultrices id du</a></li>
+						<li><a href="#">Commodo sit</a></li>
+						<li ><a href="#">Urna ac tortor sc</a></li>
+						<li><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Urna ac tortor sc</a></li>
+						<li ><a href="#">Eget nisi laoreet</a></li>
+						<li ><a href="#">Faciisis ornare</a></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-cate bottom-grid-cat">
+					<h6>FEATURE PROJECTS</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a></li>
+						<li><a href="#">Dignissim purus</a></li>
+						<li><a href="#">Tempus pretium</a></li>
+						<li ><a href="#">Dignissim neque</a></li>
+						<li ><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Ultrices id du</a></li>
+						<li><a href="#">Commodo sit</a></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-cate">
+					<h6>TOP BRANDS</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a></li>
+						<li><a href="#">Dignissim purus</a></li>
+						<li><a href="#">Tempus pretium</a></li>
+						<li ><a href="#">Dignissim neque</a></li>
+						<li ><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Ultrices id du</a></li>
+						<li><a href="#">Commodo sit</a></li>
+						<li ><a href="#">Urna ac tortor sc</a></li>
+						<li><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Urna ac tortor sc</a></li>
+						<li ><a href="#">Eget nisi laoreet</a></li>
+						<li ><a href="#">Faciisis ornare</a></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-cate cate-bottom">
+					<h6>OUR ADDERSS</h6>
+					<ul>
+						<li>Aliquam metus  dui. </li>
+						<li>orci, ornareidquet</li>
+						<li> ut,DUI.</li>
+						<li >nisi, dignissim</li>
+						<li >gravida at.</li>
+						<li class="phone">PH : 6985792466</li>
+						<li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+	   $(".menu-icon").on("click", function() {
+			 $("nav ul").toggleClass("showing");
+	   });
+ });
+
+ $(window).on("scroll", function() {
+	   if($(window).scrollTop()) {
+			 $('nav').addClass('color');
+	   }
+
+	   else {
+			 $('nav').removeClass('color');
+	   }
+ })
+
+</script>
+</body>
+</html>
