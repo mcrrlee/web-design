@@ -1479,7 +1479,7 @@ a.get-cart {
 @media all and (max-width: 991px) {
 	.search {
 		top: 0vw;
-		left: 20vw;
+		left: 25vw;
 		height: 3vw;
 		
 	}
@@ -1494,7 +1494,7 @@ a.get-cart {
 		height: 3vw;
 		text-align: center;
 		right: 12vw;
-		top: -3.7vw;
+		top: -2.8vw;
 	}
 	.logo {
 		position: fixed;
@@ -1555,12 +1555,33 @@ nav.color ul {
 	height: 3.5vw;
 	text-align: center;
 	right: 12vw;
-	top: -4vw;
+	top: -3.8vw;
+	font-size: 2vw;
 }
 .search {
     top: 0vw;
-    left: 20vw;
+    left: 25vw;
     height: 3vw;
+}
+
+.search button {
+
+    height: 4vw;
+    font-size: 2vw;
+
+}
+
+.search input[type="text"] {
+    border: 1px solid #fff;
+    outline: none;
+    background: none;
+    font-size: 1vw;
+    color: #777;
+    width: 35vw;
+    height: 4vw;
+    top: 10%;
+    -webkit-apperance: none;
+    margin: 0;
 }
 .logo {
     left: -3vw;
@@ -1704,10 +1725,11 @@ nav ul li {
     margin: 0 auto;
 } 
 .search {
-    top: -1vw;
-    left: 20vw;
+    top: 0vw;
+    left: 25vw;
     height: 5vw;
 }
+
 .search input[type="submit"] {
     height: 4.5vw;
 }
@@ -1717,7 +1739,7 @@ nav ul li {
     height: 5vw;
     text-align: center;
     right: 12vw;
-    top: -5.5vw;
+    top: -5vw;
 }
 
 nav ul {
@@ -1807,23 +1829,32 @@ a.get-cart {
 		width: 15vw;
 		height: 6vw;
 		right: 12vw;
-		top: -6.8vw;
+		top: -6vw;
 	}
 	.swap a {
 
 		font-size: 3vw;
 		
 	}
+	.search button {
+		height: 5vw;
+	}
+	.img_S {
+		width: 3vw;
+		height: 3vw;
+	}
 	.img_swap {
 		top: -4vw;
 		left: 5.5vw;
 	}
-	.search input[type="submit"] {
-		height: 5.5vw;
+	.search input[type="text"] {
+		height: 5vw;
+
 	}
+
 	.search {
-		top: -1.5vw;
-		left: 20vw;
+		top: 0vw;
+		left: 25vw;
 		height: 6vw;
 	}
 
@@ -1936,20 +1967,39 @@ p.m_text {
 	nav{
 		background-color: coral;
 	  }
-	.swap {
+	  .swap {
 		width: 15vw;
 		height: 6vw;
 		right: 12vw;
-		top: -8vw;
+		top: -6vw;
 	}
+	.swap a {
+
+		font-size: 3vw;
+		
+	}
+	.search button {
+		height: 5vw;
+	}
+	.img_S {
+		width: 3vw;
+		height: 3vw;
+	}
+	.img_swap {
+		top: -4vw;
+		left: 5.5vw;
+	}
+	.search input[type="text"] {
+		height: 5vw;
+
+	}
+
 	.search {
-		top: -1.5vw;
-		left: 20vw;
-		height: 7vw;
+		top: 0vw;
+		left: 25vw;
+		height: 6vw;
 	}
-	.search input[type="submit"] {
-		height: 6.5vw;
-	}
+
 	.logo {
 		left: -10vw;
 	}
@@ -2085,12 +2135,7 @@ img.banner-bag {
 .cate-bottom ul li a {
 	font-size: 1.1em;
 }
-.search input[type="submit"] {
-	width: 37%;
-}
-.search input[type="text"] {
-	width: 60%;
-}
+
 .login-left p, .login-right p {
 	font-size: 1em;
 	margin: 0 0 1em 0;
