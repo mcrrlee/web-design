@@ -33,9 +33,16 @@ body a{
 	-moz-transition: 0.5s all;
 }
 
+.offer2{
+
+	background-color: #fff;  width: 35vw; padding-bottom: 5%; padding-top: 5%;
+}
 
 
-
+#txt1{
+	font-size: 2.5vw; 
+	color: #da251f;
+}
 .inputDnD .form-control-file {
   position: relative;
   width: 100%;
@@ -47,6 +54,32 @@ body a{
   background-color: #c61c23;
   box-shadow: 0 0 5px solid currentColor;
 }
+.B1{
+	border: 1px solid gray;
+	position: relative;
+	width: 5vw;
+	text-align: center;
+	height: 2vw;
+	display: block;
+	font-size: 1.5vw;
+	background-color: none;
+	
+}
+a .B1{
+	text-decoration: none;
+}
+
+.B1:hover{
+	text-decoration: none;
+	background-color: #1DBAA5;
+	color: #fff;
+}
+
+#me_11{
+	width: 20vw;
+	height: 15vw;
+}
+
 .inputDnD .form-control-file:before {
   content: attr(data-title);
   position: absolute;
@@ -68,7 +101,12 @@ body a{
   box-shadow: inset 0px 0px 0px 0.25em currentColor;
 }
 
-
+#imgg3{
+	width: 10vw;
+	height: 10vw; 
+	position: relative; 
+	left: 1vw;
+}
 
 
 #me_2{
@@ -96,7 +134,7 @@ body a{
 	border-radius: 50%; 
 }
 .reviews{
-  	width: 500px;
+  	width: 40vw;
   	border: 2px solid black;
   	padding: 50px;
  	margin-left:20px;
@@ -116,6 +154,9 @@ body a{
 	font-weight: bold;
 	font-size: 20px;
 	letter-spacing: 2px;
+}
+#name2{
+	font-size: 1vw;
 }
 .swiper-container {
 	width: 80vw;
@@ -172,6 +213,10 @@ body a{
 	left: 10vw;
 	color: #EFB167;
 }
+#ice1{
+	position: relative; 
+	padding-top: 10%;
+}
 nav{
 
 	z-index: 5000;
@@ -202,7 +247,7 @@ nav{
 }
 
 .btn:hover{
-	color: OliveDrab;
+	color: #fff;
 }
   nav.color ul li a{
 	opacity: 1;
@@ -228,6 +273,12 @@ nav{
     text-align: center;
     display: none;
     left: 3vw;
+}
+#HH1{
+	position: absolute; 
+	top: 0vw; 
+	left: 2vw; 
+	font-size: 1vw;
 }
   
   .menu-icon{
@@ -316,8 +367,29 @@ ul.support li a {
 	text-align: center;
 	padding-top:1.7em;
 }
+.offer{
+	position: absolute;
+	right: 6vw;
+	 width: 50vw;
+	  background-color: #fff; 
+	  padding-bottom: 10%;
+	border-radius: 20px 0px 0px 0px;
+}
 
+#imgg2{
+	width: 5vw; 
+	height: 5vw; 
+	position: relative;  
+	border-radius: 50%; 
+	right: 5vw;
+}
 
+#HH2{
+	font-size: 1vw; 
+	text-align: center;
+	top: -2vw; 
+	position: relative;
+}
 
 
 .swap:hover img {
@@ -519,6 +591,10 @@ ul.login li a span{
 	transition: all 250ms linear;
   }
 
+  #i1{
+	  width: 10vw;
+	  height: 10vw;
+  }
 
 
 
@@ -1770,6 +1846,119 @@ nav.color ul {
 	right: 0%;
 
 }
+#me_11 {
+    width: 20vw;
+    height: 15vw;
+    position: relative;
+    left: 38%;
+}
+
+#HH1 {
+    position: absolute;
+    top: -18vw;
+    left: 40vw;
+    font-size: 3vw;
+}
+#HH2 {
+    font-size: 3vw;
+    text-align: center;
+    top: -15vw;
+    left: 10vw;
+    position: relative;
+}
+
+.B1 {
+    border: 1px solid gray;
+    position: relative;
+    width: 20vw;
+    text-align: center;
+    height: 5vw;
+    display: block;
+    font-size: 3vw;
+    top: -10vw;
+    left: 45vw;
+    background-color: none;
+}
+#txt3 {
+    top: 10vw;
+    position: relative;
+    right: 35vw;
+}
+#reviews {
+    position: relative;
+    top: 10vw;
+    width: 70vw;
+}
+#i1 {
+    width: 20vw;
+    height: 20vw;
+}
+.offer {
+    position: relative;
+    top: -27vw;
+    left: 25vw;
+    padding-bottom: 2%;
+}
+#txt4{
+	position: relative;
+    top: -10vw;
+    left: 20vw;
+    font-size: 2vw;
+}
+#B_1 {
+    position: absolute;
+    right: 1vw;
+    top: 4vw;
+}
+#imgg3 {
+    width: 15vw;
+    height: 15vw;
+    position: relative;
+    left: 1vw;
+}
+#imgg2 {
+    width: 10vw;
+    height: 10vw;
+    position: relative;
+    border-radius: 50%;
+    right: -25vw;
+    top: -15vw;
+}
+#me_2 {
+    width: 10vw;
+    height: 10vw;
+    margin-left: 1vw;
+    border-radius: 50%;
+}
+#product_img2 {
+    position: absolute;
+    top: 3vw;
+    right: 37vw;
+    width: 8vw;
+    height: 8vw;
+    margin-left: 1vw;
+    border-radius: 50%;
+}
+#name2 {
+    position: relative;
+    top: -10vw;
+    left: 20vw;
+    font-size: 2vw;
+}
+.offer2 {
+    position: relative;
+    width: 90vw;
+}
+
+#txt2{
+	padding-left: 15vw;
+}
+#Aboutme{
+	padding-left: 15vw;
+}
+#txt1{
+	font-size: 5vw; 
+}
 
 .profile_ {
     width: 5vw;
@@ -2092,6 +2281,17 @@ a.get-cart {
 		right: 12vw;
 		top: -5vw;
 	}
+	.offer {
+		position: relative;
+		top: -30vw;
+		left: 25vw;
+		padding-bottom: 2%;
+	}
+	#B_1 {
+		position: absolute;
+		right: -1vw;
+		top: 4vw;
+	}
 	.swiper-container {
 		width: 80vw;
 		height: 10vw;
@@ -2251,6 +2451,10 @@ p.m_text {
 }
 }
 @media(max-width:320px){
+	#ice1{
+		padding-top: 20vw;
+		
+	}
 	nav{
 		background-color: #EFB167;
 	  }
@@ -2259,6 +2463,28 @@ p.m_text {
 		width: 80vw;
 		height: 10vw;
 		top: 20vw;
+	}
+	#txt3 {
+		top: 10vw;
+		position: relative;
+		right: 90vw;
+	}
+	.offer {
+		position: relative;
+		top: -36vw;
+		left: 25vw;
+		padding-bottom: 2%;
+	}
+	#name2 {
+		position: relative;
+		top: -10vw;
+		left: 25vw;
+		font-size: 2vw;
+	}
+	#B_1 {
+		position: absolute;
+		right: -15vw;
+		top: 1vw;
 	}
 	  .profile_ {
 		width: 5vw;
