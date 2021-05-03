@@ -79,6 +79,10 @@ a .B1{
 	width: 20vw;
 	height: 15vw;
 }
+#menu3{
+	background-color: #ffe3aa;
+	padding-bottom: 25%;
+}
 
 .inputDnD .form-control-file:before {
   content: attr(data-title);
@@ -404,7 +408,14 @@ ul.support li a {
 .cart{
 	width:24%;
 }
-
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #ffe3aa;
+  
+	border-radius: 0px 20px 0px 0px;
+    border-bottom-color: transparent;
+}
 .account a span{
 	background: url(../images/img-sprite.png)-117px -30px;
 	width: 26px;

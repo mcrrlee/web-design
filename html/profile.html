@@ -8,9 +8,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-	<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
+	<title>profile</title>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
 	<!--theme-style-->
 
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -20,10 +20,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!--fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 	<!--//fonts-->
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
@@ -79,7 +82,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				  <div  class="profile_">
 				  
-					  <a href="profile.html"  id="user_para"><img src="images/user.png" > </a>
+					  <a href="profile.html"  ><img src="images/user.png" > </a>
 						   
 				  
 				  </div>
@@ -95,14 +98,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <ul >
 				  
 
-				  <!-- <li ><a href="profile.html"  class="btn">  </a> </li>
-				   <li><a href="profile.html"  class="btn">  </a> </li>  -->
+				  
+				   <li><a href="profile.html"  class="btn" id="user_para">  </a> </li>  
 
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
  
-				  <li ><button id="logout" style="display: none;" onclick="logout()" class="btn">Logout</button></li>         
+				  <li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
 			  </ul>
 
 		  </div>
@@ -111,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--ปุ่มข้างบน-->
 	<div class="container"  id="ice1">
 
-		<ul class="nav nav-tabs nav-justified" style="background-color: coral;">
+		<ul class="nav nav-tabs nav-justified" style="background-color: #EFB167;">
 			<li class="active"><a data-toggle="tab" href="#home" class="menupro" style="font-size: 1.5vw;">โปรไฟล์</a></li>
 			<li><a data-toggle="tab" href="#menu1" class="menupro" style="font-size: 1.5vw;">การแลกเปลี่ยน</a></li>
 			<li><a data-toggle="tab" href="#menu2" class="menupro" style="font-size: 1.5vw;">กำลังดำเนินการ</a></li>
@@ -268,39 +271,58 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 			<!--หน้าประวัติ-->
-			<div id="menu3" class="tab-pane fade" style="background-color: #ffe3aa; height: 400px;">
+			<div id="menu3" class="tab-pane fade">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-sm-6"><br>
-							<div class="offer" style="border: 2px solid black; height: 200px; width: 520px;">
+							<div class="offer2" >
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
-										<img style="width: 100px; height: 100px" class="me" src="images/baa.jpg">
+
+										<img id="imgg3" class="me" src="images/toys.png">
 									</div>
 
 									<div class="col-sm-6">
-										<p>My Trade</p>
-										<p style="color: green">Complete</p>
+										<img id="imgg2" class="me" src="images/t2.jpg">
+										<h1  id="HH1">ชื่อ</h1>
+
+
+										<h1  id="HH2">สถานะ</h1>
+
+										<h2 class="status" id="HH2" style="color: green">Complete</h2>
+
+
+										
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="col-sm-6"><br>
-							<div class="offer" style="border: 2px solid black; height: 200px; width: 520px;">
+							<div class="offer2" >
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
-										<img style="width: 100px; height: 100px;" class="me" src="images/baa.jpg">
+
+										<img id="imgg3" class="me" src="images/toys.png">
 									</div>
 
 									<div class="col-sm-6">
-										<p>Offer</p>
-										<p style="color: green">Complete</p>
+										<img id="imgg2" class="me" src="images/t2.jpg">
+										<h1  id="HH1">ชื่อ</h1>
+
+
+										<h1  id="HH2">สถานะ</h1>
+
+										<h2 class="status" id="HH2" style="color: green">Complete</h2>
+
+
+										
 									</div>
 								</div>
 							</div>
-						</div>
+
+
 
 					</div>
 				</div>
