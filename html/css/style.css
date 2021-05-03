@@ -165,7 +165,7 @@ nav{
   nav.color ul li a{
 	opacity: 1;
 	color: #fff;
-	font-size: 2vw;
+	font-size: 1.7vw;
 	transition: 1s;
   
   }
@@ -205,7 +205,7 @@ nav{
   }
   
   .btn:hover{
-	letter-spacing: 5px;
+	letter-spacing: 4px;
 	font-weight:bold;
   }
 
