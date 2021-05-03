@@ -33,6 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--//fonts-->
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="js/jquery.min.js"></script>
 <!--script-->
 
@@ -79,15 +80,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  
 
 				  <li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
-				  <!-- <li><div   id="user_para" class="btn">  </div> </li> -->
+				 <li><div   id="user_para" class="btn">  </div> </li> 
 
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
 
 				  <li > <a href="#"  class="btn" > CART </a> </li>        
-				  <!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
-			  </ul>
+				 <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>         
 
 		  </div>
   </nav>
@@ -97,12 +97,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container" style="position: relative; padding-top: 5%;"> 
 			         
 		<div class="register" >
-		  	  <form> 
+		  	  <div> 
 				 <div class="  register-top-grid">
 					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
 					<div class="aaa">
 						<span>ชื่อสินค้า<label>*</label></span>
-						<input type="text"> 
+						<input id="nameitem" type="text"> 
 					
 						<span>แท็ก<label>*</label></span>
 						<div class="input-group">
@@ -118,7 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                           </div>
 						  <span>อัพรูปภาพ<label>*</label></span>
 						  <form id="styleImageForm1" method= "post" action="../imageUpload/productStyle.json" enctype="multipart/form-data">
-							<input type="file" id="my-element1" name="commonsMultipartFile[]" value="" multiple />
+							<input type="file" id="imglist" name="commonsMultipartFile[]" value="" multiple />
 						 </form>
 						 <span>ความต้องการ<label>*</label></span>
 						 <div class="input-group">
@@ -133,23 +133,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                           </div>
 						 <span>รายละเอียด<label>*</label></span>
-						<input type="text"> 
+						<input id="Detail" type="text"> 
 						
 						
 					</div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
-					   </a>
-					 </div>
+					 
 				     
-				</form>
-				<div class="clearfix"> </div>
+				</div>
+				<div class=""> </div>
 				<div class="register-but text-center">
-				   <form>
-					   <input type="submit" value="submit">
-					   <div class="clearfix"> </div>
-				   </form>
+				   <div>
+					   <button  onclick="additemtrading()" >submit</button>
+					   <div class=""> </div>
+				   </div>
 				</div>
 		   </div>
 		        
@@ -261,7 +257,85 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			 $('nav').removeClass('color');
 	   }
  })
+ firebase.auth().onAuthStateChanged(function (user) {
+				if (user) {
+					// User is signed in.
+					var user = firebase.auth().currentUser;
 
+					if (user != null) {
+						//console.log(1);
+						var email_id = user.email;
+						var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+						ref.on("value", (snapshot) => {
+							if (snapshot.exists()) {
+								console.log("userlist/" + email_id.replace(/\./, ''));
+								var data = snapshot.val();
+								console.log(user.email);
+								console.log(data.username);
+								document.getElementById("login").style.display = "none";
+								document.getElementById("signup").style.display = "none";
+								document.getElementById("user_para").style.display = "block";
+								document.getElementById("logout").style.display = "block";
+								document.getElementById("user_para").innerHTML = data.username;
+
+							}
+							else {
+								console.log("No data available");
+							}
+						});
+					}
+
+				} else {
+					// No user is signed in.
+					window.location.href = 'login.html';
+
+				}
+			});
+			function logout() {
+				firebase.auth().signOut();
+			}
+			function additemtrading() {
+				var datauser = '';
+				var user = firebase.auth().currentUser;
+				data = firebase.database();
+				var ref = firebase.database().ref("userlist/" + user.email.replace(/\./, ''));
+				ref.on("value", (snapshot) => {if (snapshot.exists()) { datauser = snapshot.val(); 
+					console.log('load DB');
+					console.log(datauser.username+datauser.runid);
+				}
+				else{
+					console.log('fail load DB');
+				}});
+				
+
+				var nameitem = document.getElementById("nameitem").value;
+				var Detail = document.getElementById("Detail").value;
+				//var wantlist = document.getElementById("wantlist").value;
+				var imglist = document.getElementById("imglist");
+				//var storageRef = firebase.storage().child("img");
+				
+				for (i = 0; i <= imglist.files.length; i++)	{
+					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem+datauser.runid+"/"+i)
+					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
+				}
+				;
+				
+				data.ref("ItemTrading/"+user.email.replace(/\./, '')).set({
+					owrname:datauser.username,
+					runid: datauser.runid,
+					nameitem:nameitem,
+					//wantlist:wantlist,
+					Detail:Detail
+
+				});
+				data.ref('userlist/'+user.email.replace(/\./, '')+"/runid").set(datauser.runid+1);
+
+			}
+			$('#contactForm').submit(function () {
+ sendContactForm();
+ return false;
+});
+//list item trading
 </script>
 </body>
 </html>
