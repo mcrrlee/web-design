@@ -7,17 +7,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<title>LOGIN</title>
+
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <!--//fonts-->
 
 
@@ -31,6 +34,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="js/jquery.min.js"></script>
+
+
+
+
 <script>firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 	  // User is signed in.
@@ -73,6 +80,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   }</script>
 </head>
 <body> 
+
+
 	<div class="wrapper">
 
 			  <nav>
@@ -101,6 +110,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						
 						</div>
 
+						<div  class="Chat">
+						
+							<a href="chat.html" ><img src="images/chat.png" > </a>
+								
+						
+						</div>
+
+						<div  class="profile_">
+						
+							<a href="profile.html"  ><img src="images/user.png" > </a>
+								 
+						
+						</div>
+
 						
 			
 					
@@ -112,35 +135,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul >
 						
 
-						<li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
-						<!-- <li><div   id="user_para" class="btn">  </div> </li> -->
+						 <li><a href="profile.html"  class="btn" id="user_para">  </a> </li> 
 
 						<li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 						<li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
-
-						<li > <a href="#"  class="btn" > CART </a> </li>        
-						<!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
+       
+						<li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
 					</ul>
 
 				</div>
 		</nav>
 
 
+	
 	<!---->
-	<div class="container" style="position: relative; padding-top: 5%;">
+	<div class="container" id="container_login" >
 		
       	   <div class="account_grid">
 			   <div class=" login-right">
-			  	<h3>REGISTERED CUSTOMERS</h3>
+			  	<h3 style="font-size: 2vw;">REGISTERED CUSTOMERS</h3>
 				<p>If you have an account with us, please log in.</p>
 				
 				  <div>
-					<span>Email Address<label>*</label></span>
+					<span style="font-size: 1.5vw;">Email Address<label>*</label></span>
 					<input  id="email_field" type="text"> 
 				  </div>
 				  <div>
-					<span>Password<label>*</label></span>
+					<span style="font-size: 1.5vw;">Password<label>*</label></span>
 					<input id="password_field" type="text"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
@@ -155,95 +177,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			    <div class=" login-left" style="padding: 10px;">
 			  	 
 				 
-				 <a class="acount-btn" href="register.html">Create an Account</a>
+				 <a class="acount-btn  btn-3" style="border-radius: 3em / 3em;" href="register.html">Create an Account</a>
 			   </div>
-			   <div class="clearfix"> </div>
-			 </div>
-			 <div class="sub-cate">
-				<div class=" top-nav rsidebar span_1_of_left">
-					<h3 class="cate">CATEGORIES</h3>
-		 <ul class="menu">
-		<li class="item1"><a href="#">Curabitur sapien<img class="arrow-img" src="images/arrow1.png" alt=""/> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-		<li class="item2"><a href="#">Dignissim purus <img class="arrow-img " src="images/arrow1.png" alt=""/></a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-		<li class="item3"><a href="#">Ultrices id du<img class="arrow-img img-arrow" src="images/arrow1.png" alt=""/> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-			</ul>
-		</li>
-		<li class="item4"><a href="#">Cras iacaus rhone <img class="arrow-img img-left-arrow" src="images/arrow1.png" alt=""/></a>
-			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-			</ul>
-		</li>
-				<li>
-			<ul class="kid-menu">
-				<li><a href="product.html">Tempus pretium</a></li>
-				<li ><a href="product.html">Dignissim neque</a></li>
-				<li ><a href="product.html">Ornared id aliquet</a></li>
-			</ul>
-		</li>
-		<ul class="kid-menu ">
-				<li><a href="product.html">Commodo sit</a></li>
-				<li ><a href="product.html">Urna ac tortor sc</a></li>
-				<li><a href="product.html">Ornared id aliquet</a></li>
-				<li><a href="product.html">Urna ac tortor sc</a></li>
-				<li ><a href="product.html">Eget nisi laoreet</a></li>
-				<li><a href="product.html">Faciisis ornare</a></li>
-				<li class="menu-kid-left"><a href="contact.html">Contact us</a></li>
-			</ul>
-		
-	</ul>
-					</div>
-				<!--initiate accordion-->
-		<script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
-			
-			});
-		</script>
-					<div class=" chain-grid menu-chain">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>	   		     		
-	   		     		<div class="grid-chain-bottom chain-watch">
-		   		     		<span class="actual dolor-left-grid">300$</span>
-		   		     		<span class="reducedfrom">500$</span>  
-		   		     		<h6>Lorem ipsum dolor</h6>  		     			   		     										
-	   		     		</div>
-	   		     	</div>
-	   		     	 <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a> 	
-			</div>
-			  <div class="clearfix"> </div>
-      	 </div>
-	<!---->
-
+			   
 
 	<script>
 		$(document).ready(function() {

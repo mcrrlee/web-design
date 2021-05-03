@@ -442,6 +442,13 @@ ul.login li a span{
 	top: 1vw;
 	transform: rotate(15deg);
 }
+#container_login{
+	position: relative; 
+	padding-top: 10%;
+	justify-items: center; 
+	justify-content: center; 
+	right: 10vw;
+}
 
 
 .swap {
@@ -1169,21 +1176,20 @@ p.m_text {
 	width: 95%;
 }
 .acount-btn {
-	background:#F97E76;
 	color: #FFF;
-	font-size: 0.9em;
+	font-size: 1vw;
 	padding: 0.7em 1.2em;
+	
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
 	display: inline-block;
-	text-transform: uppercase;
+	text-decoration: none;
+	
 }
-.acount-btn:hover, .login-right input[type="submit"]:hover{
-	background:#1DBAA5;
-	text-decoration:none;
-	color:#fff;
+.acount-btn a{
+	text-decoration: none;
 }
 .login-right form {
 	padding: 1em 0;
@@ -1897,6 +1903,14 @@ nav ul li {
 }
 @media(max-width:640px){
 
+	#container_login {
+		position: relative;
+		padding-top: 10%;
+		justify-items: center;
+		justify-content: center;
+		right: 0vw;
+	}
+
 	nav{
 		background-color: #EFB167;
 	  }
@@ -2033,6 +2047,16 @@ a.get-cart {
 .product-grid:nth-child(9){
 	display:none;
 }
+
+#container_login {
+    position: relative;
+    padding-top: 10%;
+    justify-items: center;
+    justify-content: center;
+    right: 0vw;
+}
+
+
 }
 @media(max-width:480px){
 	nav{
