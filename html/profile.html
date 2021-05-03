@@ -20,6 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!--fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 	<!--//fonts-->
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
@@ -111,19 +112,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container" style="position: relative; padding-top: 10%;">
 
 		<ul class="nav nav-tabs nav-justified" style="background-color: coral;">
-			<li class="active"><a data-toggle="tab" href="#home">โปรไฟล์</a></li>
-			<li><a data-toggle="tab" href="#menu1">การแลกเปลี่ยน</a></li>
-			<li><a data-toggle="tab" href="#menu2">ข้อเสนอ</a></li>
-			<li><a data-toggle="tab" href="#menu3">ประวัติ</a></li>
+			<li class="active"><a data-toggle="tab" href="#home" class="menupro" style="font-size: 1.5vw;">โปรไฟล์</a></li>
+			<li><a data-toggle="tab" href="#menu1" class="menupro" style="font-size: 1.5vw;">การแลกเปลี่ยน</a></li>
+			<li><a data-toggle="tab" href="#menu2" class="menupro" style="font-size: 1.5vw;">กำลังดำเนินการ</a></li>
+			<li><a data-toggle="tab" href="#menu3" class="menupro" style="font-size: 1.5vw;">ประวัติ</a></li>
 		</ul>
 
 
 		<!--หน้าโปรไฟล์-->
 		<div class="tab-content">
-			<div id="home" class="tab-pane fade in active">
-				<h3>
-					<center> Profile</center>
-				</h3><br>
+			<div id="home" class="tab-pane fade in active" style="background-color: #ffe3aa; height: 500px;"><br>
+				<strong><center><p style="font-size: 2.5vw; color: #da251f;">Profile</p></center></strong>
 				<div class="aboutme" id="about">
 					<div class="container">
 						<div class="row">
@@ -131,26 +130,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="left-text">
 									<div class="descrip"></div>
 									<ul>
-										<img class="me" src="images/ba.jpg">
+										<img class="me" src="images/t1.jpg" style="border-radius: 50%;">
 									</ul>
 								</div>
 							</div>
 							<div class="col-sm-4">
-								<p>ชิ้อ :<span id="firstname"></span> นามสกุล:<span id="lastname"></span></p>
-								<p>Username : <span id="username"></span> </p>
-								<p></p>
+								
+								<p style="font-size: 2vw;">Username : <span id="username"> ใส่ชื่อ </span> </p>
+								<p> </p>
 								<p></p>
 							</div>
 							<!--หน้า2 about me ฝั่งขวา-->
 							<div class="col-sm-5">
-								<p style="font-size: 25px">About</p>
+								<p style="font-size: 2vw">About</p>
 								<div id="Aboutme">
-
+										เขียนอะไรก้ได้ที่ผู้ใช้อยากเขียน
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="container">
+					<div class="container" style="top: -5vw; position: relative;">
 						<div class="row">
 							<div class="col-sm-12">
 								<h3 class="titlereview">Reviews</h3>
@@ -163,14 +162,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 			</div>
-			<!--หน้าการแลกเปลี่ยน-->
-			<div id="menu1" class="tab-pane fade">
+			<!--หน้าการแลกเปลี่ยน--> 
+			<div id="menu1" class="tab-pane fade" style="background-color: #ffe3aa; height: 400px;">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-sm-4">
 							<div class="left-text">
-								<div class="descrip"></div>
+								<div class="descrip"></div><br>
 								<ul>
 									<img class="me" src="images/ba.jpg">
 								</ul>
@@ -178,30 +177,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 
 						<div class="col-sm-8"><br>
-							<p style="font-size: 25px">Offer</p>
-							<div class="offer" style="border: 2px solid black; height: 200px;">
+							<strong><p style="font-size: 25px">Offer</p></strong>
+							<div class="offer" style="position: absolute;right: 6vw; width: 50vw; background-color: #fff; padding-bottom: 10%;
+							
+							border-radius: 20px 0px 0px 0px;">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-3">
-										<img style="width: 100px; height: 100px" class="me" src="images/baa.jpg">
+										<img  class="me" id="me_2"src="images/t1.jpg">
+
+										<img id="product_img2" class="product_img" src="images/desktop.png">
 									</div>
 
-									<div class="col-sm-3">
-										..............................................
-										............................................
-										..............................................
-										............................................
-									</div>
+									<h1 id="name2" style="font-size: 1vw;"> ชื่อคนเสนอ </h1>
 
 									<div class="col-sm-3">
-										..............................................
-										............................................
-										..............................................
-										............................................
+										สนใจแลกค่าา
 									</div>
 
-									<div class="col-sm-3">
-										<button type="button" class="btn btn-primary">Chat</button><br><br>
-										<button type="button" class="btn btn-danger">Refuse</button>
+									<div class="col-sm-3" id="B_1">
+										<button type="button" class="btn btn-primary" style="font-size: 1vw; border-radius: 3em / 3em;">รับข้อเสนอ</button><br><br>
+										<button type="button" class="btn btn-danger" style="font-size: 1vw; border-radius: 3em / 3em;">ปฎิเสธ</button>
 									</div>
 
 								</div>
@@ -217,33 +212,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 			<!--หน้าข้อเสนอ-->
-			<div id="menu2" class="tab-pane fade">
+			<div id="menu2" class="tab-pane fade" style="background-color: #ffe3aa; height: 400px;">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-sm-6"><br>
-							<div class="offer" style="border: 2px solid black; height: 200px;">
+							<div class="offer" style="border: 2px solid black; height: 200px; width: 520px;">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 										<img style="width: 100px; height: 100px" class="me" src="images/baa.jpg">
 									</div>
 
 									<div class="col-sm-6">
-										<button type="button" class="btn btn-primary">Chat</button><br><br>
+										<button type="button" class="btn btn-primary" style="font-size: 15px">Chat</button><br><br>
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="col-sm-6"><br>
-							<div class="offer" style="border: 2px solid black; height: 200px;">
+							<div class="offer" style="border: 2px solid black; height: 200px; width: 520px;">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 										<img style="width: 100px; height: 100px" class="me" src="images/baa.jpg">
 									</div>
 
 									<div class="col-sm-6">
-										<button type="button" class="btn btn-danger">Refuse</button>
+										<button type="button" class="btn btn-danger" style="font-size: 15px">Refuse</button>
 									</div>
 								</div>
 							</div>
@@ -255,12 +250,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 			<!--หน้าประวัติ-->
-			<div id="menu3" class="tab-pane fade">
+			<div id="menu3" class="tab-pane fade" style="background-color: #ffe3aa; height: 400px;">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-sm-6"><br>
-							<div class="offer" style="border: 2px solid black; height: 200px;">
+							<div class="offer" style="border: 2px solid black; height: 200px; width: 520px;">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 										<img style="width: 100px; height: 100px" class="me" src="images/baa.jpg">
@@ -275,7 +270,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 
 						<div class="col-sm-6"><br>
-							<div class="offer" style="border: 2px solid black; height: 200px;">
+							<div class="offer" style="border: 2px solid black; height: 200px; width: 520px;">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 										<img style="width: 100px; height: 100px;" class="me" src="images/baa.jpg">

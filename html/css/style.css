@@ -71,7 +71,30 @@ body a{
 
 
 
+#me_2{
+	width: 5vw; 
+	height: 5vw; 
+	margin-left: 1vw; 
+	border-radius: 50%;
 
+
+}
+
+#B_1{
+	position: absolute;
+	right: 1vw;
+    top: 1vw;
+}
+
+#product_img2{
+	position: absolute;
+	top: 2vw;
+	right: 3vw;
+	width: 5vw; 
+	height: 5vw; 
+	margin-left: 1vw; 
+	border-radius: 50%; 
+}
 .reviews{
   	width: 500px;
   	border: 2px solid black;
@@ -95,11 +118,21 @@ body a{
 	letter-spacing: 2px;
 }
 .swiper-container {
-	width: 60vw;
+	width: 80vw;
 	height: 10vw;
-	top: 12vw;
+	top: 14vw;
   }
 
+   .container_index {
+    width: 90vw;
+    position: relative;
+    padding-top: 5%;
+    flex-wrap: wrap;
+    top: 15vw;
+    right: -5vw;
+    background-color: bisque;
+    padding: 2vw;
+}
 .swiper-pagination{
 	top: 0vw;
 	position: relative;
@@ -124,12 +157,21 @@ body a{
 	-webkit-align-items: center;
 	align-items: center;
 }
+#logout{
+	background-color: none;
+}
 
 .swiper-slide img{
 	width: 100%;
 	height: 100%;
 }
-
+.txt_category{
+	position: absolute;
+	top: 10vw;
+	font-size: 2vw;
+	left: 10vw;
+	color: #EFB167;
+}
 nav{
 
 	z-index: 5000;
@@ -141,7 +183,7 @@ nav{
 	background: none;
 	overflow: hidden;
 	padding-top: 1%;
-	padding-bottom: 3%;
+	padding-bottom: 2%;
 	
 	text-align: right;
 	background-color: #EFB167;
@@ -207,6 +249,14 @@ nav{
   .btn:hover{
 	letter-spacing: 4px;
 	font-weight:bold;
+  }
+
+  #container_single{
+	position: relative; 
+	justify-content: center;
+	justify-items: center;
+	padding-top: 6%;
+	right: 10%;
   }
 
 .top-header-left{
@@ -307,6 +357,7 @@ ul.login{
 	width:36%;
 	margin:0;
 }
+
 ul.login li{
 	display:inline-block;
 }
@@ -414,10 +465,16 @@ ul.login li a span{
 	top: 1vw;
 	transform: rotate(15deg);
 }
+#container_login{
+	position: relative; 
+	padding-top: 10%;
+	justify-items: center; 
+	justify-content: center; 
+	right: 10vw;
+}
 
 
 .swap {
-    background-color: #FFE4B5;
     cursor: pointer;
 	width: 8vw;
 	height: 2.5vw;
@@ -432,6 +489,7 @@ ul.login li a span{
 	top: -2.5vw;
 
 }
+
 
 
 
@@ -618,12 +676,9 @@ ul.cute li{
 a.now-get{
 	font-size: 1.1em;
 	color:#fff;
+
 	padding:0.6em 0.8em;
-	background:#323A45;
 	text-decoration: none;
-}
-a.now-get:hover{
-	background: #0D3F84;
 }
 .wmuSlider {
 	position: relative;
@@ -705,13 +760,13 @@ width: 49%;
 }
 .products{
 	width: 100%;
-	border: 1px solid #ddd;
+	
 	float:left;
 	margin: 1.5em 0;
 	padding: 0.7em 1em ;
 }
 .grid-chain-bottom {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #fff;
 }
 .latest-product,.dolor-grid{
 	float:left;
@@ -738,7 +793,7 @@ a.all-product{
 }
 h5.latest-product{
 	margin: 6px 0 0;
-	font-size: 1.3em;
+	font-size: 1.5vw;
 	color: #000;
 	font-weight: 700;
 }
@@ -754,7 +809,7 @@ h5.latest-product{
 	color:#F97E76;
 }
 .chain-grid{
-	border: 1px solid #ddd;
+
 	position: relative;	
 	width: 30.7%;
 	margin: 0 3% 0 0;
@@ -935,8 +990,9 @@ p.m_text {
 }
 
 .etalage_zoom_area div {
-    width:460px !important;
-    height:500px !important;
+
+    width:50vw !important;
+    height:40vw !important;
 }
 
 /*--product--*/
@@ -1143,21 +1199,20 @@ p.m_text {
 	width: 95%;
 }
 .acount-btn {
-	background:#F97E76;
 	color: #FFF;
-	font-size: 0.9em;
+	font-size: 1vw;
 	padding: 0.7em 1.2em;
+	
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
 	display: inline-block;
-	text-transform: uppercase;
+	text-decoration: none;
+	
 }
-.acount-btn:hover, .login-right input[type="submit"]:hover{
-	background:#1DBAA5;
-	text-decoration:none;
-	color:#fff;
+.acount-btn a{
+	text-decoration: none;
 }
 .login-right form {
 	padding: 1em 0;
@@ -1173,7 +1228,7 @@ p.m_text {
 	text-transform: uppercase;
 }
 .login-right input[type="text"] {
-	border: 1px solid #DDDBDB;
+	
 	outline-color:#fb4d01;
 	width: 96%;
 	font-size:0.9em;
@@ -1626,6 +1681,11 @@ a.get-cart {
 
 		top: -5.5vw;
 	}
+
+	.container_single{
+		right: 10vw;
+
+	}
 	
 
 	.profile_ {
@@ -1697,7 +1757,7 @@ nav.color ul {
 
 
 }
-@media(max-width:768px){
+@media(max-width:769px){
 .top-down {
 	padding: 0 0em 0 0em;
 }
@@ -1705,6 +1765,10 @@ nav.color ul {
 	width: 5vw;
 	left: 54vw;
 	top: -8vw;
+}
+#container_single{
+	right: 0%;
+
 }
 
 .profile_ {
@@ -1862,6 +1926,14 @@ nav ul li {
 }
 @media(max-width:640px){
 
+	#container_login {
+		position: relative;
+		padding-top: 10%;
+		justify-items: center;
+		justify-content: center;
+		right: 0vw;
+	}
+
 	nav{
 		background-color: #EFB167;
 	  }
@@ -1879,6 +1951,10 @@ nav ul li {
 		height: 2vw;
 		left: 65vw;
 		top: -11.5vw;
+	}
+	#container_single{
+		right: 0%;
+	
 	}
 
 	.swap a{
@@ -1939,6 +2015,7 @@ nav ul li {
 	  text-align: center;
 }
 
+
 .menu-icon {
 	  display: block;
 }
@@ -1994,6 +2071,16 @@ a.get-cart {
 .product-grid:nth-child(9){
 	display:none;
 }
+
+#container_login {
+    position: relative;
+    padding-top: 10%;
+    justify-items: center;
+    justify-content: center;
+    right: 0vw;
+}
+
+
 }
 @media(max-width:480px){
 	nav{
@@ -2005,6 +2092,11 @@ a.get-cart {
 		right: 12vw;
 		top: -5vw;
 	}
+	.swiper-container {
+		width: 80vw;
+		height: 10vw;
+		top: 14vw;
+	  }
 	.profile_ {
 		width: 5vw;
 		height: 2vw;
@@ -2162,6 +2254,12 @@ p.m_text {
 	nav{
 		background-color: #EFB167;
 	  }
+
+	  .swiper-container {
+		width: 80vw;
+		height: 10vw;
+		top: 20vw;
+	}
 	  .profile_ {
 		width: 5vw;
 		height: 2vw;
@@ -2390,6 +2488,13 @@ img.banner-bag {
 .img-left-arrow {
 	padding: 0 0 0 6.2em;
 }
+
+.container_index{
+	top: 25vw;
+
+	
+}
+
 }
 
 
