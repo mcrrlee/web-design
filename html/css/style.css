@@ -23,7 +23,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
-    font-family: 'Kanit', sans-serif;
 }
 
 body a{
@@ -35,9 +34,7 @@ body a{
 }
 
 
-.menupro{
-	font-size: 15px;
-}
+
 
 .inputDnD .form-control-file {
   position: relative;
@@ -103,8 +100,15 @@ body a{
 	top: 14vw;
   }
 
-   .container_index{
-	position: relative; padding-top: 5%; flex-wrap: wrap; top: 15vw; background-color: bisque; padding: 2vw;
+   .container_index {
+    width: 90vw;
+    position: relative;
+    padding-top: 5%;
+    flex-wrap: wrap;
+    top: 15vw;
+    right: -5vw;
+    background-color: bisque;
+    padding: 2vw;
 }
 .swiper-pagination{
 	top: 0vw;
@@ -452,22 +456,6 @@ ul.login li a span{
 
 }
 
-.Offer_ {
-    cursor: pointer;
-	width: 8vw;
-	height: 2.5vw;
-	border-radius: 3em / 3em;
-	font-size: 1.5vw;
-    text-align: center;
-	position: relative;
-	left: 42vw;
-	border-bottom: none;
-	border-top: none;
-	border-right: none;
-	top: -2.5vw;
-
-}
-
 
 
 
@@ -654,6 +642,7 @@ ul.cute li{
 a.now-get{
 	font-size: 1.1em;
 	color:#fff;
+
 	padding:0.6em 0.8em;
 	text-decoration: none;
 }
@@ -737,13 +726,13 @@ width: 49%;
 }
 .products{
 	width: 100%;
-	border: 1px solid #ddd;
+	
 	float:left;
 	margin: 1.5em 0;
 	padding: 0.7em 1em ;
 }
 .grid-chain-bottom {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #fff;
 }
 .latest-product,.dolor-grid{
 	float:left;
@@ -770,7 +759,7 @@ a.all-product{
 }
 h5.latest-product{
 	margin: 6px 0 0;
-	font-size: 1.3em;
+	font-size: 1.5vw;
 	color: #000;
 	font-weight: 700;
 }
@@ -786,7 +775,7 @@ h5.latest-product{
 	color:#F97E76;
 }
 .chain-grid{
-	border: 1px solid #ddd;
+
 	position: relative;	
 	width: 30.7%;
 	margin: 0 3% 0 0;
