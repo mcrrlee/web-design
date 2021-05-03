@@ -97,18 +97,18 @@ body a{
 .swiper-container {
 	width: 60vw;
 	height: 10vw;
-	top: 11vw;
+	top: 12vw;
   }
 
 .swiper-pagination{
-	top: 9vw;
-	z-index: 30000000;
+	top: 0vw;
+	position: relative;
 }
 
   .swiper-slide {
 	text-align: center;
-	font-size: 18px;
 	background: #fff;
+	height: 20vw;
 
 	/* Center slide text vertically */
 	display: -webkit-box;
@@ -124,6 +124,12 @@ body a{
 	-webkit-align-items: center;
 	align-items: center;
 }
+
+.swiper-slide img{
+	width: 100%;
+	height: 100%;
+}
+
 nav{
 
 	z-index: 5000;
@@ -348,7 +354,7 @@ ul.login li a span{
 	outline: none;
 	cursor: pointer;
 	width: 5vw;
-	border-radius: 15px 30px 30px 15px;
+	border-radius: 0px 30px 30px 0px;
 	float: right;
 	height: 2.5vw;
 	font-size: 1.5vw;
