@@ -100,7 +100,7 @@ body a{
 	top: 14vw;
   }
 
-   .container{
+   .container_index{
 	position: relative; padding-top: 5%; flex-wrap: wrap; top: 15vw; background-color: bisque; padding: 2vw;
 }
 .swiper-pagination{
@@ -2411,7 +2411,7 @@ img.banner-bag {
 	padding: 0 0 0 6.2em;
 }
 
-.container{
+.container_index{
 	top: 25vw;
 
 	
