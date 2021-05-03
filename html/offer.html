@@ -134,28 +134,44 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					
 						<span>รายละเอียด<label>*</label></span>
 						<input type="text"> 
-						<span>เพิ่มรูปภาพ<label>*</label></span>
-						<form id="styleImageForm1" method= "post" action="../imageUpload/productStyle.json" enctype="multipart/form-data">
-						  <input type="file" id="my-element1" name="commonsMultipartFile[]" value="" multiple />
-					   </form>
-						 
-						
-					</div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox "><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
-					   </a>
-					 </div>
-				     
-				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but  text-center">
-				   
-					  <!-- <input type="submit" value="submit">-->
-					   <button type="button" onclick="register()" class="btn btn-primary btn-lg ">submit</button>
-					   <div class="clearfix"> </div>
-				   
-				</div>
+						<div class="container p-y-1">
+  <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-primary btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+   <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-success font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+    <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-warning font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+    <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-danger btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-danger font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+</div>
 		   </div>
 		        
 	</div>
@@ -266,6 +282,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   }
  })
 
+</script>
+<script type="text/javascript">
+	function readUrl(input) {
+  
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let imgData = e.target.result;
+      let imgName = input.files[0].name;
+      input.setAttribute("data-title", imgName);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+
+}
 </script>
 </body>
 </html>
