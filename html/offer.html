@@ -124,131 +124,75 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!---->
 	<div class="container" style="position: relative; padding-top: 5%;"> 
 			         
-		<div class="register">
+		<div class="register" >
 		  	  <form> 
 				 <div class="  register-top-grid">
-					<h2 class="text-center">ยื่นข้อเสนอ</h2>
-					<div class="aaa  ">
-						<span>มอบบริการ<label>*</label></span>
+					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
+					<div class="aaa">
+						<span>ชื่อสินค้า<label>*</label></span>
 						<input type="text"> 
 					
-						<span>รายละเอียด<label>*</label></span>
+					<div class="container p-y-1">
+  <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-primary btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+   <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-success font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+    <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-warning font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+    <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-danger btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-danger font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+</div>						 <span>รายละเอียด<label>*</label></span>
 						<input type="text"> 
-						<span>เพิ่มรูปภาพ<label>*</label></span>
-						<form id="styleImageForm1" method= "post" action="../imageUpload/productStyle.json" enctype="multipart/form-data">
-						  <input type="file" id="my-element1" name="commonsMultipartFile[]" value="" multiple />
-					   </form>
-						 
+						
 						
 					</div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
-						 <label class="checkbox "><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
 					   </a>
 					 </div>
 				     
 				</form>
 				<div class="clearfix"> </div>
-				<div class="register-but  text-center">
-				   
-					  <!-- <input type="submit" value="submit">-->
-					   <button type="button" onclick="register()" class="btn btn-primary btn-lg ">submit</button>
+				<div class="register-but text-center">
+				   <form>
+					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
-				   
+				   </form>
 				</div>
 		   </div>
 		        
-	</div>
+	</div><br>
 	<!---->
-	<div class="footer">
-		<div class="footer-top">
-			<div class="container">
-				<div class="latter">
-					<h6>NEWS-LETTER</h6>
-					<div class="sub-left-right">
-						<form>
-							<input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
-							<input type="submit" value="SUBSCRIBE" />
-						</form>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="latter-right">
-					<p>FOLLOW US</p>
-					<ul class="face-in-to">
-						<li><a href="#"><span> </span></a></li>
-						<li><a href="#"><span class="facebook-in"> </span></a></li>
-						<div class="clearfix"> </div>
-					</ul>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="footer-bottom-cate">
-					<h6>CATEGORIES</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate bottom-grid-cat">
-					<h6>FEATURE PROJECTS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate">
-					<h6>TOP BRANDS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate cate-bottom">
-					<h6>OUR ADDERSS</h6>
-					<ul>
-						<li>Aliquam metus  dui. </li>
-						<li>orci, ornareidquet</li>
-						<li> ut,DUI.</li>
-						<li >nisi, dignissim</li>
-						<li >gravida at.</li>
-						<li class="phone">PH : 6985792466</li>
-						<li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
+	
 	<script>
 		$(document).ready(function() {
 	   $(".menu-icon").on("click", function() {
@@ -266,6 +210,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   }
  })
 
+</script>
+<script type="text/javascript">
+	function readUrl(input) {
+  
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let imgData = e.target.result;
+      let imgName = input.files[0].name;
+      input.setAttribute("data-title", imgName);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+
+}
 </script>
 </body>
 </html>
