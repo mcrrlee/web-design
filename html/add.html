@@ -33,6 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--//fonts-->
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="js/jquery.min.js"></script>
 <!--script-->
 
@@ -79,15 +80,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  
 
 				  <li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
-				  <!-- <li><div   id="user_para" class="btn">  </div> </li> -->
+				 <li><div   id="user_para" class="btn">  </div> </li> 
 
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
 
 				  <li > <a href="#"  class="btn" > CART </a> </li>        
-				  <!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
-			  </ul>
+				 <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>         
 
 		  </div>
   </nav>
@@ -97,153 +97,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container" style="position: relative; padding-top: 5%;"> 
 			         
 		<div class="register" >
-		  	  <form> 
+		  	  <div> 
 				 <div class="  register-top-grid">
 					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
 					<div class="aaa">
 						<span>ชื่อสินค้า<label>*</label></span>
-						<input type="text"> 
+						<input id="nameitem" type="text"> 
 					
-						<span>แท็ก<label>*</label></span>
-						<div class="input-group">
-                            <select class="custom-select" id="inputGroupSelect04">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <div class="input-group-append">
-                              <button class="btn btn-outline-secondary" type="button">Button</button>
-                            </div>
-                          </div>
-						  <span>อัพรูปภาพ<label>*</label></span>
-						  <form id="styleImageForm1" method= "post" action="../imageUpload/productStyle.json" enctype="multipart/form-data">
-							<input type="file" id="my-element1" name="commonsMultipartFile[]" value="" multiple />
-						 </form>
-						 <span>ความต้องการ<label>*</label></span>
-						 <div class="input-group">
-                            <select class="custom-select" id="inputGroupSelect04">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <div class="input-group-append">
-                              <button class="btn btn-outline-secondary" type="button">Button</button>
-                            </div>
-                          </div>
-						 <span>รายละเอียด<label>*</label></span>
-						<input type="text"> 
+
+					<div class="container p-y-1">
+  
+   <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-success font-weight-bold" id="imglist"  accept="image/*" multiple onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+   
+  
+</div>						<span>รายละเอียด<label>*</label></span>
+						<input id="Detail" type="text"> 
+
 						
 						
 					</div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
-					   </a>
-					 </div>
+					 
 				     
-				</form>
-				<div class="clearfix"> </div>
+				</div>
+				<div class=""> </div>
 				<div class="register-but text-center">
-				   <form>
-					   <input type="submit" value="submit">
-					   <div class="clearfix"> </div>
-				   </form>
+				   <div>
+					   <button  onclick="additemtrading()" >submit</button>
+					   <div class=""> </div>
+				   </div>
 				</div>
 		   </div>
 		        
-	</div>
+	</div><br>
 	<!---->
-	<div class="footer">
-		<div class="footer-top">
-			<div class="container">
-				<div class="latter">
-					<h6>NEWS-LETTER</h6>
-					<div class="sub-left-right">
-						<form>
-							<input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
-							<input type="submit" value="SUBSCRIBE" />
-						</form>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="latter-right">
-					<p>FOLLOW US</p>
-					<ul class="face-in-to">
-						<li><a href="#"><span> </span></a></li>
-						<li><a href="#"><span class="facebook-in"> </span></a></li>
-						<div class="clearfix"> </div>
-					</ul>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="footer-bottom-cate">
-					<h6>CATEGORIES</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate bottom-grid-cat">
-					<h6>FEATURE PROJECTS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate">
-					<h6>TOP BRANDS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate cate-bottom">
-					<h6>OUR ADDERSS</h6>
-					<ul>
-						<li>Aliquam metus  dui. </li>
-						<li>orci, ornareidquet</li>
-						<li> ut,DUI.</li>
-						<li >nisi, dignissim</li>
-						<li >gravida at.</li>
-						<li class="phone">PH : 6985792466</li>
-						<li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
+
 
 	<script>
 		$(document).ready(function() {
@@ -261,7 +155,102 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			 $('nav').removeClass('color');
 	   }
  })
+ firebase.auth().onAuthStateChanged(function (user) {
+				if (user) {
+					// User is signed in.
+					var user = firebase.auth().currentUser;
 
+					if (user != null) {
+						//console.log(1);
+						var email_id = user.email;
+						var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+						ref.on("value", (snapshot) => {
+							if (snapshot.exists()) {
+								console.log("userlist/" + email_id.replace(/\./, ''));
+								var data = snapshot.val();
+								console.log(user.email);
+								console.log(data.username);
+								document.getElementById("login").style.display = "none";
+								document.getElementById("signup").style.display = "none";
+								document.getElementById("user_para").style.display = "block";
+								document.getElementById("logout").style.display = "block";
+								document.getElementById("user_para").innerHTML = data.username;
+
+							}
+							else {
+								console.log("No data available");
+							}
+						});
+					}
+
+				} else {
+					// No user is signed in.
+					window.location.href = 'login.html';
+
+				}
+			});
+			function logout() {
+				firebase.auth().signOut();
+			}
+			function additemtrading() {
+				var datauser = '';
+				var user = firebase.auth().currentUser;
+				data = firebase.database();
+				var ref = firebase.database().ref("userlist/" + user.email.replace(/\./, ''));
+				ref.on("value", (snapshot) => {if (snapshot.exists()) { datauser = snapshot.val(); 
+					console.log('load DB');
+					console.log(datauser.username+datauser.runid);
+				}
+				else{
+					console.log('fail load DB');
+				}});
+				
+
+				var nameitem = document.getElementById("nameitem").value;
+				var Detail = document.getElementById("Detail").value;
+				//var wantlist = document.getElementById("wantlist").value;
+				var imglist = document.getElementById("imglist");
+				//var storageRef = firebase.storage().child("img");
+				
+				for (i = 0; i <= imglist.files.length; i++)	{
+					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem+datauser.runid+"/"+i)
+					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
+				}
+				;
+				
+				data.ref("ItemTrading/"+user.email.replace(/\./, '')).set({
+					owrname:datauser.username,
+					runid: datauser.runid,
+					nameitem:nameitem,
+					//wantlist:wantlist,
+					Detail:Detail
+
+				});
+				data.ref('userlist/'+user.email.replace(/\./, '')+"/runid").set(datauser.runid+1);
+
+			}
+			$('#contactForm').submit(function () {
+ sendContactForm();
+ return false;
+});
+//list item trading
+</script>
+
+<script type="text/javascript">
+	function readUrl(input) {
+  
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let imgData = e.target.result;
+      let imgName = input.files[0].name;
+      input.setAttribute("data-title", imgName);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+
+}
 </script>
 </body>
 </html>

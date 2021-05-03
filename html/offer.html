@@ -25,7 +25,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="js/jquery.min.js"></script>
 <script>
-	var data = firebase.database();
 	firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 	  // User is signed in.
@@ -37,9 +36,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  if(user != null){
   
 		var email_id = user.email;
-		console.log(user.email);
-		window.location.href = 'login.html';
-		firebase.auth().signOut();
+		console.log(user.email)
+		window.location.href = 'index.html';
 	  }
   
 	} else {
@@ -49,48 +47,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   
 	}
   });
-  function test(){
-	var lastnamet = document.getElementById("lastname").value;
-  var firstnamet = document.getElementById("firstname").value;
-  var phonet = document.getElementById("phone").value;
-  var usernamet = document.getElementById("username").value;
-  var useraEmailt = document.getElementById("email_field").value;
-  var userPasst = document.getElementById("password_field").value;
-  
- 	 data.ref('userlist/'+useraEmailt.replace(/\./, '')).set({
-		firstname : firstnamet,
-		lastname: lastnamet,
-		Email : useraEmailt,
-		username : usernamet,
-		phone:phonet,
-		Aboutme:"กดเเก้ไขเพื่อเพิ่มรายละเอียดได้นะ",
-		runid:0,
-
-	});
-  }
   function register(){
   console.log(1);
-  var lastname = document.getElementById("lastname").value;
-  var firstname = document.getElementById("firstname").value;
-  var phone = document.getElementById("phone").value;
-  var username = document.getElementById("username").value;
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-  
-  test();
+
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPass)
   .then((userCredential) => {
     // Signed in 
-	
-	
-	
-	
+    var user = userCredential.user;
     // ...
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-	data.ref('userlist/'+useraEmailt).remove();
     // ..
   });
 
@@ -101,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body> 
 	
-	<div class="wrapper">
+	<div class="wrapper" >
 
 		<nav>
 
@@ -118,18 +88,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			  <div class="search">
 				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
-				  
-				  </button>
+				  <input type="submit"  value="SEARCH">
 
-				  <div  class="swap btn-3">
+				  <div  class="swap">
 				  
 					  <a href="add.html" >swap </a>
-						  
+					  <img src="images/search.png" class="img_swap">	
 				  
 				  </div>
-
-				  
 	  
 			  
 			  </div>
@@ -155,57 +121,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   </nav>
 
 
-
 	<!---->
 	<div class="container" style="position: relative; padding-top: 5%;"> 
 			         
-		<div class="register">
+		<div class="register" >
 		  	  <form> 
 				 <div class="  register-top-grid">
-
-					<h2 class="text-center">ลงทะเบียน</h2>
-					<div class="aaa  text-center">
-						<span>First Name<label>*</label></span>
-						<input id= "firstname" type="text"> 
-
+					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
+					<div class="aaa">
+						<span>ชื่อสินค้า<label>*</label></span>
+						<input type="text"> 
 					
-						<span>Last Name<label>*</label></span>
-						<input id= "lastname" type="text"> 
-					 
-						 <span>Phone Number<label>*</label></span>
-						 <input id="phone" type="text"> 
-						 <span>Username<label>*</label></span>
-						<input id="username" type="text"> 
-						<span>Password<label>*</label></span>
-						<input id="password_field" type="text"> 
-						<span>E-mail <label>*</label></span>
-						<input  id="email_field" type="text"> 
+					<div class="container p-y-1">
+  <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-primary btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+   <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-success font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+    <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-warning font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+    <div class="row m-b-1">
+    <div class="col-sm-6 offset-sm-3">
+      <button type="button" class="btn btn-danger btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+      <div class="form-group inputDnD">
+        <label class="sr-only" for="inputFile">File Upload</label>
+        <input type="file" class="form-control-file text-danger font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+      </div>
+    </div>
+  </div>
+</div>						 <span>รายละเอียด<label>*</label></span>
+						<input type="text"> 
+						
 						
 					</div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
-						 <label class="checkbox  text-center"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
 					   </a>
 					 </div>
-				     <div class="  register-bottom-grid text-center">
-						    <h3>Create Account With ...</h3>
-							<a href="#" class="fa fa-facebook"></a>
-				<a href="#" class="fa fa-google"></a>
-					 </div>
+				     
 				</form>
 				<div class="clearfix"> </div>
-				<div class="register-but  text-center">
-				   
-					  <!-- <input type="submit" value="submit">-->
-					   <button type="button" onclick="register()" class="btn btn-primary btn-lg ">submit</button>
+				<div class="register-but text-center">
+				   <form>
+					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
-				   
+				   </form>
 				</div>
 		   </div>
 		        
-	</div>
+	</div><br>
 	<!---->
-
+	
 	<script>
 		$(document).ready(function() {
 	   $(".menu-icon").on("click", function() {
@@ -223,6 +210,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   }
  })
 
+</script>
+<script type="text/javascript">
+	function readUrl(input) {
+  
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let imgData = e.target.result;
+      let imgName = input.files[0].name;
+      input.setAttribute("data-title", imgName);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+
+}
 </script>
 </body>
 </html>
