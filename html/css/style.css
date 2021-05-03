@@ -95,11 +95,14 @@ body a{
 	letter-spacing: 2px;
 }
 .swiper-container {
-	width: 60vw;
+	width: 80vw;
 	height: 10vw;
 	top: 12vw;
   }
 
+   .container{
+	position: relative; padding-top: 5%; flex-wrap: wrap; top: 15vw; background-color: bisque; padding: 2vw;
+}
 .swiper-pagination{
 	top: 0vw;
 	position: relative;
@@ -2005,6 +2008,11 @@ a.get-cart {
 		right: 12vw;
 		top: -5vw;
 	}
+	.swiper-container {
+		width: 80vw;
+		height: 10vw;
+		top: 14vw;
+	  }
 	.profile_ {
 		width: 5vw;
 		height: 2vw;
@@ -2162,6 +2170,12 @@ p.m_text {
 	nav{
 		background-color: #EFB167;
 	  }
+
+	  .swiper-container {
+		width: 80vw;
+		height: 10vw;
+		top: 20vw;
+	}
 	  .profile_ {
 		width: 5vw;
 		height: 2vw;
@@ -2390,6 +2404,13 @@ img.banner-bag {
 .img-left-arrow {
 	padding: 0 0 0 6.2em;
 }
+
+.container{
+	top: 25vw;
+
+	
+}
+
 }
 
 
