@@ -6,161 +6,235 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-<!--//fonts-->
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="./js/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.css">
-<!--script-->
-<script>
-	firebase.auth().onAuthStateChanged(function(user) {
-	if (user) {
-	  // User is signed in.
-	  var user = firebase.auth().currentUser;
-  
-	  if(user != null){
-		  //console.log(1);
-		var email_id = user.email;
-		var ref = firebase.database().ref("userlist/"+email_id.replace(/\./, ''));
-		ref.on("value", (snapshot) => {
-			if (snapshot.exists()) {
-				console.log("userlist/"+email_id.replace(/\./, ''));
-				var data = snapshot.val();
-				console.log(user.email);
-		console.log(data.username);
-		document.getElementById("login").style.display = "none";
-		document.getElementById("signup").style.display = "none";
-    	document.getElementById("user_para").style.display = "block";
-		document.getElementById("logout").style.display = "block";
-		document.getElementById("user_para").innerHTML =  data.username;
+	<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<!--theme-style-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--//theme-style-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!--fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+		integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+	<!--//fonts-->
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!--<script src="./js/script.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.css">
+	<!--script-->
+	<script>
+		var addlist =  document.getElementById("container");
+		var data = firebase.database();
+		var refItemTrading = data.ref("ItemTrading");
+		var datarefItemTrading = '';
+		refItemTrading.on("value", (snapshot) => {
+			datarefItemTrading = snapshot.val();
+			for (let i in datarefItemTrading) {
+				console.log(1);
+				
+				console.log(i);
+				//
 			}
-			else{
-				console.log("No data available");
+		});
+		//container.appendChild(createListItem({ iusername , iitemname, idetall}))
+
+		refItemTrading.on('value', function (snap) {
+			snap.forEach(function (childNodes) {
+				var refItemTradinguser = data.ref("ItemTrading/" + childNodes.key);
+
+				refItemTradinguser.on('value', function (snap) {
+					snap.forEach(function (cNodes) {
+
+						var refItemTradinguser = data.ref("ItemTrading/" + childNodes.key+"/"+cNodes.key+"/");
+
+						refItemTradinguser.on('value', function (snap) {
+						var ccNodes =  snap.val();
+						var iusername = ccNodes.owrname;
+						var iitemname = ccNodes.nameitem;
+						var idetall = ccNodes.Detail ;
+						console.log(ccNodes.Detail+ccNodes.nameitem+ccNodes.owrname+ccNodes.runid)
+						var storage    = firebase.storage();
+						var  starsRef= storage.ref();
+						var storageRef = starsRef.child("ItemTrading/"+childNodes.key+"/"+iitemname+ccNodes.runid+"/0");
+						//
+						console.log(storageRef);
+						console.log(storageRef.storage);
+						storageRef.getDownloadURL().then((url) => {
+								// Insert url into an <img> tag to "download"
+								var tagcreate = createListItem( iusername , iitemname, idetall,url);
+
+						document.getElementById("container").appendChild(tagcreate);
+							})
+							.catch((error) => {
+								// A full list of error codes is available at
+								// https://firebase.google.com/docs/storage/web/handle-errors
+								console.log(error.code) 
+							});
+						
+
+						
+						
+
+					
+				});
+
+
+					});
+				});
+			});
+		});
+
+
+		console.log(2);
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				// User is signed in.
+				var user = firebase.auth().currentUser;
+
+				if (user != null) {
+					//console.log(1);
+					var email_id = user.email;
+					var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+					ref.on("value", (snapshot) => {
+						if (snapshot.exists()) {
+							console.log("userlist/" + email_id.replace(/\./, ''));
+							var data = snapshot.val();
+							console.log(user.email);
+							console.log(data.username);
+							document.getElementById("login").style.display = "none";
+							document.getElementById("signup").style.display = "none";
+							document.getElementById("user_para").style.display = "block";
+							document.getElementById("logout").style.display = "block";
+							document.getElementById("user_para").innerHTML = data.username;
+						}
+						else {
+							console.log("No data available");
+						}
+					});
+				}
+
+			} else {
+				// No user is signed in.
+				console.log(2);
+				document.getElementById("login").style.display = "block";
+				document.getElementById("signup").style.display = "block";
+				document.getElementById("user_para").style.display = "none";
+				document.getElementById("logout").style.display = "none";
+
 			}
-    });
-	  }
-  
-	} else {
-	  // No user is signed in.
-	  console.log(2);
-  	document.getElementById("login").style.display = "block";
-		document.getElementById("signup").style.display = "block";
-		document.getElementById("user_para").style.display = "none";
-		document.getElementById("logout").style.display = "none";
-  
-	}
-  });
-  function logout(){
-  firebase.auth().signOut();
-}
-</script>
+		});
+		function logout() {//ขาดwant-in
+			firebase.auth().signOut();
+			
+		}
+		function createListItem(username, itemname, detall ,srcimg ) {
+				var List = document.createElement("a");
+				var elit = document.createElement("DIV");
+				elit.classList.add("elit-grid");
+				var content = document.createElement("DIV");
+				//content.classList.add("col-md-6 con-sed-grid sed-left-top");
+				var tapitemname = document.createElement("label");
+				tapitemname.innerHTML = itemname;
+				var tapname = document.createElement("h4");
+				tapname.innerHTML = username;
+				var tapdetall = document.createElement("p");
+				tapdetall.innerHTML = detall;
+				var spanbutton = document.createElement("span");
+				spanbutton.classList.add("on-get");
+				spanbutton.innerHTML = "แชท";
+				var tapimg = document.createElement("IMG");
+				//tapimg.classList.add("img-responsive shoe-left");
+				tapimg.src = srcimg;
+				content.appendChild(tapname);
+				content.appendChild(tapitemname);
+				content.appendChild(tapdetall);
+				content.appendChild(spanbutton);
+				elit.appendChild(content);
+				elit.appendChild(tapimg);
+				List.appendChild(elit);
+				return List;
+
+			}
+/*
+		<a href="single.html">
+		<div id= "content" class="col-md-6 con-sed-grid sed-left-top">
+			<h4>
+			<p>
+			<span class="on-get">GET NOW</span>
+		<img class="img-responsive shoe-left" src="images/wa.jpg" alt=" " />
+		<div class="clearfix"> </div>
+		</div>
+		</a>
+		*/
+	</script>
 </head>
-<body> 
 
-	
-    <div class="wrapper">
-
+<body>
+	<div class="wrapper">
 		<nav>
-
-			  <div class="menu-icon">
-				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
-			  </div>
-
-			  <div class="logo">
-				  <a href="index.html">
-				  <img src="images/logo.png"  alt=" " /></a></li>
-			  </div>
-
-			  <a href="add.html" > </a>
-
-			  <div class="search">
-				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
-				  
-				  </button>
-
-				  <div  class="swap btn-3">
-				  
-					  <a href="add.html" >swap </a>
-						  
-				  
-				  </div>
-
-				  <div  class="Chat">
-				  
-					  <a href="chat.html" ><img src="images/chat.png" > </a>
-						  
-				  
-				  </div>
-
-				  <div  class="profile_">
-				  
-					  <a href="profile.html" ><img src="images/user.png" > </a>
-						  
-				  
-				  </div>
-
-				  
-	  
-			  
-			  </div>
-
-			  
-
-				  
-			  <ul >
-				  
-
-				  <!-- <li ><a href="profile.html"  class="btn">  </a> </li> -->
-				   <li><a href="profile.html"  id="user_para" class="btn">  </a> </li> 
-
-				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
-
-				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
- 
-				  <li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
-			  </ul>
-
-		  </div>
-  </nav>
-		
-		<div class="swiper-container category-slide">
-			<div class="swiper-wrapper">
-			  <div class="swiper-slide"><img src="images/t1.jpg" class=""></div>
-			  <div class="swiper-slide"><img src="images/t2.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t3.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t4.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t1.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t2.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t3.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t4.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t1.jpg" ></div>
-			  <div class="swiper-slide"><img src="images/t2.jpg" ></div>
+			<div class="menu-icon">
+				<img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a /></i>
 			</div>
-			<!-- Add Pagination -->
-			<!-- <div class="swiper-pagination"></div> -->
-		  </div>
+			<div class="logo">
+				<a href="index.html">
+					<img src="images/logo.png" alt=" " /></a></li>
+			</div>
+			<a href="add.html"> </a>
+			<div class="search">
+				<input type="text" value="" onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = '';}">
+				<button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
+				</button>
+				<div class="swap btn-3">
+					<a href="add.html">swap </a>
+				</div>
+				<div class="Chat">
+					<a href="chat.html"><img src="images/chat.png"> </a>
+				</div>
+				<div class="profile_">
+					<a href="profile.html"><img src="images/user.png"> </a>
+				</div>
+			</div>
+			<ul>
+				<!-- <li ><a href="profile.html"  class="btn">  </a> </li> -->
+				<li><a href="profile.html" id="user_para" class="btn"> </a> </li>
+				<li> <a href="login.html" id="login" class="btn"> LOGIN </a></li>
+				<li> <a href="register.html" id="signup" class="btn"> SIGNUP </a></li>
+				<li><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>
+			</ul>
+	</div>
+	</nav>
+	<div class="swiper-container category-slide">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="images/t1.jpg" class=""></div>
+			<div class="swiper-slide"><img src="images/t2.jpg"></div>
+			<div class="swiper-slide"><img src="images/t3.jpg"></div>
+			<div class="swiper-slide"><img src="images/t4.jpg"></div>
+			<div class="swiper-slide"><img src="images/t1.jpg"></div>
+			<div class="swiper-slide"><img src="images/t2.jpg"></div>
+			<div class="swiper-slide"><img src="images/t3.jpg"></div>
+			<div class="swiper-slide"><img src="images/t4.jpg"></div>
+			<div class="swiper-slide"><img src="images/t1.jpg"></div>
+			<div class="swiper-slide"><img src="images/t2.jpg"></div>
+		</div>
+		<!-- Add Pagination -->
+		<!-- <div class="swiper-pagination"></div> -->
+	</div>
 
 
-		
-		  	
+
+
 	<!--header-->
-	
-		<!-- <div class="bottom-header" style="position: fixed; width: 100%; margin: 0; z-index: 500; background-color: coral;">
+
+	<!-- <div class="bottom-header" style="position: fixed; width: 100%; margin: 0; z-index: 500; background-color: coral;">
 			<div class="container">
 				<div class="header-bottom-left">
 					<div class="logo">
@@ -183,24 +257,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="swap">
 					    <a href="http:// " >swap </a>	
 						</div>				 -->
-						<!-- <div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
-							<ul class="login">
-								<li><a href="login.html"><span> </span>LOGIN</a></li> |
-								<li ><a href="register.html">SIGNUP</a></li>
-							</ul>
-						<div class="cart"><a href="#"><span> </span>CART</a></div> -->
-					<!-- <div class="clearfix"> </div>
+	<!-- <div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
+					<ul class="login">
+							<li><a href="login.html"><span> </span>LOGIN</a></li> |
+							<li ><a href="register.html">SIGNUP</a></li>
+					</ul>
+				<div class="cart"><a href="#"><span> </span>CART</a></div> -->
+	<!-- <div class="clearfix"> </div>
 				</div>
-				<div class="clearfix"> </div>	
+			<div class="clearfix"> </div>	
 			</div>
-		</div>
-	</div> -->
-	
-	  
-	 <div class="container" style="position: relative; padding-top: 5%; flex-wrap: wrap; top: 15vw; background-color: bisque; padding: 2vw;">
+			</div>
+		</div> -->
 
 
-			<!-- <div class="shoes-grid" >
+	<div id= 'container' class="container"
+		style="position: relative; padding-top: 5%; flex-wrap: wrap; top: 15vw; background-color: bisque; padding: 2vw;">
+
+
+		<!-- <div class="shoes-grid" >
 			<a href="single.html">
 			<div class="wrap-in">
 				<div class="wmuSlider example1 slide-grid">		 
@@ -269,216 +344,213 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	          </div>
 	           	</a>
 	   		    -->
-	   		     <div class="shoes-grid-left" >
-			<a href="single.html">				 
-	   		     	<div class="col-md-6 con-sed-grid">
-					
-	   		     		<div class=" elit-grid"> 
-						
-		   		     		<h4>consectetur  elit</h4>
-		   		     		<label>FOR ALL PURCHASE VALUE</label>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
-							<span class="on-get">GET NOW</span>						
-						</div>						
-						<img class="img-responsive shoe-left" src="images/sh.jpg" alt=" " />
-							
+<!--
+		<div class="shoes-grid-left">
+			<a href="single.html">
+				<div class="col-md-6 con-sed-grid">
+
+					<div class=" elit-grid">
+
+						<h4>consectetur elit</h4>
+						<label>FOR ALL PURCHASE VALUE</label>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
+						<span class="on-get">GET NOW</span>
+					</div>
+					<img class="img-responsive shoe-left" src="images/sh.jpg" alt=" " />
+
+					<div class="clearfix"> </div>
+
+				</div>
+			</a>
+			<a href="single.html">
+				<div id="content" class="col-md-6 con-sed-grid sed-left-top">
+
+					<img class="img-responsive shoe-left" src="images/wa.jpg" alt=" " />
+
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+		</div>
+		<div class="products">
+			<h5 class="latest-product">LATEST PRODUCTS</h5>
+			<a class="view-all" href="product.html">VIEW ALL<span> </span></a>
+		</div>
+		<div class="product-left">
+			<div class="col-md-4 chain-grid">
+				<a href="single.html"><img class="img-responsive chain" src="images/ch.jpg" alt=" " /></a>
+				<span class="star"> </span>
+				<div class="grid-chain-bottom">
+					<h6><a href="single.html">Lorem ipsum dolor</a></h6>
+					<div class="star-price">
+						<div class="dolor-grid">
+							<span class="actual">300$</span>
+							<span class="reducedfrom">400$</span>
+							<span class="rating">
+								<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+								<label for="rating-input-1-5" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+								<label for="rating-input-1-4" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+								<label for="rating-input-1-3" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+								<label for="rating-input-1-2" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+								<label for="rating-input-1-1" class="rating-star"> </label>
+							</span>
+						</div>
+						<a class="now-get get-cart" href="#">ADD TO CART</a>
 						<div class="clearfix"> </div>
-						
-	   		     	</div>
-					</a>
-					<a href="single.html">	
-	   		     	<div class="col-md-6 con-sed-grid sed-left-top">
-	   		     		<div class=" elit-grid"> 
-		   		     		<h4>consectetur  elit</h4>
-		   		     		<label>FOR ALL PURCHASE VALUE</label>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
-							<span class="on-get">GET NOW</span>
-						</div>		
-						<img class="img-responsive shoe-left" src="images/wa.jpg" alt=" " />
-						
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 chain-grid">
+				<a href="single.html"><img class="img-responsive chain" src="images/ba.jpg" alt=" " /></a>
+				<span class="star"> </span>
+				<div class="grid-chain-bottom">
+					<h6><a href="single.html">Lorem ipsum dolor</a></h6>
+					<div class="star-price">
+						<div class="dolor-grid">
+							<span class="actual">300$</span>
+							<span class="reducedfrom">400$</span>
+							<span class="rating">
+								<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+								<label for="rating-input-1-5" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+								<label for="rating-input-1-4" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+								<label for="rating-input-1-3" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+								<label for="rating-input-1-2" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+								<label for="rating-input-1-1" class="rating-star"> </label>
+							</span>
+						</div>
+						<a class="now-get get-cart" href="#">ADD TO CART</a>
 						<div class="clearfix"> </div>
-	   		     	</div>
-					</a>
-	   		     </div>
-	   		     <div class="products">
-	   		     	<h5 class="latest-product">LATEST PRODUCTS</h5>	
-	   		     	  <a class="view-all" href="product.html">VIEW ALL<span> </span></a> 		     
-	   		     </div>
-	   		     <div class="product-left">
-	   		     	<div class="col-md-4 chain-grid">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/ch.jpg" alt=" " /></a>
-	   		     		<span class="star"> </span>
-	   		     		<div class="grid-chain-bottom">
-	   		     			<h6><a href="single.html">Lorem ipsum dolor</a></h6>
-	   		     			<div class="star-price">
-	   		     				<div class="dolor-grid"> 
-		   		     				<span class="actual">300$</span>
-		   		     				<span class="reducedfrom">400$</span>
-		   		     				  <span class="rating">
-									        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
-									        <label for="rating-input-1-5" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
-									        <label for="rating-input-1-4" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
-									        <label for="rating-input-1-3" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
-									        <label for="rating-input-1-2" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
-									        <label for="rating-input-1-1" class="rating-star"> </label>
-							    	   </span>
-	   		     				</div>
-	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
-	   		     				<div class="clearfix"> </div>
-							</div>
-	   		     		</div>
-	   		     	</div>
-	   		     	<div class="col-md-4 chain-grid">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/ba.jpg" alt=" " /></a>
-	   		     		<span class="star"> </span>
-	   		     		<div class="grid-chain-bottom">
-	   		     			<h6><a href="single.html">Lorem ipsum dolor</a></h6>
-	   		     			<div class="star-price">
-	   		     				<div class="dolor-grid"> 
-		   		     				<span class="actual">300$</span>
-		   		     				<span class="reducedfrom">400$</span>
-		   		     				  <span class="rating">
-									        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
-									        <label for="rating-input-1-5" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
-									        <label for="rating-input-1-4" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
-									        <label for="rating-input-1-3" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
-									        <label for="rating-input-1-2" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
-									        <label for="rating-input-1-1" class="rating-star"> </label>
-							    	   </span>
-	   		     				</div>
-	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
-	   		     				<div class="clearfix"> </div>
-							</div>
-	   		     		</div>
-	   		     	</div>
-	   		     	<div class="col-md-4 chain-grid grid-top-chain">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/bo.jpg" alt=" " /></a>
-	   		     		<span class="star"> </span>
-	   		     		<div class="grid-chain-bottom">
-	   		     			<h6><a href="single.html">Lorem ipsum dolor</a></h6>
-	   		     			<div class="star-price">
-	   		     				<div class="dolor-grid"> 
-		   		     				<span class="actual">300$</span>
-		   		     				<span class="reducedfrom">400$</span>
-		   		     				  <span class="rating">
-									        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
-									        <label for="rating-input-1-5" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
-									        <label for="rating-input-1-4" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
-									        <label for="rating-input-1-3" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
-									        <label for="rating-input-1-2" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
-									        <label for="rating-input-1-1" class="rating-star"> </label>
-							    	   </span>
-	   		     				</div>
-	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
-	   		     				<div class="clearfix"> </div>
-							</div>
-	   		     		</div>
-	   		     	</div>
-	   		     	 <div class="clearfix"> </div>
-	   		     </div>
-	   		     <div class="products">
-	   		     	<h5 class="latest-product">LATEST PRODUCTS</h5>	
-	   		     	  <a class="view-all" href="product.html">VIEW ALL<span> </span></a> 		     
-	   		     </div>
-	   		     <div class="product-left">
-	   		     	<div class="col-md-4 chain-grid">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/bott.jpg" alt=" " /></a>
-	   		     		<span class="star"> </span>
-	   		     		<div class="grid-chain-bottom">
-	   		     			<h6><a href="single.html">Lorem ipsum dolor</a></h6>
-	   		     			<div class="star-price">
-	   		     				<div class="dolor-grid"> 
-		   		     				<span class="actual">300$</span>
-		   		     				<span class="reducedfrom">400$</span>
-		   		     				  <span class="rating">
-									        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
-									        <label for="rating-input-1-5" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
-									        <label for="rating-input-1-4" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
-									        <label for="rating-input-1-3" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
-									        <label for="rating-input-1-2" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
-									        <label for="rating-input-1-1" class="rating-star"> </label>
-							    	   </span>
-	   		     				</div>
-	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
-	   		     				<div class="clearfix"> </div>
-							</div>
-	   		     		</div>
-	   		     	</div>
-	   		     	<div class="col-md-4 chain-grid">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/bottle.jpg" alt=" " /></a>
-	   		     		<span class="star"> </span>
-	   		     		<div class="grid-chain-bottom">
-	   		     			<h6><a href="single.html">Lorem ipsum dolor</a></h6>
-	   		     			<div class="star-price">
-	   		     				<div class="dolor-grid"> 
-		   		     				<span class="actual">300$</span>
-		   		     				<span class="reducedfrom">400$</span>
-		   		     				  <span class="rating">
-									        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
-									        <label for="rating-input-1-5" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
-									        <label for="rating-input-1-4" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
-									        <label for="rating-input-1-3" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
-									        <label for="rating-input-1-2" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
-									        <label for="rating-input-1-1" class="rating-star"> </label>
-							    	   </span>
-	   		     				</div>
-	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
-	   		     				<div class="clearfix"> </div>
-							</div>
-	   		     		</div>
-	   		     	</div>
-	   		     	<div class="col-md-4 chain-grid grid-top-chain">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/baa.jpg" alt=" " /></a>
-	   		     		<span class="star"> </span>
-	   		     		<div class="grid-chain-bottom">
-	   		     			<h6><a href="single.html">Lorem ipsum dolor</a></h6>
-	   		     			<div class="star-price">
-	   		     				<div class="dolor-grid"> 
-		   		     				<span class="actual">300$</span>
-		   		     				<span class="reducedfrom">400$</span>
-		   		     				  <span class="rating">
-									        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
-									        <label for="rating-input-1-5" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
-									        <label for="rating-input-1-4" class="rating-star1"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
-									        <label for="rating-input-1-3" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
-									        <label for="rating-input-1-2" class="rating-star"> </label>
-									        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
-									        <label for="rating-input-1-1" class="rating-star"> </label>
-							    	   </span>
-	   		     				</div>
-	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
-	   		     				<div class="clearfix"> </div>
-							</div>
-	   		     		</div>
-	   		     	</div>
-	   		     	 <div class="clearfix"> </div>
-	   		     </div>
-	   		     <div class="clearfix"> </div>
-	   		   </div>   
-			   <!-- <div class="sub-cate">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 chain-grid grid-top-chain">
+				<a href="single.html"><img class="img-responsive chain" src="images/bo.jpg" alt=" " /></a>
+				<span class="star"> </span>
+				<div class="grid-chain-bottom">
+					<h6><a href="single.html">Lorem ipsum dolor</a></h6>
+					<div class="star-price">
+						<div class="dolor-grid">
+							<span class="actual">300$</span>
+							<span class="reducedfrom">400$</span>
+							<span class="rating">
+								<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+								<label for="rating-input-1-5" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+								<label for="rating-input-1-4" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+								<label for="rating-input-1-3" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+								<label for="rating-input-1-2" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+								<label for="rating-input-1-1" class="rating-star"> </label>
+							</span>
+						</div>
+						<a class="now-get get-cart" href="#">ADD TO CART</a>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="products">
+			<h5 class="latest-product">LATEST PRODUCTS</h5>
+			<a class="view-all" href="product.html">VIEW ALL<span> </span></a>
+		</div>
+		<div class="product-left">
+			<div class="col-md-4 chain-grid">
+				<a href="single.html"><img class="img-responsive chain" src="images/bott.jpg" alt=" " /></a>
+				<span class="star"> </span>
+				<div class="grid-chain-bottom">
+					<h6><a href="single.html">Lorem ipsum dolor</a></h6>
+					<div class="star-price">
+						<div class="dolor-grid">
+							<span class="actual">300$</span>
+							<span class="reducedfrom">400$</span>
+							<span class="rating">
+								<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+								<label for="rating-input-1-5" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+								<label for="rating-input-1-4" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+								<label for="rating-input-1-3" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+								<label for="rating-input-1-2" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+								<label for="rating-input-1-1" class="rating-star"> </label>
+							</span>
+						</div>
+						<a class="now-get get-cart" href="#">ADD TO CART</a>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 chain-grid">
+				<a href="single.html"><img class="img-responsive chain" src="images/bottle.jpg" alt=" " /></a>
+				<span class="star"> </span>
+				<div class="grid-chain-bottom">
+					<h6><a href="single.html">Lorem ipsum dolor</a></h6>
+					<div class="star-price">
+						<div class="dolor-grid">
+							<span class="actual">300$</span>
+							<span class="reducedfrom">400$</span>
+							<span class="rating">
+								<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+								<label for="rating-input-1-5" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+								<label for="rating-input-1-4" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+								<label for="rating-input-1-3" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+								<label for="rating-input-1-2" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+								<label for="rating-input-1-1" class="rating-star"> </label>
+							</span>
+						</div>
+						<a class="now-get get-cart" href="#">ADD TO CART</a>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 chain-grid grid-top-chain">
+				<a href="single.html"><img class="img-responsive chain" src="images/baa.jpg" alt=" " /></a>
+				<span class="star"> </span>
+				<div class="grid-chain-bottom">
+					<h6><a href="single.html">Lorem ipsum dolor</a></h6>
+					<div class="star-price">
+						<div class="dolor-grid">
+							<span class="actual">300$</span>
+							<span class="reducedfrom">400$</span>
+							<span class="rating">
+								<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+								<label for="rating-input-1-5" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+								<label for="rating-input-1-4" class="rating-star1"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+								<label for="rating-input-1-3" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+								<label for="rating-input-1-2" class="rating-star"> </label>
+								<input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+								<label for="rating-input-1-1" class="rating-star"> </label>
+							</span>
+						</div>
+						<a class="now-get get-cart" href="#">ADD TO CART</a>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="clearfix"> </div>
+-->
+	</div>
+	<!-- <div class="sub-cate">
 				<div class=" top-nav rsidebar span_1_of_left">
 					<h3 class="cate">CATEGORIES</h3>
 		 <ul class="menu">
@@ -528,27 +600,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</ul>
 	</ul>
 					</div>  -->
-				<!--initiate accordion-->
-		<script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
-			
+	<!--initiate accordion-->
+	<script type="text/javascript">
+		$(function () {
+			var menu_ul = $('.menu > li > ul'),
+				menu_a = $('.menu > li > a');
+			menu_ul.hide();
+			menu_a.click(function (e) {
+				e.preventDefault();
+				if (!$(this).hasClass('active')) {
+					menu_a.removeClass('active');
+					menu_ul.filter(':visible').slideUp('normal');
+					$(this).addClass('active').next().stop(true, true).slideDown('normal');
+				} else {
+					$(this).removeClass('active');
+					$(this).next().stop(true, true).slideUp('normal');
+				}
 			});
-		</script>
-					<!-- <div class=" chain-grid menu-chain">
+
+		});
+	</script>
+	<!-- <div class=" chain-grid menu-chain">
 	   		     		<a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>	   		     		
 	   		     		<div class="grid-chain-bottom chain-watch">
 		   		     		<span class="actual dolor-left-grid">300$</span>
@@ -561,38 +633,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   		    <div class="clearfix"> </div>        	         
 		</div> 
 	 -->
-	
-	
+
+
 
 	<script>
-			 $(document).ready(function() {
-            $(".menu-icon").on("click", function() {
-                  $("nav ul").toggleClass("showing");
-            });
-      });
+		$(document).ready(function () {
+			$(".menu-icon").on("click", function () {
+				$("nav ul").toggleClass("showing");
+			});
+		});
 
-	  $(window).on("scroll", function() {
-            if($(window).scrollTop()) {
-                  $('nav').addClass('color');
-            }
+		$(window).on("scroll", function () {
+			if ($(window).scrollTop()) {
+				$('nav').addClass('color');
+			}
 
-            else {
-                  $('nav').removeClass('color');
-            }
-      })
+			else {
+				$('nav').removeClass('color');
+			}
+		})
 
-	  
-	  var swiper = new Swiper('.category-slide', {
-      slidesPerView: 8,
-      spaceBetween: 3,
-      freeMode: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
- 
+
+		var swiper = new Swiper('.category-slide', {
+			slidesPerView: 8,
+			spaceBetween: 3,
+			freeMode: true,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+		});
+
 
 	</script>
 </body>
+
 </html>
