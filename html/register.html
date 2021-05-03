@@ -56,11 +56,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   var useraEmailt = document.getElementById("email_field").value;
   var userPasst = document.getElementById("password_field").value;
   
- 	 data.ref('userlist/'+firstnamet+lastnamet).set({
+ 	 data.ref('userlist/'+useraEmailt.replace(/\./, '')).set({
 		firstname : firstnamet,
 		lastname: lastnamet,
 		Email : useraEmailt,
-		phone:phonet
+		username : usernamet,
+		phone:phonet,
+		Aboutme:"กดเเก้ไขเพื่อเพิ่มรายละเอียดได้นะ",
 
 	});
   }

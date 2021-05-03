@@ -6,96 +6,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!--theme-style-->
+	<title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!--theme-style-->
 
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-<script src="js/jquery.min.js"></script>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-	ul li a{
-		font-size: 0.5vw;
-	}
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--//theme-style-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!--fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!--//fonts-->
 
-	nav.color ul li a{
-	opacity: 1;
-	color: #000;
-	font-size: 1vw;
-	transition: 1s;
-  
-  }
-
-</style>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<style>
+		ul li a {
+			font-size: 0.5vw;
+		}
+		nav.color ul li a {
+			opacity: 1;
+			color: #000;
+			font-size: 1vw;
+			transition: 1s;
+		}
+	</style>
 </head>
-<body> 
-	
-	
-    <div class="wrapper">
-
+<body>
+	<div w3-include-html="porfile.html"></div>
+	<div class="wrapper">
 		<nav>
+			<div class="menu-icon">
+				<img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a /></i>
+			</div>
 
-			  <div class="menu-icon">
-				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
-			  </div>
+			<div class="logo">
+				<a href="index.html">
+					<img src="images/logo.png" alt=" " /></a></li>
+			</div>
+			<a href="add.html"> </a>
+			<div class="search">
+				<input type="text" value="" onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = '';}">
+				<button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
+				</button>
+				<div class="swap btn-3">
+				<a href="add.html">swap </a>
+				</div>
+			</div>
+			<ul>
+				<li><a href="#one" class="btn"> ACCOUNT </a> </li>
+				<li><div   id="user_para" class="btn">  </div> </li> 
 
-			  <div class="logo">
-				  <a href="index.html">
-				  <img src="images/logo.png"  alt=" " /></a></li>
-			  </div>
+				<li> <a href="login.html" id="login" class="btn"> LOGIN </a></li>
 
-			  <a href="add.html" > </a>
+				<li> <a href="register.html" id="signup" class="btn"> SIGNUP </a></li>
 
-			  <div class="search">
-				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
-				  
-				  </button>
+				<li> <a href="#" class="btn"> CART </a> </li>
+				 <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          
+			</ul>
 
-				  <div  class="swap btn-3">
-				  
-					  <a href="add.html" >swap </a>
-						  
-				  
-				  </div>
-
-				  
-	  
-			  
-			  </div>
-
-			  
-
-				  
-			  <ul >
-				  
-
-				  <li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
-				  <!-- <li><div   id="user_para" class="btn">  </div> </li> -->
-
-				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
-
-				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
-
-				  <li > <a href="#"  class="btn" > CART </a> </li>        
-				  <!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
-			  </ul>
-
-		  </div>
-  </nav>
+	</div>
+	</nav>
 	<!--ปุ่มข้างบน-->
-	<div class="container" style="position: relative; padding-top: 10%;"> 
-			         
+	<div class="container" style="position: relative; padding-top: 10%;">
+
 		<ul class="nav nav-tabs nav-justified" style="background-color: coral;">
 			<li class="active"><a data-toggle="tab" href="#home">โปรไฟล์</a></li>
 			<li><a data-toggle="tab" href="#menu1">การแลกเปลี่ยน</a></li>
@@ -104,57 +86,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</ul>
 
 
-		  <!--หน้าโปรไฟล์-->
-		  <div class="tab-content">
+		<!--หน้าโปรไฟล์-->
+		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
-			  	<h3><center> Profile</center></h3><br>
-				  <div class="aboutme" id="about">
+				<h3>
+					<center> Profile</center>
+				</h3><br>
+				<div class="aboutme" id="about">
 					<div class="container">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="left-text">
-								<div class="descrip"></div>
-								<ul>
-									<img class="me" src="images/ba.jpg">
-								</ul>
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="left-text">
+									<div class="descrip"></div>
+									<ul>
+										<img class="me" src="images/ba.jpg">
+									</ul>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<p>ชิ้อ :<span id="firstname"></span> นามสกุล:<span id="lastname"></span></p>
+								<p>Username : <span id="username"></span> </p>
+								<p></p>
+								<p></p>
+							</div>
+							<!--หน้า2 about me ฝั่งขวา-->
+							<div class="col-sm-5">
+								<p style="font-size: 25px">About</p>
+								<div id="Aboutme">
+
+								</div>
 							</div>
 						</div>
-		
-						<div class="col-sm-4">
-							<p>Username : ............ </p>
-							<p>..........................</p>
-							<p>..........................</p>
-						</div>
-		
-		
-						<!--หน้า2 about me ฝั่งขวา-->
-						<div class="col-sm-5">
-							<p style="font-size: 25px">About</p>
-							<p>ชื่อ-นามสกุล : อัญชลี ทิพย์ประเสริฐ</p>
-							<p>ชื่อเล่น : เปิ้ล</p>
-							<p>วันเกิด : 17 ตุลาคม พ.ศ. 2541</p>
-						</div>                
-					</div>
 					</div>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
 								<h3 class="titlereview">Reviews</h3>
-									<center>
+								<center>
 									<div class="reviews">
-										dsmvpdmpdfkpmpdv
 									</div>
-									</center>
+								</center>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
 			<!--หน้าการแลกเปลี่ยน-->
 			<div id="menu1" class="tab-pane fade">
-				  <div class="container">
+				<div class="container">
 					<div class="row">
 
 						<div class="col-sm-4">
@@ -165,7 +144,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>
 							</div>
 						</div>
-		
+
 						<div class="col-sm-8"><br>
 							<p style="font-size: 25px">Offer</p>
 							<div class="offer" style="border: 2px solid black; height: 200px;">
@@ -192,9 +171,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<button type="button" class="btn btn-primary">Chat</button><br><br>
 										<button type="button" class="btn btn-danger">Refuse</button>
 									</div>
-									
+
 								</div>
-									
+
 							</div>
 						</div>
 
@@ -207,7 +186,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			<!--หน้าข้อเสนอ-->
 			<div id="menu2" class="tab-pane fade">
-			  	<div class="container">
+				<div class="container">
 					<div class="row">
 
 						<div class="col-sm-6"><br>
@@ -220,10 +199,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="col-sm-6">
 										<button type="button" class="btn btn-primary">Chat</button><br><br>
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
-		
+
 						<div class="col-sm-6"><br>
 							<div class="offer" style="border: 2px solid black; height: 200px;">
 								<div class="row" style="margin-top: 20px">
@@ -234,7 +213,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="col-sm-6">
 										<button type="button" class="btn btn-danger">Refuse</button>
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
 
@@ -259,10 +238,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>My Trade</p>
 										<p style="color: green">Complete</p>
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
-		
+
 						<div class="col-sm-6"><br>
 							<div class="offer" style="border: 2px solid black; height: 200px;">
 								<div class="row" style="margin-top: 20px">
@@ -274,130 +253,182 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Offer</p>
 										<p style="color: green">Complete</p>
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
 
 					</div>
 				</div>
-		  </div>
+			</div>
 
-		  <!--หน้าprofile-->
-		
-	</div>
+			<!--หน้าprofile-->
 
-
+		</div>
 
 
-	
-	<!---->
-	<div class="footer">
-		<div class="footer-top">
-			<div class="container">
-				<div class="latter">
-					<h6>NEWS-LETTER</h6>
-					<div class="sub-left-right">
-						<form>
-							<input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
-							<input type="submit" value="SUBSCRIBE" />
-						</form>
+
+
+
+		<!---->
+		<div class="footer">
+			<div class="footer-top">
+				<div class="container">
+					<div class="latter">
+						<h6>NEWS-LETTER</h6>
+						<div class="sub-left-right">
+							<form>
+								<input type="text" value="Enter email here" onfocus="this.value = '';"
+									onblur="if (this.value == '') {this.value = 'Enter email here';}" />
+								<input type="submit" value="SUBSCRIBE" />
+							</form>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="latter-right">
+						<p>FOLLOW US</p>
+						<ul class="face-in-to">
+							<li><a href="#"><span> </span></a></li>
+							<li><a href="#"><span class="facebook-in"> </span></a></li>
+							<div class="clearfix"> </div>
+						</ul>
+						<div class="clearfix"> </div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="latter-right">
-					<p>FOLLOW US</p>
-					<ul class="face-in-to">
-						<li><a href="#"><span> </span></a></li>
-						<li><a href="#"><span class="facebook-in"> </span></a></li>
-						<div class="clearfix"> </div>
-					</ul>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="footer-bottom-cate">
+						<h6>CATEGORIES</h6>
+						<ul>
+							<li><a href="#">Curabitur sapien</a></li>
+							<li><a href="#">Dignissim purus</a></li>
+							<li><a href="#">Tempus pretium</a></li>
+							<li><a href="#">Dignissim neque</a></li>
+							<li><a href="#">Ornared id aliquet</a></li>
+							<li><a href="#">Ultrices id du</a></li>
+							<li><a href="#">Commodo sit</a></li>
+							<li><a href="#">Urna ac tortor sc</a></li>
+							<li><a href="#">Ornared id aliquet</a></li>
+							<li><a href="#">Urna ac tortor sc</a></li>
+							<li><a href="#">Eget nisi laoreet</a></li>
+							<li><a href="#">Faciisis ornare</a></li>
+						</ul>
+					</div>
+					<div class="footer-bottom-cate bottom-grid-cat">
+						<h6>FEATURE PROJECTS</h6>
+						<ul>
+							<li><a href="#">Curabitur sapien</a></li>
+							<li><a href="#">Dignissim purus</a></li>
+							<li><a href="#">Tempus pretium</a></li>
+							<li><a href="#">Dignissim neque</a></li>
+							<li><a href="#">Ornared id aliquet</a></li>
+							<li><a href="#">Ultrices id du</a></li>
+							<li><a href="#">Commodo sit</a></li>
+						</ul>
+					</div>
+					<div class="footer-bottom-cate">
+						<h6>TOP BRANDS</h6>
+						<ul>
+							<li><a href="#">Curabitur sapien</a></li>
+							<li><a href="#">Dignissim purus</a></li>
+							<li><a href="#">Tempus pretium</a></li>
+							<li><a href="#">Dignissim neque</a></li>
+							<li><a href="#">Ornared id aliquet</a></li>
+							<li><a href="#">Ultrices id du</a></li>
+							<li><a href="#">Commodo sit</a></li>
+							<li><a href="#">Urna ac tortor sc</a></li>
+							<li><a href="#">Ornared id aliquet</a></li>
+							<li><a href="#">Urna ac tortor sc</a></li>
+							<li><a href="#">Eget nisi laoreet</a></li>
+							<li><a href="#">Faciisis ornare</a></li>
+						</ul>
+					</div>
+					<div class="footer-bottom-cate cate-bottom">
+						<h6>OUR ADDERSS</h6>
+						<ul>
+							<li>Aliquam metus dui. </li>
+							<li>orci, ornareidquet</li>
+							<li> ut,DUI.</li>
+							<li>nisi, dignissim</li>
+							<li>gravida at.</li>
+							<li class="phone">PH : 6985792466</li>
+							<li class="temp">
+								<p class="footer-class">Design by <a href="http://w3layouts.com/"
+										target="_blank">W3layouts</a> </p>
+							</li>
+						</ul>
+					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="clearfix"> </div>
 			</div>
 		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="footer-bottom-cate">
-					<h6>CATEGORIES</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate bottom-grid-cat">
-					<h6>FEATURE PROJECTS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate">
-					<h6>TOP BRANDS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
-				</div>
-				<div class="footer-bottom-cate cate-bottom">
-					<h6>OUR ADDERSS</h6>
-					<ul>
-						<li>Aliquam metus  dui. </li>
-						<li>orci, ornareidquet</li>
-						<li> ut,DUI.</li>
-						<li >nisi, dignissim</li>
-						<li >gravida at.</li>
-						<li class="phone">PH : 6985792466</li>
-						<li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
 
-	<script>
-		$(document).ready(function() {
-	   $(".menu-icon").on("click", function() {
-			 $("nav ul").toggleClass("showing");
-	   });
- });
+		<script>
+			$(document).ready(function () {
+				$(".menu-icon").on("click", function () {
+					$("nav ul").toggleClass("showing");
+				});
+			});
 
- $(window).on("scroll", function() {
-	   if($(window).scrollTop()) {
-			 $('nav').addClass('color');
-	   }
+			$(window).on("scroll", function () {
+				if ($(window).scrollTop()) {
+					$('nav').addClass('color');
+				}
 
-	   else {
-			 $('nav').removeClass('color');
-	   }
- })
+				else {
+					$('nav').removeClass('color');
+				}
+			})
 
-</script>
+		</script>
+		<script>
+			firebase.auth().onAuthStateChanged(function (user) {
+				if (user) {
+					// User is signed in.
+					var user = firebase.auth().currentUser;
+
+					if (user != null) {
+						//console.log(1);
+						var email_id = user.email;
+						var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+						ref.on("value", (snapshot) => {
+							if (snapshot.exists()) {
+								console.log("userlist/" + email_id.replace(/\./, ''));
+								var data = snapshot.val();
+								console.log(user.email);
+								console.log(data.username);
+								document.getElementById("login").style.display = "none";
+								document.getElementById("signup").style.display = "none";
+								document.getElementById("user_para").style.display = "block";
+								document.getElementById("logout").style.display = "block";
+								document.getElementById("user_para").innerHTML = data.username;
+								document.getElementById("username").innerHTML = data.username;
+								document.getElementById("firstname").innerHTML = data.firstname;
+								document.getElementById("lastname").innerHTML = data.lastname;
+								document.getElementById("Aboutme").innerHTML = data.Aboutme;
+
+							}
+							else {
+								console.log("No data available");
+							}
+						});
+					}
+
+				} else {
+					// No user is signed in.
+					console.log(2);
+					document.getElementById("login").style.display = "block";
+					document.getElementById("signup").style.display = "block";
+					document.getElementById("user_para").style.display = "none";
+					document.getElementById("logout").style.display = "none";
+
+				}
+			});
+			function logout() {
+				firebase.auth().signOut();
+			}
+		</script>
 </body>
+
 </html>
