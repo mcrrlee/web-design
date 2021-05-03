@@ -299,10 +299,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					if (user != null) {
 						//console.log(1);
 						var email_id = user.email;
-						var ref = firebase.database().ref("userlist/" + email_id.replaceAll(/\./, ''));
+						var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
 						ref.on("value", (snapshot) => {
 							if (snapshot.exists()) {
-								console.log("userlist/" + email_id.replaceAll(/\./, ''));
+								console.log("userlist/" + email_id.replace(/\./, ''));
 								var data = snapshot.val();
 								console.log(user.email);
 								console.log(data.username);
