@@ -71,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body> 
 	
-	<div class="wrapper" >
+	<div class="wrapper">
 
 		<nav>
 
@@ -88,14 +88,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			  <div class="search">
 				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-				  <input type="submit"  value="SEARCH">
+				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
+				  
+				  </button>
 
-				  <div  class="swap">
+				  <div  class="swap btn-3">
 				  
 					  <a href="add.html" >swap </a>
-					  <img src="images/search.png" class="img_swap">	
+						  
 				  
 				  </div>
+
+				  <div  class="Chat">
+				  
+					  <a href="chat.html" ><img src="images/chat.png" > </a>
+						  
+				  
+				  </div>
+
+				  <div  class="profile_">
+				  
+					  <a href="profile.html"  id="user_para"><img src="images/user.png" > </a>
+						   
+				  
+				  </div>
+
+				  
 	  
 			  
 			  </div>
@@ -106,20 +124,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <ul >
 				  
 
-				  <li ><a href="#one"  class="btn"> ACCOUNT </a> </li>
-				  <!-- <li><div   id="user_para" class="btn">  </div> </li> -->
+				  <!-- <li ><a href="profile.html"  class="btn">  </a> </li>
+				   <li><a href="profile.html"  class="btn">  </a> </li>  -->
 
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
-
-				  <li > <a href="#"  class="btn" > CART </a> </li>        
-				  <!-- <li ><button id="logout" style="display: none;" onclick="logout()">Logout</button>    </li>          -->
+ 
+				  <li ><button id="logout" style="display: none;" onclick="logout()" class="btn">Logout</button></li>         
 			  </ul>
 
 		  </div>
   </nav>
-
 
 	<!---->
 	<div class="container" style="position: relative; padding-top: 5%;"> 
