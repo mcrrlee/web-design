@@ -54,6 +54,36 @@ body a{
 	font-size: 20px;
 	letter-spacing: 2px;
 }
+.swiper-container {
+	width: 60vw;
+	height: 10vw;
+	top: 10vw;
+  }
+
+.swiper-pagination{
+	top: 9vw;
+	z-index: 30000000;
+}
+
+  .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
 nav{
 
 	z-index: 5000;
