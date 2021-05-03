@@ -57,7 +57,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   var useraEmailt = document.getElementById("email_field").value;
   var userPasst = document.getElementById("password_field").value;
   
- 	 data.ref('userlist/'+useraEmailt.replace(/\./, '')).set({
+ 	 data.ref('userlist/'+useraEmailt.replaceAll(/\./, '')).set({
 		firstname : firstnamet,
 		lastname: lastnamet,
 		Email : useraEmailt,
