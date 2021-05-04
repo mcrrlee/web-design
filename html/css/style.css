@@ -23,6 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: 'Kanit', sans-serif;
 }
 
 body a{
