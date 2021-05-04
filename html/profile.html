@@ -99,13 +99,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  
 
 				  
-				   <li><a href="profile.html"  class="btn" id="user_para">  </a> </li>  
+				   <li><a href="profile.html"  class="btn" id="user_para" style="color: #fff;">  </a> </li>  
 
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
 
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
  
-				  <li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
+				  <li ><a id="logout" style="display: none; color: #fff;" onclick="logout()" class="btn" >Logout</a></li>         
 			  </ul>
 
 		  </div>
@@ -140,11 +140,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							
 							<div class="col-sm-4">
 								<p  id="txt2">ชิ่อ :
-									<input type="text" name="country" value=""id="firstname" class="txtbox1" readonly> นามสกุล:
-								 <input type="text" name="country" value=""id="lastname" class="txtbox2" readonly> 
+									<input type="text" name="country"  value=""id="firstname" class="txtbox1" readonly> นามสกุล:
+								 <input type="text" name="country"  value=""id="lastname" class="txtbox2" readonly> 
 								
 								</p>
-								<p id="txt2"> Username : <input type="text" name="country" value=""id="username" class="txtbox2" readonly> </p>
+								<p id="txt2"> Username : <input type="text"  name="country" value=""id="username" class="txtbox2" readonly> </p>
 								<p> </p>
 								<p></p>
 							</div>
@@ -155,7 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									About
 									
 								</p>
-								<textarea type="text" rows="10" name="country" value="เขียนอะไรก็ได้ที่ผู้ใช้อยากเขียน" id="Aboutme" class="txtbox3"   readonly>
+								<textarea type="text" rows="10" name="country"  value="เขียนอะไรก็ได้ที่ผู้ใช้อยากเขียน" id="Aboutme" class="txtbox3"   readonly>
 										</textarea>
 									
 								
@@ -376,9 +376,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script>
 			function edit() {
   			document.getElementById("firstname").readOnly = false;
+			  document.getElementById("firstname").style.backgroundColor = "#fff";
 			  document.getElementById("lastname").readOnly = false;
+			  document.getElementById("lastname").style.backgroundColor = "#fff";
 			  document.getElementById("username").readOnly = false;
+			  document.getElementById("username").style.backgroundColor = "#fff";
 			  document.getElementById("Aboutme").readOnly = false;
+			  document.getElementById("Aboutme").style.backgroundColor = "#fff";
 			}
 
 		</script>
