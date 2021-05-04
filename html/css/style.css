@@ -1007,9 +1007,10 @@ h5.latest-product{
 	color:#F97E76;
 }
 .chain-grid{
-
+	top: -15vw;
+	height: 15vw;
 	position: relative;	
-	margin: 0 3% 0 0;
+	margin: 1vw;
 	padding:0;
 }
 .menu-chain{
