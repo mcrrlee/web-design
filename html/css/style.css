@@ -49,6 +49,10 @@ body a{
 	height: 5vw;
 }
 
+.indextxt1{
+	font-size: 1.5vw;
+}
+
 #txt1{
 	font-size: 2.5vw; 
 	color: #da251f;
@@ -1879,6 +1883,9 @@ a.get-cart {
 	#Detail{
 		width: 80%;
 	}
+	.chain-grid {
+		top: -35vw;
+	}
 	#wantDetail{
 		width: 80%;
 	}
@@ -2037,7 +2044,9 @@ nav.color ul {
 #nameitem{
 	width: 70%;
 }
+
 .chain-grid {
+	top: -20vw;
 	width: 29.5%;
 }
 
@@ -2413,6 +2422,10 @@ nav ul li {
 
 @media(max-width:640px){
 
+	.img-responsive {
+		width: 50vw;
+		height: 50vw;}
+
 	#container_login {
 		position: relative;
 		padding-top: 10%;
@@ -2423,7 +2436,15 @@ nav ul li {
 	#nameitem{
 		width: 55%;
 	}
-	
+	.indextxt1{
+
+			font-size: 4vw;
+
+	}
+	span.actual {
+
+		font-size: 2.5vw;
+	}
 	#Detail{
 		width: 55%;
 	}
@@ -2594,6 +2615,12 @@ a.get-cart {
     justify-content: center;
     right: 0vw;
 }
+.chain-grid {
+	top: -55vw;
+	height: 70vw;
+	top: -220vw;
+
+}
 
 }
 
@@ -2621,8 +2648,11 @@ a.get-cart {
 	}
 
 
+
 }
 @media(max-width:480px){
+
+	
 	nav{
 		background-color: #EFB167;
 	  }
