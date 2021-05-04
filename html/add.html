@@ -42,7 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <style>
 	.container{
 		font-family: 'Kanit', sans-serif;
-		background-color: #ffd384;
+		
 	}
 </style>
 <body> 
@@ -79,52 +79,53 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  </ul>
 		  </div>
   </nav>
-<div class="container" style="height: 200px;background-color: white;"></div>
+<div class="container" style="background-color: white;" ></div>
 	<!---->
-	<div class="container" style="position: relative; padding-top: 5%;width: 200vw;"> 
+
+	<div class="container_add " > 
 		
-					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
+					<h2 class="text-center" id="addtxt1">เพิ่มสินค้าแลกเปลี่ยน</h2>
 					<div class="container-fluid" style="width: 500px;">
 						<form>
 						<div class="form-group ">
 							
-						  <label >ชื่อสินค้า</label>
+						  <label id="addtxt2">ชื่อสินค้า</label>
 						  <input type="text" class="form-control" id="nameitem" >
-						  <label >ประเภทสินค้า</label>
+						  <label id="addtxt2">ประเภทสินค้า</label>
 						  <select id="itemcategory"  name="cars">
-							<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้ชาย</option>
-							<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้หญิง</option>
-							<option value="เครื่องประดับ">เครื่องประดับ</option>
-							<option value="คอมพิวเตอร์เเละมือถือ">คอมพิวเตอร์เเละมือถือ</option>
-							<option value="กล้องและอุปกรณ์ถ่ายภาพ">กล้องและอุปกรณ์ถ่ายภาพ</option>
-							<option value="ของเล่น">ของเล่น</option>
-							<option value="กีฬา">กีฬา</option>
-							<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
+							<option value="เสื่อผ้าแฟชั้น ผู้ชาย" id="addtxt2">เสื่อผ้าแฟชั้น ผู้ชาย</option>
+							<option value="เสื่อผ้าแฟชั้น ผู้ชาย" id="addtxt2">เสื่อผ้าแฟชั้น ผู้หญิง</option>
+							<option value="เครื่องประดับ" id="addtxt2">เครื่องประดับ</option>
+							<option value="คอมพิวเตอร์เเละมือถือ" id="addtxt2">คอมพิวเตอร์เเละมือถือ</option>
+							<option value="กล้องและอุปกรณ์ถ่ายภาพ" id="addtxt2">กล้องและอุปกรณ์ถ่ายภาพ</option>
+							<option value="ของเล่น" id="addtxt2">ของเล่น</option>
+							<option value="กีฬา" id="addtxt2">กีฬา</option>
+							<option value="เครื่องใช้ในบ้าน" id="addtxt2">เครื่องใช้ในบ้าน</option>
 						  </select>
 							
 						</div>
 						<div class="form-group">
-						  <label for="exampleInputPassword1">รายละเอียด</label>
+						  <label for="exampleInputPassword1" id="addtxt2">รายละเอียด</label>
 						  <textarea  type="text" class="form-control" rows="5" id="Detail"></textarea>
 						</div>
 						<div class="form-group">
-							<label >ประเภทสินค้าที่ต้องการเเลกเปลี่ยน</label>
+							<label id="addtxt2">ประเภทสินค้าที่ต้องการเเลกเปลี่ยน</label>
 							<select id="wantcategory"  name="cars">
-								<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้ชาย</option>
-								<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้หญิง</option>
-								<option value="เครื่องประดับ">เครื่องประดับ</option>
-								<option value="คอมพิวเตอร์เเละมือถือ">คอมพิวเตอร์เเละมือถือ</option>
-								<option value="กล้องและอุปกรณ์ถ่ายภาพ">กล้องและอุปกรณ์ถ่ายภาพ</option>
-								<option value="ของเล่น">ของเล่น</option>
-								<option value="กีฬา">กีฬา</option>
-								<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
+								<option value="เสื่อผ้าแฟชั้น ผู้ชาย" id="addtxt2">เสื่อผ้าแฟชั้น ผู้ชาย</option>
+								<option value="เสื่อผ้าแฟชั้น ผู้ชาย" id="addtxt2">เสื่อผ้าแฟชั้น ผู้หญิง</option>
+								<option value="เครื่องประดับ" id="addtxt2">เครื่องประดับ</option>
+								<option value="คอมพิวเตอร์เเละมือถือ" id="addtxt2">คอมพิวเตอร์เเละมือถือ</option>
+								<option value="กล้องและอุปกรณ์ถ่ายภาพ" id="addtxt2">กล้องและอุปกรณ์ถ่ายภาพ</option>
+								<option value="ของเล่น" id="addtxt2">ของเล่น</option>
+								<option value="กีฬา" id="addtxt2">กีฬา</option>
+								<option value="เครื่องใช้ในบ้าน" id="addtxt2">เครื่องใช้ในบ้าน</option>
 							  </select>
 						</div>
-						<div class="form-group">							<label >รายละเอียดสินค้าที่ต้องการเเลกเปลี่ยน</label>
+						<div class="form-group">							<label id="addtxt2">รายละเอียดสินค้าที่ต้องการเเลกเปลี่ยน</label>
 							<input type="text" class="form-control" id="wantDetail" >
 						  </div>
 						 <div class="form-group">
-							<label >สถานที่รับ</label>
+							<label id="addtxt2">สถานที่รับ</label>
 							<input type="text" class="form-control" id="location" >
 						 </div>
 					  </form>

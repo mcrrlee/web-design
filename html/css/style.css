@@ -55,7 +55,7 @@ body a{
 }
 .inputDnD .form-control-file {
   position: relative;
-  width: 100%;
+  width: 95%;
   height: 100%;
   min-height: 6em;
   outline: none;
@@ -273,6 +273,67 @@ nav{
     font-size: 0.5vw;
 	color: #fff
 }
+
+.container_add{
+	position: relative; 
+	-moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+	top: 5vw;
+	padding: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	transform: scale(0.8);
+	width: 50vw;
+	background-color: #ffd384;
+
+}
+#nameitem{
+	width: 90%;
+}
+
+#Detail{
+	width: 90%;
+}
+#wantDetail{
+	width: 90%;
+}
+#location{
+	width: 90%;
+}
+.container_add:hover{
+	top: 8vw;
+	transform: scale(1);
+	box-shadow:  0px 5px 15px gray;
+  transition: 1s;
+}
+#wantcategory{
+	color: #da251f;
+	border: none;
+	width: 15vw;
+	height: 2vw;
+	font-size: 1vw;
+}
+
+#itemcategory{
+	color: #da251f;
+	border: none;
+	width: 15vw;
+	height: 2vw;
+	font-size: 1vw;
+
+
+}
+#addtxt1{
+	font-size: 2vw;
+	color: #da251f;
+}
+#addtxt2{
+	font-size: 1vw;
+	color: #da251f;
+	
+}
+
 #txt2{
 	font-size: 1.5vw;
 }
@@ -1851,6 +1912,21 @@ a.get-cart {
 		height: 3vw;
 		
 	}
+	#nameitem{
+		width: 80%;
+	}
+	
+	#Detail{
+		width: 80%;
+	}
+	#wantDetail{
+		width: 80%;
+	}
+	#location{
+		width: 80%;
+	}
+	
+
 	.Chat {
 		width: 3vw;
 
@@ -1858,6 +1934,9 @@ a.get-cart {
 
 		top: -5.5vw;
 	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 80%;}
 
 	.container_single{
 		right: 10vw;
@@ -1962,10 +2041,47 @@ nav.color ul {
 
 
 }
+
+@media(max-width:840px){
+	#nameitem{
+		width: 70%;
+	}
+	
+	#Detail{
+		width: 70%;
+	}
+	#wantDetail{
+		width: 70%;
+	}
+	#location{
+		width: 70%;
+	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 70%;}
+
+}
+
 @media(max-width:769px){
 .top-down {
 	padding: 0 0em 0 0em;
 }
+#nameitem{
+	width: 70%;
+}
+
+#Detail{
+	width: 70%;
+}
+#wantDetail{
+	width: 70%;
+}
+#location{
+	width: 70%;
+}
+.inputDnD .form-control-file {
+	position: relative;
+	width: 70%;}
 .Chat {
 	width: 5vw;
 	left: 54vw;
@@ -2300,6 +2416,27 @@ nav ul li {
 		padding-bottom: 20vw;
 		background-color: #ffe3aa;
 	}
+	#nameitem{
+		width: 60%;
+	}
+	
+	#Detail{
+		width: 60%;
+	}
+	#wantDetail{
+		width: 60%;
+	}
+	#location{
+		width: 60%;
+	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 60%;}
+
+	.container_add{
+		width: 55vw;
+	}
+	
 
 }
 
@@ -2312,6 +2449,22 @@ nav ul li {
 		justify-content: center;
 		right: 0vw;
 	}
+	#nameitem{
+		width: 55%;
+	}
+	
+	#Detail{
+		width: 55%;
+	}
+	#wantDetail{
+		width: 55%;
+	}
+	#location{
+		width: 55%;
+	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 55%;}
 
 	nav{
 		background-color: #EFB167;
@@ -2471,6 +2624,31 @@ a.get-cart {
     right: 0vw;
 }
 
+}
+
+@media(max-width:549px){
+
+	#nameitem{
+		width: 60%;
+	}
+	
+	#Detail{
+		width: 60%;
+	}
+	#wantDetail{
+		width: 60%;
+	}
+	#location{
+		width: 60%;
+	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 60%;}
+
+	.container_add{
+		width: 65vw;
+	}
+
 
 }
 @media(max-width:480px){
@@ -2483,12 +2661,33 @@ a.get-cart {
 		right: 12vw;
 		top: -5vw;
 	}
+	.container_add {
+		width: 90%;
+	}
+	
 	.offer {
 		position: relative;
 		top: -30vw;
 		left: 25vw;
+	
 		padding-bottom: 2%;
 	}
+	#nameitem{
+		width: 70%;
+	}
+	
+	#Detail{
+		width: 70%;
+	}
+	#wantDetail{
+		width: 70%;
+	}
+	#location{
+		width: 70%;
+	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 70%;}
 	#me_22 {
 
 		top: -45vw;
@@ -2520,6 +2719,12 @@ a.get-cart {
 		
 		font-size: 2.5vw;
 		
+	}
+	#itemcategory{
+		height: 5vw;
+	}
+	#wantcategory{
+		height: 5vw;
 	}
 	.search button {
 		height: 5vw;
@@ -2658,9 +2863,46 @@ p.m_text {
 }
 }
 @media(max-width:320px){
+	#nameitem{
+		width: 60%;
+	}
+	
+	#Detail{
+		width: 60%;
+	}
+	#wantDetail{
+		width: 60%;
+	}
+	#location{
+		width: 60%;
+	}
+	.inputDnD .form-control-file {
+		position: relative;
+		width: 80%;}
+
+	.container_add{
+		width: 70vw;
+	}
+	.container_add {
+		width: 140vw;
+		margin-left: -10%;
+	}
 	#ice1{
 		padding-top: 20vw;
 		
+	}
+	#nameitem{
+		width: 80%;
+	}
+	
+	#Detail{
+		width: 80%;
+	}
+	#wantDetail{
+		width: 80%;
+	}
+	#location{
+		width: 80%;
 	}
 	nav{
 		background-color: #EFB167;
