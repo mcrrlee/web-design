@@ -289,16 +289,20 @@ nav{
 
 }
 #nameitem{
+	font-size: 1vw;
 	width: 90%;
 }
 
 #Detail{
+	font-size: 1vw;
 	width: 90%;
 }
 #wantDetail{
+	font-size: 1vw;
 	width: 90%;
 }
 #location{
+	font-size: 1vw;
 	width: 90%;
 }
 .container_add:hover{
