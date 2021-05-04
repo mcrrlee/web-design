@@ -15,6 +15,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     /* font-family: 'Josefin Sans', sans-serif;
     font-family: 'Source Code Pro', monospace; */
   }
+  #home{
+	padding-bottom: 4vw;
+	background-color: #ffe3aa;
+}
   
   body {
 
@@ -39,6 +43,11 @@ body a{
 	background-color: #fff;  width: 35vw; padding-bottom: 5%; padding-top: 5%;
 }
 
+
+#Aboutme{
+	font-size: 1.5vw; 
+	height: 5vw;
+}
 
 #txt1{
 	font-size: 2.5vw; 
@@ -264,6 +273,9 @@ nav{
     font-size: 0.5vw;
 	color: #fff
 }
+#txt2{
+	font-size: 1.5vw;
+}
 #container_offer{
 	position: relative; 
 	-moz-box-shadow:    inset 0 0 10px #000000;
@@ -339,6 +351,13 @@ nav{
 	letter-spacing: 4px;
 	font-weight:bold;
   }
+  #me_22 {
+    width: 3vw;
+    height: 3vw;
+    position: relative;
+    left: 22vw;
+    top: -12vw;
+}
 
   #container_single{
 	position: relative; 
@@ -374,6 +393,24 @@ ul.support li a {
 	font-size: 1.1em;
 	color: #fff;
 	
+}
+.txtbox1{
+	width: 20vw;
+	border: 0;
+	background: none;
+}
+
+
+.txtbox3{
+	width: 20vw;
+	border: 0;
+	background: none;
+}
+
+.txtbox2{
+	width: 15vw;
+	border: 0;
+	background: none;
 }
 .top-header-right{
 	float:right;
@@ -782,6 +819,9 @@ ul.cute li{
 	color: #01AFD1;
 	font-weight: 600;
 	
+}
+#me_22:hover{
+	transform: rotate(20deg);
 }
 .banner-off a{
 	text-decoration:none;
@@ -1837,6 +1877,11 @@ a.get-cart {
 	#ofdetail{
 		width: 30vw;
 	}
+
+	#me_22{
+		left: 20vw;
+    	top: -14vw;
+	}
 	.profile_ {
 
 		width: 3vw;
@@ -1936,7 +1981,14 @@ nav.color ul {
     position: relative;
     left: 38%;
 }
-
+#me_22{
+	left: 35vw;
+    top: -12vw;
+}
+.col-sm-5 {
+    width: 41.66666667%;
+    left: -8vw;
+}
 #textt2{
 	font-size: 2vw;
 }
@@ -1946,6 +1998,19 @@ nav.color ul {
 }
 #txtt3{
 	font-size: 1.5vw;
+}
+.txtbox3 {
+    width: 20vw;
+    border: 0;
+    float: right;
+    background: none;
+}
+
+#Aboutme{
+	font-size: 3vw;
+}
+#txt2{
+	font-size: 2vw;
 }
 
 #ofitem{
@@ -2061,10 +2126,9 @@ nav.color ul {
 
 #txt2{
 	padding-left: 15vw;
+	font-size: 2vw;
 }
-#Aboutme{
-	padding-left: 15vw;
-}
+
 #txt1{
 	font-size: 5vw; 
 }
@@ -2222,6 +2286,23 @@ nav ul li {
 	float: left;
 }
 }
+
+
+@media(max-width:768px){
+
+	#me_22 {
+		left: 90vw;
+		top: -38vw;
+		width: 5vw;
+		height: 5vw;
+	}
+	#home {
+		padding-bottom: 20vw;
+		background-color: #ffe3aa;
+	}
+
+}
+
 @media(max-width:640px){
 
 	#container_login {
@@ -2243,6 +2324,13 @@ nav ul li {
 		text-align: center;
 		display: none;
 		left: 5vw;
+	}
+
+	#me_22 {
+		left: 90vw;
+		top: -40vw;
+		width: 5vw;
+		height: 5vw;
 	}
 	.profile_ {
 		width: 5vw;
@@ -2311,6 +2399,11 @@ nav ul li {
 	  width: 100%;
 	  padding: 24px;
 	  text-align: center;
+}
+
+#txt2 {
+    padding-left: 15vw;
+    font-size: 3vw;
 }
 
 
@@ -2395,6 +2488,11 @@ a.get-cart {
 		top: -30vw;
 		left: 25vw;
 		padding-bottom: 2%;
+	}
+	#me_22 {
+
+		top: -45vw;
+
 	}
 	#B_1 {
 		position: absolute;
@@ -2573,16 +2671,28 @@ p.m_text {
 		height: 10vw;
 		top: 20vw;
 	}
+	#me_22 {
+		top: -55vw;
+		left: 85vw;
+	}
+
 	#txt3 {
-		top: 10vw;
+		top: 1vw;
 		position: relative;
 		right: 90vw;
+		font-size: 2vw;
 	}
 	.offer {
 		position: relative;
 		top: -36vw;
 		left: 25vw;
 		padding-bottom: 2%;
+	}
+	#reviews {
+		position: relative;
+		top: 1vw;
+		width: 70vw;
+
 	}
 	#name2 {
 		position: relative;
@@ -2616,6 +2726,10 @@ p.m_text {
 
 		font-size: 1vw;
 		
+	}
+	#home{
+		padding-bottom: 20vw;
+		background-color: #ffe3aa;
 	}
 	.search button {
 		height: 5vw;

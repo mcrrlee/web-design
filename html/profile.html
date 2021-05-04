@@ -124,7 +124,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		<!--หน้าโปรไฟล์-->
 		<div class="tab-content">
-			<div id="home" class="tab-pane fade in active" style="background-color: #ffe3aa; height: 500px;"><br>
+			<div id="home" class="tab-pane fade in active" ><br>
 				<strong><center><p  id="txt1">Profile</p></center></strong>
 				<div class="aboutme" id="about">
 					<div class="container">
@@ -137,21 +137,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</ul>
 								</div>
 							</div>
+							
 							<div class="col-sm-4">
-								<p>ชิ้อ :<span id="firstname"></span> นามสกุล:<span id="lastname"></span></p>
-								<p style="font-size: 2vw;" id="txt2"> <b>Username : </b><span id="username"> ใส่ชื่อ </span> </p>
+								<p  id="txt2">ชิ่อ :
+									<input type="text" name="country" value=""id="firstname" class="txtbox1" readonly> นามสกุล:
+								 <input type="text" name="country" value=""id="lastname" class="txtbox2" readonly> 
+								
+								</p>
+								<p id="txt2"> Username : <input type="text" name="country" value=""id="username" class="txtbox2" readonly> </p>
 								<p> </p>
 								<p></p>
 							</div>
 							<!--หน้า2 about me ฝั่งขวา-->
 							<div class="col-sm-5">
-								<p style="font-size: 2vw" id="txt2"> <center><b>About</b></center></p>
-								<div id="Aboutme" >
-										เขียนอะไรก้ได้ที่ผู้ใช้อยากเขียน
-								</div>
+								
+								<p  id="txt2"> 
+									About
+									
+								</p>
+								<textarea type="text" rows="10" name="country" value="เขียนอะไรก็ได้ที่ผู้ใช้อยากเขียน" id="Aboutme" class="txtbox3"   readonly>
+										</textarea>
+									
+								
+
+								
+										<div onclick="edit()"> <img class="me" id="me_22" src="images/edit.png" > </div>	
+								
 							</div>
 						</div>
 					</div>
+					
 					<div class="container" style="top: -5vw; position: relative;">
 						<div class="row">
 							<div class="col-sm-12">
@@ -357,6 +372,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			})
 
 		</script>
+
+		<script>
+			function edit() {
+  			document.getElementById("firstname").readOnly = false;
+			  document.getElementById("lastname").readOnly = false;
+			  document.getElementById("username").readOnly = false;
+			  document.getElementById("Aboutme").readOnly = false;
+			}
+
+		</script>
+
 		<script>
 			firebase.auth().onAuthStateChanged(function (user) {
 				if (user) {
@@ -378,9 +404,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								document.getElementById("user_para").style.display = "block";
 								document.getElementById("logout").style.display = "block";
 								document.getElementById("user_para").innerHTML = data.username;
-								document.getElementById("username").innerHTML = data.username;
-								document.getElementById("firstname").innerHTML = data.firstname;
-								document.getElementById("lastname").innerHTML = data.lastname;
+								document.getElementById("username").value = data.username;
+								document.getElementById("firstname").value = data.firstname;
+								document.getElementById("lastname").value = data.lastname;
 								document.getElementById("Aboutme").innerHTML = data.Aboutme;
 
 							}
