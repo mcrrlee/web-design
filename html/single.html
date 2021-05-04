@@ -19,11 +19,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script src="js/jquery.min.js"></script>
+
+
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script><script src="js/jquery.min.js"></script>
 <script src="js/jquery.etalage.min.js"></script>
+
 <script>
 			jQuery(document).ready(function($){
 
@@ -33,12 +36,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					source_image_width: 900,
 					source_image_height: 1200,
 					show_hint: true,
-					click_callback: function(image_anchor, instance_id){
-						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					click_callback: function (image_anchor, instance_id) {
+						alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
 					}
 				});
-
 			});
+	var params = new URLSearchParams(document.location.search.substring(1));
+	var refDB = params.get("refDB");
+	var refST = params.get("refST");
+	var data = firebase.database();
+	var refItemTrading = data.ref(refDB);
+	var storage = firebase.storage();
+	var starsRef = storage.ref(refST);
+	console.log(starsRef);
+	console.log(refItemTrading);
+	refItemTrading.on("value", (snapshot) => 
+	{var dataref = snapshot.val();
+		document.getElementById("product_name").innerHTML = dataref.nameitem;
+		//document.getElementById("user_para").innerHTML = refItemTrading.username;
+		document.getElementById("product_details").innerHTML = dataref.Detail;
+		document.getElementById("username").innerHTML = dataref.owrname;
+	})
+	;
+
 		</script>
 
 </head>
@@ -51,70 +71,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <div class="menu-icon">
 				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
 			  </div>
-
 			  <div class="logo">
 				  <a href="index.html">
 				  <img src="images/logo.png"  alt=" " /></a></li>
 			  </div>
-
 			  <a href="add.html" > </a>
 
 			  <div class="search">
 				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
-				  
 				  </button>
-
 				  <div  class="swap btn-3">
-				  
 					  <a href="add.html" >swap </a>
-						  
-				  
 				  </div>
-
 				  <div  class="Chat">
-				  
 					  <a href="chat.html" ><img src="images/chat.png" > </a>
-						  
-				  
 				  </div>
-
 				  <div  class="profile_">
-				  
 					  <a href="profile.html"  ><img src="images/user.png" > </a>
-						   
-				  
 				  </div>
-
-				  
-	  
-			  
-			  </div>
-
-			  
-
-				  
+			  </div>  
 			  <ul >
-				  
-
 				   <li><a href="profile.html"  class="btn" id="user_para">  </a> </li> 
-
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
-
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
- 
 				  <li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
 			  </ul>
-
 		  </div>
   </nav>
-
-  
-
 	<!---->
-	
-	 <div class="container" id="container_single"> 
-	 	
+	 <div class="container" id="container_single">
 	 	<div class=" single_top">
 	      <div class="single_grid">
 				<div class="grid images_3_of_2">
@@ -141,11 +127,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						 <div class="clearfix"> </div>		
 				  </div> 
 				  <div class="desc1 span_3_of_2">
-				  
-					
 					<h4 style="font-size: 2vw;" id="product_name">ชื่อสินค้า</h4>
 				<div class="cart-b">
-					<div class="left-n ">สิ่งของที่ต้องการ
+					<div id = "itemname" class="left-n ">สิ่งของที่ต้องการ
 
 						<div style="color: black; font-size: 1vw;" id="want">อยากได้A 
 						
@@ -160,14 +144,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   	<p id="product_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 			   	<div class="share">
 					   		<h5 style="font-size: 1vw;">สถานที่สะดวกนัดรับ</h5>
-
 							   <li>บ้าน</li>
-
-
 							<h5 style="font-size: 1vw;">ลงโดย</h5>
 							<ul class="share_nav">
 								<li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>
-								<li style="font-size: 1vw;">ชื่อยูเซอร์ที่ลง</li>
+								<li id='username' style="font-size: 1vw;">ชื่อยูเซอร์ที่ลง</li>
 								
 				    		</ul>
 						</div>

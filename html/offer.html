@@ -25,10 +25,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<<<<<<< HEAD
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+=======
+ <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+>>>>>>> 43473f06ea8c40a0bbc172fe7b5fced70c676225
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="js/jquery.min.js"></script>
@@ -76,7 +80,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   firebase.auth().signOut();
 }
 </script>
-
+<style>
+	.container{
+		font-family: 'Kanit', sans-serif;
+		background-color: #ffd384;
+	
+	}
+</style>
 </head>
 <body> 
 
@@ -144,47 +154,44 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		  </div>
   </nav>
+  <div class="container" style="height: 150px;background-color: white;"></div>
+  <div class="container" style="position: relative; width: 500px;padding-left: 5%;padding-right: 5%;padding-bottom: 3%;"> 
+	  <h2 class="text-center">ยื่นข้อเสนอ</h2>
 
+	  <div class="form-group row">
+		  <label for="example-text-input" class="col-2 col-form-label">ชื่อสินค้า</label>
+		  <div class="col-10">
+			<input class="form-control" type="text"  id="ofitem">
+		  </div>
+		</div>
+		<div class="form-group row">
+		  <label for="example-text-input" class="col-2 col-form-label">รายละเอียด</label>
+		  <div class="col-10">
+			<textarea  type="text" class="form-control" rows="5" id="ofdetail"></textarea>
+			
+		  </div>
+		</div>
+		<div class="container-fluid">
+			<div class="form-group inputDnD" >
+			<label class="sr-only" for="inputFile">File Upload</label>
+				<input type="file" class="form-control-file text-danger font-weight-bold" id="ofimg"  accept="image/*" multiple onchange="readUrl(this)" data-title="Drag and drop a file">
+			  </div>
+		</div>
+		
+ <div class="register-but  text-center">
+	
+	   <!-- <input type="submit" value="submit">-->
+	   <button type="button" class="acount-btn  btn-3" style="border-radius: 3em / 3em;" data-toggle="modal" data-target="#myModal">ยืนยันข้อเสนอ</button>
+	   <div class="clearfix"> </div>
+	
+ </div>
+	  </div>
 
 
 	<!---->
-	<div class="container" style="position: relative; padding-top: 5%;"> 
+	
 			         
-		<div class="register" >
-		  	  <form> 
-				 <div class="  register-top-grid">
-					<h2 class="text-center">ยื่นข้อเสนอ</h2>
-					<div class="aaa">
-						<span>ชื่อสินค้า<label>*</label></span>
-						<input type="text"> 
-					
-					<div class="container p-y-1">
- 
-   
-    <div class="row m-b-1">
-    <div class="col-sm-6 offset-sm-3">
-      <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
-      <div class="form-group inputDnD">
-        <label class="sr-only" for="inputFile">File Upload</label>
-        <input type="file" class="form-control-file text-warning font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
-      </div>
-    </div>
-  </div>
-    
-</div>						 <span>รายละเอียด<label>*</label></span>
-						<input type="text"> 
-						
-						
-					</div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up</label>
-					   </a>
-					 </div>
-				     
-				</form>
-				<div class="clearfix"> </div>
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">ยืนยันข้อเสนอ</button>
+	
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -200,8 +207,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <p>คุณยืนยันที่จะยื่นข้อเสนอใช่หรือไม่</p>
         </div>
         <div class="modal-footer">
-			<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-			<button type="button" class="btn btn-success">ยืนยัน</button>
+			<button type="button" class="btn btn-danger" style="border-radius: 3em / 3em;" data-dismiss="modal">ยกเลิก</button>
+			<button type="button" class="btn btn-success" style="border-radius: 3em / 3em;">ยืนยัน</button>
         </div>
       </div>
       
