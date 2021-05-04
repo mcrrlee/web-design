@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script src="js/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -43,127 +43,103 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	.container{
 		font-family: 'Kanit', sans-serif;
 		background-color: #ffd384;
-	
 	}
 </style>
 <body> 
-	
 	<div class="wrapper">
-
 		<nav>
-
 			  <div class="menu-icon">
 				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
 			  </div>
-
 			  <div class="logo">
 				  <a href="index.html">
 				  <img src="images/logo.png"  alt=" " /></a></li>
 			  </div>
-
 			  <a href="add.html" > </a>
-
 			  <div class="search">
 				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
-				  
 				  </button>
-
 				  <div  class="swap btn-3">
-				  
-					  <a href="add.html" >swap </a>
-						  
-				  
+					  <a href="add.html" >swap </a>  
 				  </div>
-
 				  <div  class="Chat">
-				  
 					  <a href="chat.html" ><img src="images/chat.png" > </a>
-						  
-				  
 				  </div>
-
 				  <div  class="profile_">
-				  
 					  <a href="profile.html" ><img src="images/user.png" > </a>
-						  
-				  
 				  </div>
-
-				  
-	  
-			  
-			  </div>
-
-			  
-
-				  
+			  </div>	  
 			  <ul >
-				  
-
 				  <!-- <li ><a href="profile.html"  class="btn">  </a> </li> -->
 				   <li><a href="profile.html"  id="user_para" class="btn">  </a> </li> 
-
 				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
-
 				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
- 
 				  <li ><a id="logout" style="display: none;" onclick="logout()" class="btn">Logout</a></li>         
 			  </ul>
-
 		  </div>
   </nav>
-
 <div class="container" style="height: 200px;background-color: white;"></div>
-
 	<!---->
 	<div class="container" style="position: relative; padding-top: 5%;width: 200vw;"> 
-			         
 		
 					<h2 class="text-center">เพิ่มสินค้าแลกเปลี่ยน</h2>
-					
-
-
 					<div class="container-fluid" style="width: 500px;">
 						<form>
-						<div class="form-group">
+						<div class="form-group ">
+							
 						  <label >ชื่อสินค้า</label>
 						  <input type="text" class="form-control" id="nameitem" >
-						  
+						  <label >ประเภทสินค้า</label>
+						  <select id="itemcategory"  name="cars">
+							<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้ชาย</option>
+							<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้หญิง</option>
+							<option value="เครื่องประดับ">เครื่องประดับ</option>
+							<option value="คอมพิวเตอร์เเละมือถือ">คอมพิวเตอร์เเละมือถือ</option>
+							<option value="กล้องและอุปกรณ์ถ่ายภาพ">กล้องและอุปกรณ์ถ่ายภาพ</option>
+							<option value="ของเล่น">ของเล่น</option>
+							<option value="กีฬา">กีฬา</option>
+							<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
+						  </select>
+							
 						</div>
 						<div class="form-group">
 						  <label for="exampleInputPassword1">รายละเอียด</label>
 						  <textarea  type="text" class="form-control" rows="5" id="Detail"></textarea>
 						</div>
-						
+						<div class="form-group">
+							<label >ประเภทสินค้าที่ต้องการเเลกเปลี่ยน</label>
+							<select id="wantcategory"  name="cars">
+								<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้ชาย</option>
+								<option value="เสื่อผ้าแฟชั้น ผู้ชาย">เสื่อผ้าแฟชั้น ผู้หญิง</option>
+								<option value="เครื่องประดับ">เครื่องประดับ</option>
+								<option value="คอมพิวเตอร์เเละมือถือ">คอมพิวเตอร์เเละมือถือ</option>
+								<option value="กล้องและอุปกรณ์ถ่ายภาพ">กล้องและอุปกรณ์ถ่ายภาพ</option>
+								<option value="ของเล่น">ของเล่น</option>
+								<option value="กีฬา">กีฬา</option>
+								<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
+							  </select>
+						</div>
+						<div class="form-group">							<label >รายละเอียดสินค้าที่ต้องการเเลกเปลี่ยน</label>
+							<input type="text" class="form-control" id="wantDetail" >
+						  </div>
+						 <div class="form-group">
+							<label >สถานที่รับ</label>
+							<input type="text" class="form-control" id="location" >
+						 </div>
 					  </form>
-  
-						
 							 <div class="container-fluid">
  									<div class="form-group inputDnD" >
 										 <label class="sr-only" for="inputFile">File Upload</label>
 											 <input type="file" class="form-control-file text-danger font-weight-bold" id="imglist"  accept="image/*" multiple onchange="readUrl(this)" data-title="Drag and drop a file">
 										   </div>
-										  
-							 </div>
-								  
-
-
-									
-										
-								
-
-						
-						
+							 </div>		
 					</div>
 					 <div class="register-but text-center">
 				   <div style="padding-bottom: 5%;">
-					   <button class="acount-btn  btn-3" style="border-radius: 3em / 3em;" onclick="additemtrading()" >submit</button>
-					  
+					   <button class="acount-btn  btn-3" style="border-radius: 3em / 3em;" onclick="additemtrading()" >submit</button> 
 				   </div>
 				</div>
-				     
-				
 	<!---->
 </div>
 
@@ -203,7 +179,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								document.getElementById("user_para").style.display = "block";
 								document.getElementById("logout").style.display = "block";
 								document.getElementById("user_para").innerHTML = data.username;
-
 							}
 							else {
 								console.log("No data available");
@@ -221,6 +196,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				firebase.auth().signOut();
 			}
 			function additemtrading() {
+				var r =confirm("คุณยืนยังที่จะเพิ่มสินค้าแลกเปลี่ยนหรือไม่");
+				if(r){
 				var datauser = '';
 				var user = firebase.auth().currentUser;
 				data = firebase.database();
@@ -232,32 +209,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				else{
 					console.log('fail load DB');
 				}});
-				
-
 				var nameitem = document.getElementById("nameitem").value;
 				var Detail = document.getElementById("Detail").value;
-				//var wantlist = document.getElementById("wantlist").value;
+				var itemcategory = document.getElementById("itemcategory").value;
+				var wantcategory = document.getElementById("wantcategory").value;location
+				var wantDetail = document.getElementById("wantDetail").value;
+				var location = document.getElementById("location").value;
 				var imglist = document.getElementById("imglist");
 				//var storageRef = firebase.storage().child("img");
 				data.ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+datauser.runid).set({
 					owrname:datauser.username,
 					runid: datauser.runid,
 					nameitem:nameitem,
-					//wantlist:wantlist,
-					Detail:Detail
+					itemcategory : itemcategory,
+					wantcategory:wantcategory ,
+					wantDetail:wantDetail,
+					Detail:Detail,
+					location:location,
 
 				});
 				data.ref('userlist/'+user.email.replace(/\./, '')+"/runid").set(datauser.runid+1);
 
-				for (i = 0; i <= imglist.files.length; i++)	{
+				for (i = 0; i < imglist.files.length; i++)	{
 					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+(datauser.runid-1)+"/"+i)
 					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
 				}
 				;
-				
-				
-
-			}
+				alert("คุณได้เพิ่มเพิ่มสินค้าแลกเปลี่ยนเรียบร้อยเเล้ว");
+				var refDB =  ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+datauser.runid-1)+"/";
+				var refST= ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, ''))+(datauser.runid-1)+"/0";
+				var para = new URLSearchParams();
+				para.append("refDB", refDB);
+				para.append("refST", refST);
+				window.location.href = "index.html"
+				//window.location.href = "single.html?"+para.toString();
+			}}
 			$('#contactForm').submit(function () {
  sendContactForm();
  return false;
