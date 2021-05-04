@@ -61,14 +61,15 @@ var addlist =  document.getElementById("container");
 						var storage    = firebase.storage();
 						var  starsRef= storage.ref();
 						var storageRef = starsRef.child("ItemTrading/"+childNodes.key+"/"+iitemname+ccNodes.runid+"/0");
+						var refDB =  ("ItemTrading/" + childNodes.key+"/"+cNodes.key+"/");
+						var refST= ("ItemTrading/"+childNodes.key+"/"+iitemname+ccNodes.runid+"/0");
 						//
 						console.log(storageRef);
 						console.log(storageRef.storage);
 						storageRef.getDownloadURL().then((url) => {
 								// Insert url into an <img> tag to "download"
-								var tagcreate = createListItem( /*iusername ,*/ iitemname, idetall,url);
+								var tagcreate = createListItem( /*iusername ,*/ iitemname, idetall,url, refDB,refST);
 								console.log();
-
 						document.getElementById("products").appendChild(tagcreate);
 							})
 							.catch((error) => {
@@ -76,15 +77,7 @@ var addlist =  document.getElementById("container");
 								// https://firebase.google.com/docs/storage/web/handle-errors
 								console.log(error.code) 
 							});
-
-
-
-
-
-
 				});
-
-
 					});
 				});
 			});
@@ -133,9 +126,13 @@ var addlist =  document.getElementById("container");
 			firebase.auth().signOut();
 
 		}
-		function createListItem(/*username,*/ itemname, detall ,srcimg ) {
+		function createListItem(/*username,*/ itemname, detall ,srcimg, refDB,refST ) {
+				var para = new URLSearchParams();
+				para.append("refDB", refDB);
+				para.append("refST", refST);
 				var List = document.createElement("DIV");
 				var alink = document.createElement("a");
+				alink.href = "single.html?"+para.toString();
 				List.classList.add("col-md-4");
 				List.classList.add("chain-grid");
 				var h = document.createElement("h6");
@@ -146,6 +143,7 @@ var addlist =  document.getElementById("container");
 				var divdetall = document.createElement("DIV");
 				divdetall.classList.add("dolor-grid");
 				var tapitemname = document.createElement("a");
+				tapitemname.href = "single.html?"+para.toString();
 				tapitemname.style.fontSize = "1vw";
 				tapitemname.style.textDecorationLine = "none";
 				tapitemname.style.color = "#e3403a";
@@ -169,7 +167,6 @@ var addlist =  document.getElementById("container");
 				tapimg.classList.add("img-chain");
 				tapimg.src = srcimg;
 				//content.appendChild(tapname);
-				
 				alink.appendChild(tapimg);
 				List.appendChild(alink);
 				elit.appendChild(tapitemname);
