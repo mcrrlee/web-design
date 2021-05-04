@@ -20,11 +20,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <!--//fonts-->
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-<script src="js/jquery.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="./js/script.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.css"><script src="js/jquery.min.js"></script>
 <!--script-->
 <script>
 	
@@ -44,14 +44,15 @@ var addlist =  document.getElementById("container");
 		});
 		//container.appendChild(createListItem({ iusername , iitemname, idetall}))
 
-		refItemTrading.on('value', function (snap) {
-			snap.forEach(function (childNodes) {
-				var refItemTradinguser = data.ref("ItemTrading/" + childNodes.key);
-
+		refItemTrading.on('value', function (snapp) {
+			snapp.forEach(function (childNodes) {
+				var userAc = childNodes.key
+				var refItemTradinguser = data.ref("ItemTrading/" +userAc);
+				
 				refItemTradinguser.on('value', function (snap) {
 					snap.forEach(function (cNodes) {
 
-						var refItemTradinguser = data.ref("ItemTrading/" + childNodes.key+"/"+cNodes.key+"/");
+						var refItemTradinguser = data.ref("ItemTrading/" + userAc+"/"+cNodes.key+"/");
 
 						refItemTradinguser.on('value', function (snap) {
 						var ccNodes =  snap.val();
@@ -61,22 +62,25 @@ var addlist =  document.getElementById("container");
 						console.log(ccNodes.Detail+ccNodes.nameitem+ccNodes.owrname+ccNodes.runid)
 						var storage    = firebase.storage();
 						var  starsRef= storage.ref();
-						var storageRef = starsRef.child("ItemTrading/"+childNodes.key+"/"+iitemname+ccNodes.runid+"/0");
-						var refDB =  ("ItemTrading/" + childNodes.key+"/"+cNodes.key+"/");
-						var refST= ("ItemTrading/"+childNodes.key+"/"+iitemname+ccNodes.runid+"/0");
+						var storageRef = starsRef.child("ItemTrading/"+userAc+"/"+iitemname+ccNodes.runid+"/0");
+						var refDB =  ("ItemTrading/" + userAc+"/"+cNodes.key+"/");
+						var refST= ("ItemTrading/"+userAc+"/"+iitemname+ccNodes.runid+"/0");
 						//
+						
 						console.log(storageRef);
-						console.log(storageRef.storage);
-						storageRef.getDownloadURL().then((url) => {
+						firebase.storage().ref().child("ItemTrading/"+userAc+"/"+iitemname+ccNodes.runid+"/0").getDownloadURL().then((url) => {
 								// Insert url into an <img> tag to "download"
 								var tagcreate = createListItem( /*iusername ,*/ iitemname, idetall,url, refDB,refST);
-								console.log();
+							
 						document.getElementById("products").appendChild(tagcreate);
 							})
 							.catch((error) => {
 								// A full list of error codes is available at
 								// https://firebase.google.com/docs/storage/web/handle-errors
 								console.log(error.code) 
+								var tagcreate = createListItem( /*iusername ,*/ iitemname, idetall,"https://firebasestorage.googleapis.com/v0/b/traderigth.appspot.com/o/ItemTrading%2Fkittiwat%40gmailcom%2F%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%8B%E0%B8%B2%E0%B8%A1%E0%B8%B7%E0%B8%AD2%202%2F0?alt=media&token=3c900647-6139-4b04-a534-df5ca23b20ae", refDB,refST);
+							
+						document.getElementById("products").appendChild(tagcreate);
 							});
 				});
 					});
@@ -98,17 +102,17 @@ var addlist =  document.getElementById("container");
 					ref.on("value", (snapshot) => {
 						if (snapshot.exists()) {
 							console.log("userlist/" + email_id.replace(/\./, ''));
-							var data = snapshot.val();
+							var dataa = snapshot.val();
 							console.log(user.email);
-							console.log(data.username);
+							console.log(dataa.username);
 							document.getElementById("login").style.display = "none";
 							document.getElementById("signup").style.display = "none";
 							document.getElementById("user_para").style.display = "block";
 							document.getElementById("logout").style.display = "block";
-							document.getElementById("user_para").innerHTML = data.username;
+							document.getElementById("user_para").innerHTML = dataa.username;
 						}
 						else {
-							console.log("No data available");
+							console.log("No dataa available");
 						}
 					});
 				}

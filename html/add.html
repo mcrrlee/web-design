@@ -235,6 +235,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
 				}
 				;
+				setTimeout(function (){
 				alert("คุณได้เพิ่มเพิ่มสินค้าแลกเปลี่ยนเรียบร้อยเเล้ว");
 				var refDB =  ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+datauser.runid-1)+"/";
 				var refST= ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, ''))+(datauser.runid-1)+"/0";
@@ -242,7 +243,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				para.append("refDB", refDB);
 				para.append("refST", refST);
 				window.location.href = "index.html"
-				//window.location.href = "single.html?"+para.toString();
+				//window.location.href = "single.html?"+para.toString()
+				;}, 5000)
 			}}
 			$('#contactForm').submit(function () {
  sendContactForm();
