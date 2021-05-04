@@ -161,7 +161,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								
 
 								
-										<div onclick="edit()"> <img class="me" id="me_22" src="images/edit.png" > </div>	
+										<div onclick="edit(0)" > <img class="edit" id="me_22" src="images/edit.png" > </div>	
 								
 							</div>
 						</div>
@@ -374,8 +374,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
 
 		<script>
-			function edit() {
-  			document.getElementById("firstname").readOnly = false;
+			u = 0;
+
+			function edit(k) {
+				i = k;
+			
+				if (u == i){
+  				document.getElementById("firstname").readOnly = false;
 			  document.getElementById("firstname").style.backgroundColor = "#fff";
 			  document.getElementById("lastname").readOnly = false;
 			  document.getElementById("lastname").style.backgroundColor = "#fff";
@@ -383,6 +388,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  document.getElementById("username").style.backgroundColor = "#fff";
 			  document.getElementById("Aboutme").readOnly = false;
 			  document.getElementById("Aboutme").style.backgroundColor = "#fff";
+			  document.getElementById("me_22").src = "images/C.png";
+				u = 1;	
+			}
+				else{
+
+					u = 0;
+
+				document.getElementById("firstname").readOnly = true;
+			  	document.getElementById("firstname").style.background = "none";
+			 	document.getElementById("lastname").readOnly = true;
+			  	document.getElementById("lastname").style.background = "none";
+			  	document.getElementById("username").readOnly = true;
+			  	document.getElementById("username").style.background = "none";
+			  	document.getElementById("Aboutme").readOnly = true;
+			  	document.getElementById("Aboutme").style.background = "none";
+			  	document.getElementById("me_22").src = "images/edit.png";
+				}
+
 			}
 
 		</script>
