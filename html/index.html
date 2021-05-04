@@ -27,46 +27,160 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.css">
 <!--script-->
 <script>
-	firebase.auth().onAuthStateChanged(function(user) {
-	if (user) {
-	  // User is signed in.
-	  var user = firebase.auth().currentUser;
-  
-	  if(user != null){
-		  //console.log(1);
-		var email_id = user.email;
-		var ref = firebase.database().ref("userlist/"+email_id.replace(/\./, ''));
-		ref.on("value", (snapshot) => {
-			if (snapshot.exists()) {
-				console.log("userlist/"+email_id.replace(/\./, ''));
-				var data = snapshot.val();
-				console.log(user.email);
-		console.log(data.username);
-		document.getElementById("login").style.display = "none";
-		document.getElementById("signup").style.display = "none";
-    	document.getElementById("user_para").style.display = "block";
-		document.getElementById("logout").style.display = "block";
-		document.getElementById("user_para").innerHTML =  data.username;
+
+var addlist =  document.getElementById("container");
+		var data = firebase.database();
+		var refItemTrading = data.ref("ItemTrading");
+		var datarefItemTrading = '';
+		refItemTrading.on("value", (snapshot) => {
+			datarefItemTrading = snapshot.val();
+			for (let i in datarefItemTrading) {
+				console.log(1);
+
+				console.log(i);
+				//
 			}
-			else{
-				console.log("No data available");
+		});
+		//container.appendChild(createListItem({ iusername , iitemname, idetall}))
+
+		refItemTrading.on('value', function (snap) {
+			snap.forEach(function (childNodes) {
+				var refItemTradinguser = data.ref("ItemTrading/" + childNodes.key);
+
+				refItemTradinguser.on('value', function (snap) {
+					snap.forEach(function (cNodes) {
+
+						var refItemTradinguser = data.ref("ItemTrading/" + childNodes.key+"/"+cNodes.key+"/");
+
+						refItemTradinguser.on('value', function (snap) {
+						var ccNodes =  snap.val();
+						var iusername = ccNodes.owrname;
+						var iitemname = ccNodes.nameitem;
+						var idetall = ccNodes.Detail ;
+						console.log(ccNodes.Detail+ccNodes.nameitem+ccNodes.owrname+ccNodes.runid)
+						var storage    = firebase.storage();
+						var  starsRef= storage.ref();
+						var storageRef = starsRef.child("ItemTrading/"+childNodes.key+"/"+iitemname+ccNodes.runid+"/0");
+						//
+						console.log(storageRef);
+						console.log(storageRef.storage);
+						storageRef.getDownloadURL().then((url) => {
+								// Insert url into an <img> tag to "download"
+								var tagcreate = createListItem( /*iusername ,*/ iitemname, idetall,url);
+								console.log();
+
+						document.getElementById("products").appendChild(tagcreate);
+							})
+							.catch((error) => {
+								// A full list of error codes is available at
+								// https://firebase.google.com/docs/storage/web/handle-errors
+								console.log(error.code) 
+							});
+
+
+
+
+
+
+				});
+
+
+					});
+				});
+			});
+		});
+
+
+		console.log(2);
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				// User is signed in.
+				var user = firebase.auth().currentUser;
+
+				if (user != null) {
+					//console.log(1);
+					var email_id = user.email;
+					var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+					ref.on("value", (snapshot) => {
+						if (snapshot.exists()) {
+							console.log("userlist/" + email_id.replace(/\./, ''));
+							var data = snapshot.val();
+							console.log(user.email);
+							console.log(data.username);
+							document.getElementById("login").style.display = "none";
+							document.getElementById("signup").style.display = "none";
+							document.getElementById("user_para").style.display = "block";
+							document.getElementById("logout").style.display = "block";
+							document.getElementById("user_para").innerHTML = data.username;
+						}
+						else {
+							console.log("No data available");
+						}
+					});
+				}
+
+			} else {
+				// No user is signed in.
+				console.log(2);
+				document.getElementById("login").style.display = "block";
+				document.getElementById("signup").style.display = "block";
+				document.getElementById("user_para").style.display = "none";
+				document.getElementById("logout").style.display = "none";
+
 			}
-    });
-	  }
-  
-	} else {
-	  // No user is signed in.
-	  console.log(2);
-  	document.getElementById("login").style.display = "block";
-		document.getElementById("signup").style.display = "block";
-		document.getElementById("user_para").style.display = "none";
-		document.getElementById("logout").style.display = "none";
-  
-	}
-  });
-  function logout(){
-  firebase.auth().signOut();
-}
+		});
+		function logout() {//ขาดwant-in
+			firebase.auth().signOut();
+
+		}
+		function createListItem(/*username,*/ itemname, detall ,srcimg ) {
+				var List = document.createElement("DIV");
+				var alink = document.createElement("a");
+				List.classList.add("col-md-4");
+				List.classList.add("chain-grid");
+				var h = document.createElement("h6");
+				var elit = document.createElement("DIV");
+				elit.classList.add("grid-chain-bottom");
+				var content = document.createElement("DIV");
+				content.classList.add("star-price");
+				var divdetall = document.createElement("DIV");
+				divdetall.classList.add("dolor-grid");
+				var tapitemname = document.createElement("a");
+				tapitemname.style.fontSize = "1vw";
+				tapitemname.style.textDecorationLine = "none";
+				tapitemname.style.color = "#e3403a";
+				tapitemname.style.textDecorationLine = "none";
+				tapitemname.innerHTML = itemname;
+				//var tapname = document.createElement("h4");
+				//tapname.innerHTML = username;
+				var tapdetall = document.createElement("span");
+				tapdetall.innerHTML = detall;
+				tapdetall.classList.add("actual");
+				var spanbutton = document.createElement("a");
+				spanbutton.classList.add("now-get");  
+				spanbutton.classList.add("get-cart");
+				spanbutton.style.fontSize = "1vw";
+				spanbutton.style.textDecorationLine = "none";
+				spanbutton.style.color = "#e3403a";
+				spanbutton.style.textDecorationLine = "none";
+				spanbutton.innerHTML = "ดูเพิ่มเติม";
+				var tapimg = document.createElement("IMG");
+				tapimg.classList.add("img-responsive");
+				tapimg.classList.add("img-chain");
+				tapimg.src = srcimg;
+				//content.appendChild(tapname);
+				
+				alink.appendChild(tapimg);
+				List.appendChild(alink);
+				elit.appendChild(tapitemname);
+				divdetall.appendChild(tapdetall);
+				content.appendChild(divdetall);
+				content.appendChild(spanbutton);
+				elit.appendChild(content);
+				List.appendChild(elit);
+				return List;
+
+			}
 </script>
 </head>
 <body> 
@@ -168,7 +282,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   		     	<h5 class="latest-product" style="color: #fff;">LATEST PRODUCTS</h5>	
 	   		     	  <a class="view-all" href="product.html">VIEW ALL<span> </span></a> 		     
 	   		     </div>
-	   		     <div class="product-left">
+	   		     <div id = "products" class="product-left">
 
 	   		     	<div class="col-md-4 chain-grid">
 	   		     		<a href="single.html"><img class="img-responsive chain" src="images/ch.jpg" alt=" " /></a>
