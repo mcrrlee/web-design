@@ -69,10 +69,10 @@ body a{
 	position: relative;
 	width: 5vw;
 	text-align: center;
-	height: 2vw;
+	height: 2.3vw;
 	display: block;
 	font-size: 1.5vw;
-	background-color: none;
+	background-color: #8bc8c0;
 	
 }
 a .B1{
@@ -81,7 +81,7 @@ a .B1{
 
 .B1:hover{
 	text-decoration: none;
-	background-color: #1DBAA5;
+	background-color: white;
 	color: #fff;
 }
 
