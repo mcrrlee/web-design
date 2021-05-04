@@ -264,6 +264,15 @@ nav{
     font-size: 0.5vw;
 	color: #fff
 }
+#container_offer{
+	position: relative; 
+	width: 50vw;
+	padding: 1%;
+	top: -2vw;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 3%;
+}
 
 .btn:hover{
 	color: #fff;
@@ -403,6 +412,13 @@ ul.support li a {
 	right: 5vw;
 }
 
+#textt1{
+	font-size: 2vw; padding-top: 1vw;
+}
+#textt2{
+	font-size: 1vw;
+}
+
 #HH2{
 	font-size: 1vw; 
 	text-align: center;
@@ -454,6 +470,15 @@ ul.login{
 	float:left;
 	width:36%;
 	margin:0;
+}
+#ofitem{
+	font-size: 1vw;
+	width: 30vw;
+
+}
+#ofdetail{
+	font-size: 1vw;
+	width: 30vw;
 }
 
 ul.login li{
@@ -1788,8 +1813,20 @@ a.get-cart {
 		right: 10vw;
 
 	}
-	
+	#ofitem{
 
+		width: 40vw;
+	
+	}
+	#container_offer{
+		top: -5vw;
+	}
+	#ofitem{
+		width: 30vw;
+	}
+	#ofdetail{
+		width: 30vw;
+	}
 	.profile_ {
 
 		width: 3vw;
@@ -1798,11 +1835,22 @@ a.get-cart {
 		left: 59vw;
 		top: -8vw;
 	}
+	#textt2{
+		font-size: 1.5vw;
+	}
+	#textt1 {
+		font-size: 3vw;
+		padding-top: 1vw;
+	}
+	#txtt3{
+		font-size: 1.5vw;
+	}
 	.search input[type="submit"] {
 
 		height: 3vw;
 
 	}
+	
 	.swap {
 		width: 10vw;
 		height: 3vw;
@@ -1877,6 +1925,31 @@ nav.color ul {
     height: 15vw;
     position: relative;
     left: 38%;
+}
+
+#textt2{
+	font-size: 2vw;
+}
+#textt1 {
+	font-size: 4vw;
+    padding-top: 2vw;
+}
+#txtt3{
+	font-size: 1.5vw;
+}
+
+#ofitem{
+	width: 50vw;
+}
+#ofdetail{
+	width: 50vw;
+}
+
+#container_offer{
+
+	width: 60vw;
+	padding-left: 5%;
+    padding-right: 5%;
 }
 
 #HH1 {
