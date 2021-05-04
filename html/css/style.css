@@ -23,6 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: 'Kanit', sans-serif;
 }
 
 body a{
@@ -1362,7 +1363,7 @@ a.forgot {
 	text-transform: uppercase;
 }
 .register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
-	border: 1px solid #EEE;
+	border: 1px solid black;
 	outline-color:#FF5B36;
 	width: 85%;
 	font-size: 1em;
