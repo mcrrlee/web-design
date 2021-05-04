@@ -787,59 +787,10 @@ ul.kid-menu{
 	margin: 0;
 	background: #FBFBFC;
 }
-/* ul {
-	padding: 0;
-	list-style: none;
-}
-.menu > li > a {
-	width: 100%;
-	line-height: 3.5em;
-	text-indent: 1.2em;
-	display: block;
-	position: relative;
-	color: #000;
-	font-size: 1.1em;
-	text-decoration:none;
-	border-bottom: 1px solid #ddd;
-	font-weight:700;
-} */
-/* .menu ul li a {	
-	width: 100%;
-	display: block;
-	position: relative;
-	font-size:1.1em;
-	font-weight: 400;
-	color: #000;
-	text-decoration:none;
-	border-bottom: 1px solid #ddd;
-	font-weight:700;
-	line-height: 3.5em;
-	text-indent: 1.2em;
-}
-.menu ul li a:hover{
-	background: #1DBAA5;
-}
-.menu > li > a:hover, .menu > li > a.active {
-	background:#fff;
-}
-.menu ul.kid-menu li a{
-	border-bottom: none;
-}
-ul.kid-menu{
-	padding: 0;
-	margin: 0;	
-}
-ul.kid-menu li{
-	list-style: none;
-	border-bottom: 1px solid #ddd;
-}
+.chain-grid {
+    width: 30%;
 
-ul.kid-menu li.menu-kid-left{
-	border-bottom:none;
 }
-ul.cute li{
-	background: #fff;
-} */
 .arrow-img {
 	padding: 0em 0em 0 6.5em;
 }
@@ -1053,7 +1004,6 @@ h5.latest-product{
 .chain-grid{
 
 	position: relative;	
-	width: 30.7%;
 	margin: 0 3% 0 0;
 	padding:0;
 }
@@ -1073,8 +1023,8 @@ h5.latest-product{
 }
 .chain-grid span.star{
 	background: url(../images/img-sprite.png)-208px -14px;
-	width: 52px;
-	height: 52px;
+	width: 15vw;
+	height: 15vw;
 	display: block;
 	position: absolute;
 	top: 2%;
@@ -2045,6 +1995,14 @@ nav.color ul {
 
 
 }
+@media(max-width:874px){
+	.chain-grid {
+		width: 29.5%;
+	}
+
+
+}
+
 
 @media(max-width:840px){
 	#nameitem{
@@ -2072,6 +2030,9 @@ nav.color ul {
 }
 #nameitem{
 	width: 70%;
+}
+.chain-grid {
+	width: 29.5%;
 }
 
 #Detail{
@@ -2354,7 +2315,7 @@ nav ul li {
 }
 .chain-grid {
 	margin: 2em 13px 0 0;
-    width: 32%;
+    width: 30%;
 	float:left;
 }
 .latter-right {
