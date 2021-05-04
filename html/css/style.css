@@ -423,9 +423,8 @@ nav{
   #me_22 {
     width: 3vw;
     height: 3vw;
-    position: relative;
-    left: 22vw;
-    top: -12vw;
+	position: relative;
+	float: right;
 }
 
   #container_single{
@@ -1784,7 +1783,7 @@ select.in-drop {
 	
 }
 /*--responsive--*/
-@media(max-width:1440px){
+/* @media(max-width:1440px){
 
 }
 @media(max-width:1366px){
@@ -1799,9 +1798,87 @@ padding: 0 0 0 7.2em;
 }
 .img-left-arrow {
 padding: 0 0 0 4.7em;
+} */
+@media(max-width:1199px){
+	#me_11 {
+		width: 20vw;
+		height: 15vw;
+		left: 25vw;
+		position: relative;
+	}
+	#me_22 {
+		width: 5vw;
+		height: 5vw;
+
+	}
+	#txt1 {
+		font-size: 5vw;
+
+	}
+	#txt2 {
+		font-size: 1.5vw;
+		position: relative;
+		left: 15vw;
+	}
+	#Aboutme {
+		position: relative;
+		left: 15vw;
+	}
+	.titlereview {
+		margin-left: 15vw;
+		top: 1vw;
+		position: relative;
+	}
+	.reviews {
+
+		top: 2vw;
+		position: relative;
+	}
+
+
 }
-}
+
 @media(max-width:1024px){
+
+	#me_11 {
+		width: 20vw;
+		height: 15vw;
+		left: 36vw;
+		position: relative;
+	}
+	
+	#me_22 {
+		width: 5vw;
+		height: 5vw;
+
+	}
+	#txt1 {
+		font-size: 5vw;
+		left: 4vw;
+		position: relative;
+	}
+	#txt2 {
+		font-size: 2.5vw;
+		position: relative;
+		left: 25vw;
+	}
+	#Aboutme {
+		position: relative;
+		left: 25vw;
+		width: 50vw;
+		font-size: 2vw;
+	}
+	.titlereview {
+		margin-left: 25vw;
+		top: 5vw;
+		position: relative;
+	}
+	.reviews {
+
+		top: 5vw;
+		position: relative;
+	}
+
 
 	
 .logo {
@@ -1870,12 +1947,59 @@ a.get-cart {
 }
 
 @media all and (max-width: 991px) {
+
+	#me_11 {
+		width: 20vw;
+		height: 15vw;
+		left: 25vw;
+		position: relative;
+	}
+	
+	#me_22 {
+		width: 5vw;
+		height: 5vw;
+
+	}
+	#txt1 {
+		font-size: 5vw;
+		left: 4vw;
+		position: relative;
+	}
+	#txt2 {
+		font-size: 2.5vw;
+		position: relative;
+		left: 12vw;
+	}
+	#Aboutme {
+		position: relative;
+		left: 12vw;
+		width: 50vw;
+		font-size: 2vw;
+	}
+	.titlereview {
+		margin-left: 12vw;
+		top: 5vw;
+		position: relative;
+	}
+	.reviews {
+
+		top: 5vw;
+		position: relative;
+	}
+
 	.search {
 		top: 1vw;
 		left: 25vw;
 		height: 3vw;
 		
 	}
+	#me_11 {
+		width: 20vw;
+		height: 15vw;
+		left: 25vw;
+		position: relative;
+	}
+	
 	#nameitem{
 		width: 80%;
 	}
@@ -1924,10 +2048,7 @@ a.get-cart {
 		width: 30vw;
 	}
 
-	#me_22{
-		left: 20vw;
-    	top: -14vw;
-	}
+
 	.profile_ {
 
 		width: 3vw;
@@ -2008,6 +2129,7 @@ nav.color ul {
 
 
 }
+
 @media(max-width:874px){
 	.chain-grid {
 		width: 29.5%;
@@ -2077,10 +2199,7 @@ nav.color ul {
     position: relative;
     left: 38%;
 }
-#me_22{
-	left: 35vw;
-    top: -12vw;
-}
+
 .col-sm-5 {
     width: 41.66666667%;
     left: -8vw;
@@ -2092,21 +2211,23 @@ nav.color ul {
 	font-size: 4vw;
     padding-top: 2vw;
 }
-#txtt3{
-	font-size: 1.5vw;
-}
 .txtbox3 {
     width: 20vw;
     border: 0;
-    float: right;
+	position: relative;
     background: none;
 }
 
 #Aboutme{
-	font-size: 3vw;
+	width: 50vw;
+    border: 0;
+	position: relative;
+	left: 30vw;
+    background: none;
 }
 #txt2{
-	font-size: 2vw;
+		padding-left: 15vw;
+		font-size: 2.5vw;
 }
 
 #ofitem{
@@ -2152,12 +2273,12 @@ nav.color ul {
 #txt3 {
     top: 10vw;
     position: relative;
-    right: 35vw;
+    right: -10vw;
 }
 #reviews {
     position: relative;
     top: 10vw;
-    width: 70vw;
+    width: 50vw;
 }
 #i1 {
     width: 20vw;
@@ -2220,10 +2341,7 @@ nav.color ul {
     width: 90vw;
 }
 
-#txt2{
-	padding-left: 15vw;
-	font-size: 2vw;
-}
+
 
 #txt1{
 	font-size: 5vw; 
@@ -2386,12 +2504,7 @@ nav ul li {
 
 @media(max-width:768px){
 
-	#me_22 {
-		left: 90vw;
-		top: -38vw;
-		width: 5vw;
-		height: 5vw;
-	}
+	
 	#home {
 		padding-bottom: 20vw;
 		background-color: #ffe3aa;
@@ -2441,6 +2554,11 @@ nav ul li {
 			font-size: 4vw;
 
 	}
+
+	#me_22 {
+		width: 7vw;
+		height: 7vw;
+	}
 	span.actual {
 
 		font-size: 2.5vw;
@@ -2471,12 +2589,7 @@ nav ul li {
 		left: 5vw;
 	}
 
-	#me_22 {
-		left: 90vw;
-		top: -40vw;
-		width: 5vw;
-		height: 5vw;
-	}
+
 	.profile_ {
 		width: 5vw;
 		height: 2vw;
@@ -2547,7 +2660,7 @@ nav ul li {
 }
 
 #txt2 {
-    padding-left: 15vw;
+    padding-left: 10vw;
     font-size: 3vw;
 }
 
@@ -2646,11 +2759,23 @@ a.get-cart {
 	.container_add{
 		width: 65vw;
 	}
+	#txt2 {
+		padding-left: 10vw;
+		font-size: 2.9vw;
+	}
+	#Aboutme {
+		font-size: 2.9vw;
+	}
 
 
 
 }
 @media(max-width:480px){
+
+	#txt2 {
+		padding-left: 5vw;
+		font-size: 3.5vw;
+	}
 
 	
 	nav{
@@ -2689,11 +2814,6 @@ a.get-cart {
 	.inputDnD .form-control-file {
 		position: relative;
 		width: 70%;}
-	#me_22 {
-
-		top: -45vw;
-
-	}
 	#B_1 {
 		position: absolute;
 		right: -1vw;
@@ -2914,16 +3034,13 @@ p.m_text {
 		height: 10vw;
 		top: 20vw;
 	}
-	#me_22 {
-		top: -55vw;
-		left: 85vw;
-	}
+
 
 	#txt3 {
 		top: 1vw;
 		position: relative;
-		right: 90vw;
-		font-size: 2vw;
+		right: 1vw;
+		font-size: 3.5vw;
 	}
 	.offer {
 		position: relative;
