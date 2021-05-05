@@ -52,22 +52,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	console.log(refItemTrading);
 	refItemTrading.on("value", (snapshot) => 
 	{var dataref = snapshot.val();
+		
 		document.getElementById("product_name").innerHTML = dataref.nameitem;
 		//document.getElementById("user_para").innerHTML = refItemTrading.username;
 		document.getElementById("product_details").innerHTML = dataref.Detail;
-		document.getElementById("username").innerHTML = dataref.owrname;
+		document.getElementById("username").innerHTML = dataref.owrname;//location wantDetail
+		document.getElementById("location").innerHTML = dataref.location;
+		document.getElementById("want").innerHTML = dataref.wantDetail;
+		firebase.storage().ref().child(refST).getDownloadURL().then((url) => {
+			var elms = document.querySelectorAll("[id='imgitem']");
+
+			for(var i = 0; i < elms.length; i++) {
+  			elms[i].src = url;}
+			  var elms = document.querySelectorAll("[class ='etalage_small_thumb']");
+
+			for(var i = 0; i < elms.length; i++) {
+  			elms[i].src = url;}
+;}).catch((error) => {
+								console.log(error.code) 
+							});
 	})
 	;
-
 		</script>
-
 </head>
 <body> 
 	
 	<div class="wrapper">
 
 		<nav>
-
 			  <div class="menu-icon">
 				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
 			  </div>
@@ -107,21 +119,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="images/s4.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="images/si4.jpg" class="img-responsive" title="" />
+									<img id='imgitem' class="etalage_thumb_image" src="images/s4.jpg" class="img-responsive" />
+									<img id='imgitem'  class="etalage_source_image" src="images/si4.jpg" class="img-responsive" title="" />
 								</a>
 							</li>
 							<li>
-								<img class="etalage_thumb_image" src="images/s2.jpg" class="img-responsive" />
-								<img class="etalage_source_image" src="images/si2.jpg" class="img-responsive" title="" />
+								<img id='imgitem'  class="etalage_thumb_image" src="images/s2.jpg" class="img-responsive" />
+								<img id='imgitem'  class="etalage_source_image" src="images/si2.jpg" class="img-responsive" title="" />
 							</li>
 							<li>
-								<img class="etalage_thumb_image" src="images/s3.jpg" class="img-responsive"  />
-								<img class="etalage_source_image" src="images/si3.jpg"class="img-responsive"  />
+								<img id='imgitem'  class="etalage_thumb_image" src="images/s3.jpg" class="img-responsive"  />
+								<img id='imgitem'  class="etalage_source_image" src="images/si3.jpg"class="img-responsive"  />
 							</li>
 						    <li>
-								<img class="etalage_thumb_image" src="images/s1.jpg" class="img-responsive"  />
-								<img class="etalage_source_image" src="images/si1.jpg"class="img-responsive"  />
+								<img id='imgitem'  class="etalage_thumb_image" src="images/s1.jpg" class="img-responsive"  />
+								<img id='imgitem'  class="etalage_source_image" src="images/si1.jpg"class="img-responsive"  />
 							</li>
 						</ul>
 						 <div class="clearfix"> </div>		
@@ -130,13 +142,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h4 style="font-size: 2vw;" id="product_name">ชื่อสินค้า</h4>
 				<div class="cart-b">
 					<div id = "itemname" class="left-n ">สิ่งของที่ต้องการ
-
 						<div style="color: black; font-size: 1vw;" id="want">อยากได้A 
-						
 						</div>
-
 					</div> 
-					
 				    <a class="now-get get-cart-in btn-3" style="border-radius: 3em / 3em;" href="offer.html">ยืนข้อเสนอ</a> 
 				    <div class="clearfix"></div>
 				 </div>
@@ -144,16 +152,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   	<p id="product_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 			   	<div class="share">
 					   		<h5 style="font-size: 1vw;">สถานที่สะดวกนัดรับ</h5>
-							   <li>บ้าน</li>
+							   <li id = "location">บ้าน</li>
 							<h5 style="font-size: 1vw;">ลงโดย</h5>
 							<ul class="share_nav">
 								<li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>
 								<li id='username' style="font-size: 1vw;">ชื่อยูเซอร์ที่ลง</li>
-								
 				    		</ul>
 						</div>
-			   
-				
 				</div>
           	    <div class="clearfix"> </div>
           	   </div>

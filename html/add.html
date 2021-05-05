@@ -186,7 +186,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							}
 						});
 					}
-
 				} else {
 					// No user is signed in.
 					window.location.href = 'login.html';
@@ -227,10 +226,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					wantDetail:wantDetail,
 					Detail:Detail,
 					location:location,
-
 				});
 				data.ref('userlist/'+user.email.replace(/\./, '')+"/runid").set(datauser.runid+1);
-
 				for (i = 0; i < imglist.files.length; i++)	{
 					var storageRef = firebase.storage().ref("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+(datauser.runid-1)+"/"+i)
 					storageRef.put(imglist.files[i]).then((snapshot) => { console.log(i+'Uploaded a blob or file!');});
@@ -238,8 +235,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				;
 				setTimeout(function (){
 				alert("คุณได้เพิ่มเพิ่มสินค้าแลกเปลี่ยนเรียบร้อยเเล้ว");
-				var refDB =  ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+datauser.runid-1)+"/";
-				var refST= ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, ''))+(datauser.runid-1)+"/0";
+				var refDB =  ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, '')+parseInt(datauser.runid)-1)+"/";
+				var refST= ("ItemTrading/"+user.email.replace(/\./, '')+"/"+nameitem.replace(/\./, ''))+(parseInt(datauser.runid-1))+"/0";
 				var para = new URLSearchParams();
 				para.append("refDB", refDB);
 				para.append("refST", refST);
@@ -267,7 +264,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     }
     reader.readAsDataURL(input.files[0]);
   }
-
 }
 </script>
 </body>
