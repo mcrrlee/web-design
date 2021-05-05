@@ -44,12 +44,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	var params = new URLSearchParams(document.location.search.substring(1));
 	var refDB = params.get("refDB");
 	var refST = params.get("refST");
+	var paralink = new URLSearchParams();
+	paralink.append("refDB", refDB);
+	paralink.append("refST", refST);
 	var data = firebase.database();
 	var refItemTrading = data.ref(refDB);
 	var storage = firebase.storage();
 	var starsRef = storage.ref(refST);
 	console.log(starsRef);
 	console.log(refItemTrading);
+	
 	refItemTrading.on("value", (snapshot) => 
 	{var dataref = snapshot.val();
 		
@@ -59,6 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		document.getElementById("username").innerHTML = dataref.owrname;//location wantDetail
 		document.getElementById("location").innerHTML = dataref.location;
 		document.getElementById("want").innerHTML = dataref.wantDetail;
+		document.getElementById("aLinkToOffer").href = "offer.html?"+ paralink.toString();
 		firebase.storage().ref().child(refST).getDownloadURL().then((url) => {
 			var elms = document.querySelectorAll("[id='imgitem']");
 
@@ -145,7 +150,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div style="color: black; font-size: 1vw;" id="want">อยากได้A 
 						</div>
 					</div> 
-				    <a class="now-get get-cart-in btn-3" style="border-radius: 3em / 3em;" href="offer.html">ยืนข้อเสนอ</a> 
+				    <a id="aLinkToOffer" class="now-get get-cart-in btn-3" style="border-radius: 3em / 3em;" href="offer.html">ยืนข้อเสนอ</a> 
 				    <div class="clearfix"></div>
 				 </div>
 				 <h6>รายละเอียดสินค้า</h6>

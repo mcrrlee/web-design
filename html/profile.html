@@ -20,13 +20,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!--fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+		integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-	 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 	<!--//fonts-->
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
@@ -35,6 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		ul li a {
 			font-size: 0.5vw;
 		}
+
 		nav.color ul li a {
 			opacity: 1;
 			color: #000;
@@ -43,92 +45,64 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		}
 	</style>
 </head>
+
 <body>
 	<div w3-include-html="porfile.html"></div>
 	<div class="wrapper">
-
 		<nav>
+			<div class="menu-icon">
+				<img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a /></i>
+			</div>
+			<div class="logo">
+				<a href="index.html">
+					<img src="images/logo.png" alt=" " /></a></li>
+			</div>
+			<a href="add.html"> </a>
+			<div class="search">
+				<input type="text" value="" onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = '';}">
+				<button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
+				</button>
+				<div class="swap btn-3">
+					<a href="add.html">swap </a>
+				</div>
+				<div class="Chat">
+					<a href="chat.html"><img src="images/chat.png"> </a>
+				</div>
+				<div class="profile_">
+					<a href="profile.html"><img src="images/user.png"> </a>
+				</div>
+			</div>
+			<ul>
+				<li><a href="profile.html" class="btn" id="user_para" style="color: #fff;"> </a> </li>
+				<li> <a href="login.html" id="login" class="btn"> LOGIN </a></li>
+				<li> <a href="register.html" id="signup" class="btn"> SIGNUP </a></li>
+				<li><a id="logout" style="display: none; color: #fff;" onclick="logout()" class="btn">Logout</a></li>
+			</ul>
 
-			  <div class="menu-icon">
-				  <img src="images/list.png" style="z-index: 60000;  width: 3%; height: 3%;" a/></i>
-			  </div>
-
-			  <div class="logo">
-				  <a href="index.html">
-				  <img src="images/logo.png"  alt=" " /></a></li>
-			  </div>
-
-			  <a href="add.html" > </a>
-
-			  <div class="search">
-				  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-				  <button type="submit" class="btn-3"> <img src="images/search.png" class="img_S">
-				  
-				  </button>
-
-				  <div  class="swap btn-3">
-				  
-					  <a href="add.html" >swap </a>
-						  
-				  
-				  </div>
-
-				  <div  class="Chat">
-				  
-					  <a href="chat.html" ><img src="images/chat.png" > </a>
-						  
-				  
-				  </div>
-
-				  <div  class="profile_">
-				  
-					  <a href="profile.html"  ><img src="images/user.png" > </a>
-						   
-				  
-				  </div>
-
-				  
-	  
-			  
-			  </div>
-
-			  
-
-				  
-			  <ul >
-				  
-
-				  
-				   <li><a href="profile.html"  class="btn" id="user_para" style="color: #fff;">  </a> </li>  
-
-				  <li > <a  href="login.html" id="login" class="btn"> LOGIN </a></li>
-
-				  <li > <a href="register.html"  id="signup" class="btn"> SIGNUP </a></li>
- 
-				  <li ><a id="logout" style="display: none; color: #fff;" onclick="logout()" class="btn" >Logout</a></li>         
-			  </ul>
-
-		  </div>
-  </nav>
+	</div>
+	</nav>
 	</nav>
 	<!--ปุ่มข้างบน-->
-	<div class="container"  id="ice1">
+	<div class="container" id="ice1">
 
 		<ul class="nav nav-tabs nav-justified" style="background-color: #EFB167;">
-			<li class="active"><a data-toggle="tab" href="#home" class="menupro" style="font-size: 1.5vw;">โปรไฟล์</a></li>
+			<li class="active"><a data-toggle="tab" href="#home" class="menupro" style="font-size: 1.5vw;">โปรไฟล์</a>
+			</li>
 			<li><a data-toggle="tab" href="#menu1" class="menupro" style="font-size: 1.5vw;">การแลกเปลี่ยน</a></li>
 			<li><a data-toggle="tab" href="#menu2" class="menupro" style="font-size: 1.5vw;">กำลังดำเนินการ</a></li>
 			<li><a data-toggle="tab" href="#menu3" class="menupro" style="font-size: 1.5vw;">ประวัติ</a></li>
 		</ul>
-
-
 		<!--หน้าโปรไฟล์-->
 		<div class="tab-content">
-			<div id="home" class="tab-pane fade in active" ><br>
-				<strong><div onclick="edit(0)" > <img class="edit" id="me_22" src="images/edit.png" > </div>
-					
-					<center><p  id="txt1" style="color: black">Profile</p></center>
-					</strong>
+			<div id="home" class="tab-pane fade in active"><br>
+				<strong>
+					<div onclick="edit(0)"> <img class="edit" id="me_22" src="images/edit.png"> </div>
+
+					<center>
+						<p id="txt1" style="color: black">Profile</p>
+					</center>
+				</strong>
 				<div class="aboutme" id="about">
 					<div class="container">
 						<div class="row">
@@ -141,30 +115,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</ul>
 								</div>
 							</div>
-							
 							<div class="col-lg-4 col-sm-12">
-								<p  id="txt2">ชิ่อ :
-									<input type="text" name="country"  value=""id="firstname" class="txtbox1" readonly> นามสกุล:
-								 <input type="text" name="country"  value=""id="lastname" class="txtbox2" readonly> 
-								
+								<p id="txt2">ชิ่อ :
+									<input type="text" name="country" value="" id="firstname" class="txtbox1" readonly>
+									นามสกุล:
+									<input type="text" name="country" value="" id="lastname" class="txtbox2" readonly>
+
 								</p>
-								<p id="txt2"> Username : <input type="text"  name="country" value=""id="username" class="txtbox2" readonly> </p>
+								<p id="txt2"> Username : <input type="text" name="country" value="" id="username"
+										class="txtbox2" readonly> </p>
 								<p> </p>
 								<p></p>
 							</div>
 							<!--หน้า2 about me ฝั่งขวา-->
 							<div class="col-lg-5 col-sm-12">
-								
-								<p id="txt2"> About</p>
-								<textarea type="text" rows="10" name="country"  value="เขียนอะไรก็ได้ที่ผู้ใช้อยากเขียน" id="Aboutme" class="txtbox3"   readonly></textarea>
 
-										
-											
-								
+								<p id="txt2"> About</p>
+								<textarea type="text" rows="10" name="country" value="เขียนอะไรก็ได้ที่ผู้ใช้อยากเขียน"
+									id="Aboutme" class="txtbox3" readonly></textarea>
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="container" style="top: -5vw; position: relative;">
 						<div class="row">
 							<div class="col-sm-12">
@@ -178,9 +150,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 			</div>
-			<!--หน้าการแลกเปลี่ยน--> 
+			<!--หน้าการแลกเปลี่ยน-->
 			<div id="menu1" class="tab-pane fade" style="background-color: #ffe3aa; height: 400px;">
-				<div class="container">
+				<div id = "container1" class="container">
 					<div class="row">
 
 						<div class="col-sm-4">
@@ -193,24 +165,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 
 						<div class="col-sm-8"><br>
-							
-							<div class="offer" >
+
+							<div class="offer">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-lg-4 col-sm-12">
-										<img  class="me" id="me_2"src="images/t1.jpg">
+										<img class="me" id="me_2" src="images/t1.jpg">
 
 										<img id="product_img2" class="product_img" src="images/desktop.png">
 									</div>
 
-									<h1 id="name2" > ชื่อคนเสนอ </h1>
+									<h1 id="name2"> ชื่อคนเสนอ </h1>
 
 									<div class="col-lg-4" id="txt4">
 										สนใจแลกค่าา
 									</div>
 
 									<div class="col-lg-4" id="B_1">
-										<button type="button" class="btn btn-primary" style="font-size: 1vw; border-radius: 3em / 3em;">รับข้อเสนอ</button><br><br>
-										<button type="button" class="btn btn-danger" style="font-size: 1vw; border-radius: 3em / 3em;">ปฎิเสธ</button>
+										<button type="button" class="btn btn-primary"
+											style="font-size: 1vw; border-radius: 3em / 3em;">รับข้อเสนอ</button><br><br>
+										<button type="button" class="btn btn-danger"
+											style="font-size: 1vw; border-radius: 3em / 3em;">ปฎิเสธ</button>
 									</div>
 
 								</div>
@@ -231,7 +205,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="row">
 
 						<div class="col-sm-6"><br>
-							<div class="offer2" >
+							<div class="offer2">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 
@@ -240,22 +214,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<div class="col-sm-6">
 										<img id="imgg2" class="me" src="images/t2.jpg">
-										<h1  id="HH1">ชื่อ</h1>
+										<h1 id="HH1">ชื่อ</h1>
 
 
-										<h1  id="HH2">สถานะ</h1>
+										<h1 id="HH2">สถานะ</h1>
 
-										<h2 class="status" id="HH2" >กำลังรอบลาๆ</h2>
+										<h2 class="status" id="HH2">กำลังรอบลาๆ</h2>
 
 
-										<a href="chat.html" type="button" class="B1" >Chat</a>
+										<a href="chat.html" type="button" class="B1">Chat</a>
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="col-sm-6"><br>
-							<div class="offer2" >
+							<div class="offer2">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 
@@ -264,23 +238,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<div class="col-sm-6">
 										<img id="imgg2" class="me" src="images/t2.jpg">
-										<h1  id="HH1">ชื่อ</h1>
+										<h1 id="HH1">ชื่อ</h1>
 
 
-										<h1  id="HH2">สถานะ</h1>
+										<h1 id="HH2">สถานะ</h1>
 
-										<h2 class="status" id="HH2" >กำลังรอบลาๆ</h2>
+										<h2 class="status" id="HH2">กำลังรอบลาๆ</h2>
 
 
-										<a href="chat.html" type="button" class="B1" >Chat</a>
+										<a href="chat.html" type="button" class="B1">Chat</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						</div>
-						</div>
-						</div>
-						
+					</div>
+				</div>
+			</div>
+
 
 
 			<!--หน้าประวัติ-->
@@ -289,7 +263,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="row">
 
 						<div class="col-sm-6"><br>
-							<div class="offer2" >
+							<div class="offer2">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 
@@ -298,22 +272,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<div class="col-sm-6">
 										<img id="imgg2" class="me" src="images/t2.jpg">
-										<h1  id="HH1">ชื่อ</h1>
+										<h1 id="HH1">ชื่อ</h1>
 
 
-										<h1  id="HH2">สถานะ</h1>
+										<h1 id="HH2">สถานะ</h1>
 
 										<h2 class="status" id="HH2" style="color: green">Complete</h2>
 
 
-										
+
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="col-sm-6"><br>
-							<div class="offer2" >
+							<div class="offer2">
 								<div class="row" style="margin-top: 20px">
 									<div class="col-sm-6">
 
@@ -322,156 +296,262 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<div class="col-sm-6">
 										<img id="imgg2" class="me" src="images/t2.jpg">
-										<h1  id="HH1">ชื่อ</h1>
+										<h1 id="HH1">ชื่อ</h1>
 
 
-										<h1  id="HH2">สถานะ</h1>
+										<h1 id="HH2">สถานะ</h1>
 
 										<h2 class="status" id="HH2" style="color: green">Complete</h2>
 
 
-										
+
 									</div>
 								</div>
 							</div>
 
 
 
+						</div>
 					</div>
 				</div>
+
+				<!--หน้าprofile-->
+
 			</div>
 
-			<!--หน้าprofile-->
-
-		</div>
 
 
 
 
+			<!---->
 
-	<!---->
 
-
-		<script>
-			$(document).ready(function () {
-				$(".menu-icon").on("click", function () {
-					$("nav ul").toggleClass("showing");
+			<script>
+				$(document).ready(function () {
+					$(".menu-icon").on("click", function () {
+						$("nav ul").toggleClass("showing");
+					});
 				});
-			});
 
-			$(window).on("scroll", function () {
-				if ($(window).scrollTop()) {
-					$('nav').addClass('color');
-				}
-
-				else {
-					$('nav').removeClass('color');
-				}
-			})
-
-		</script>
-
-		<script>
-			u = 0;
-
-			function edit(k) {
-				i = k;
-			
-				if (u == i){
-  				document.getElementById("firstname").readOnly = false;
-			  document.getElementById("firstname").style.backgroundColor = "#fff";
-			  document.getElementById("lastname").readOnly = false;
-			  document.getElementById("lastname").style.backgroundColor = "#fff";
-			  document.getElementById("username").readOnly = false;
-			  document.getElementById("username").style.backgroundColor = "#fff";
-			  document.getElementById("Aboutme").readOnly = false;
-			  document.getElementById("Aboutme").style.backgroundColor = "#fff";
-			  document.getElementById("me_22").src = "images/C.png";
-				u = 1;	
-			}
-				else{
-
-					u = 0;
-
-				document.getElementById("firstname").readOnly = true;
-			  	document.getElementById("firstname").style.background = "none";
-			 	document.getElementById("lastname").readOnly = true;
-			  	document.getElementById("lastname").style.background = "none";
-			  	document.getElementById("username").readOnly = true;
-			  	document.getElementById("username").style.background = "none";
-			  	document.getElementById("Aboutme").readOnly = true;
-			  	document.getElementById("Aboutme").style.background = "none";
-			  	document.getElementById("me_22").src = "images/edit.png";
-				}
-
-			}
-
-		</script>
-
-		<script>
-			firebase.auth().onAuthStateChanged(function (user) {
-				if (user) {
-					// User is signed in.
-					var user = firebase.auth().currentUser;
-
-					if (user != null) {
-						//console.log(1);
-						var email_id = user.email;
-						var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
-						ref.on("value", (snapshot) => {
-							if (snapshot.exists()) {
-								console.log("userlist/" + email_id.replace(/\./, ''));
-								var data = snapshot.val();
-								console.log(user.email);
-								console.log(data.username);
-								document.getElementById("login").style.display = "none";
-								document.getElementById("signup").style.display = "none";
-								document.getElementById("user_para").style.display = "block";
-								document.getElementById("logout").style.display = "block";
-								document.getElementById("user_para").innerHTML = data.username;
-								document.getElementById("username").value = data.username;
-								document.getElementById("firstname").value = data.firstname;
-								document.getElementById("lastname").value = data.lastname;
-								document.getElementById("Aboutme").innerHTML = data.Aboutme;
-
-							}
-							else {
-								console.log("No data available");
-							}
-						});
+				$(window).on("scroll", function () {
+					if ($(window).scrollTop()) {
+						$('nav').addClass('color');
 					}
 
-				} else {
-					// No user is signed in.
-					console.log(2);
-					document.getElementById("login").style.display = "block";
-					document.getElementById("signup").style.display = "block";
-					document.getElementById("user_para").style.display = "none";
-					document.getElementById("logout").style.display = "none";
+					else {
+						$('nav').removeClass('color');
+					}
+				})
+
+			</script>
+
+			<script>
+				u = 0;
+
+				function edit(k) {
+					i = k;
+
+					if (u == i) {
+						document.getElementById("firstname").readOnly = false;
+						document.getElementById("firstname").style.backgroundColor = "#fff";
+						document.getElementById("lastname").readOnly = false;
+						document.getElementById("lastname").style.backgroundColor = "#fff";
+						document.getElementById("username").readOnly = false;
+						document.getElementById("username").style.backgroundColor = "#fff";
+						document.getElementById("Aboutme").readOnly = false;
+						document.getElementById("Aboutme").style.backgroundColor = "#fff";
+						document.getElementById("me_22").src = "images/C.png";
+						u = 1;
+					}
+					else {
+
+						u = 0;
+
+						document.getElementById("firstname").readOnly = true;
+						document.getElementById("firstname").style.background = "none";
+						document.getElementById("lastname").readOnly = true;
+						document.getElementById("lastname").style.background = "none";
+						document.getElementById("username").readOnly = true;
+						document.getElementById("username").style.background = "none";
+						document.getElementById("Aboutme").readOnly = true;
+						document.getElementById("Aboutme").style.background = "none";
+						document.getElementById("me_22").src = "images/edit.png";
+					}
 
 				}
-			});
-			function logout() {
-				firebase.auth().signOut();
-			}
-		</script>
 
-<script type="text/javascript">
-	function readUrl(input) {
-  
-  if (input.files && input.files[0]) {
-    let reader = new FileReader();
-    reader.onload = (e) => {
-      let imgData = e.target.result;
-      let imgName = input.files[0].name;
-      input.setAttribute("data-title", imgName);
-      console.log(e.target.result);
-    }
-    reader.readAsDataURL(input.files[0]);
-  }
+			</script>
 
-}
-</script>
+			<script>
+
+				firebase.auth().onAuthStateChanged(function (user) {
+					if (user) {
+						// User is signed in.
+						var user = firebase.auth().currentUser;
+
+						if (user != null) {
+							//console.log(1);
+							var email_id = user.email;
+							var ref = firebase.database().ref("userlist/" + email_id.replace(/\./, ''));
+							ref.on("value", (snapshot) => {
+								if (snapshot.exists()) {
+									console.log("userlist/" + email_id.replace(/\./, ''));
+									var data = snapshot.val();
+									console.log(user.email);
+									console.log(data.username);
+									document.getElementById("login").style.display = "none";
+									document.getElementById("signup").style.display = "none";
+									document.getElementById("user_para").style.display = "block";
+									document.getElementById("logout").style.display = "block";
+									document.getElementById("user_para").innerHTML = data.username;
+									document.getElementById("username").value = data.username;
+									document.getElementById("firstname").value = data.firstname;
+									document.getElementById("lastname").value = data.lastname;
+									document.getElementById("Aboutme").innerHTML = data.Aboutme;
+
+									var databa = firebase.database();
+									var refItemTrading = databa.ref("ItemTrading");
+									var datarefItemTrading = '';
+									refItemTrading.on('value', function (snapp) {
+										snapp.forEach(function (childNodes) {
+											var userAc = childNodes.key
+											var refItemTradinguser = databa.ref("ItemTrading/" + userAc);
+											if (userAc == email_id.replace(/\./, '')) {
+												refItemTradinguser.on('value', function (snap) {
+												snap.forEach(function (cNodes) {
+
+													var refItemTradinguser = databa.ref("ItemTrading/" + userAc + "/" + cNodes.key + "/");
+
+													refItemTradinguser.on('value', function (snap) {
+														var ccNodes = snap.val();
+														var iusername = ccNodes.owrname;
+														var iitemname = ccNodes.nameitem;
+														var idetall = ccNodes.Detail;
+														console.log(ccNodes.Detail + ccNodes.nameitem + ccNodes.owrname + ccNodes.runid)
+														var storage = firebase.storage();
+														var starsRef = storage.ref();
+														var storageRef = starsRef.child("ItemTrading/" + userAc + "/" + iitemname + ccNodes.runid + "/0");
+														var refDB = ("ItemTrading/" + userAc + "/" + cNodes.key + "/");
+														var refST = ("ItemTrading/" + userAc + "/" + iitemname + ccNodes.runid + "/0");
+														
+														firebase.storage().ref().child("ItemTrading/"+userAc+"/"+iitemname+ccNodes.runid+"/0").getDownloadURL().then((url) => {
+													// Insert url into an <img> tag to "download"
+													var tagcreate = createItemtradeing( /*iusername ,*/ iitemname, url);
+
+													document.getElementById("container1").appendChild(tagcreate);
+														})
+														
+
+													
+
+													});
+												});
+											});
+											}
+											
+										});
+									});
+								}
+								else {
+									console.log("No data available");
+								}
+							});
+						}
+
+					} else {
+						// No user is signed in.
+						console.log(2);
+						document.getElementById("login").style.display = "block";
+						document.getElementById("signup").style.display = "block";
+						document.getElementById("user_para").style.display = "none";
+						document.getElementById("logout").style.display = "none";
+
+					}
+				});
+				function logout() {
+					firebase.auth().signOut();
+				}
+				function createItemtradeing(/*username,*/ itemname, srcimg) {
+					
+					var row = document.createElement("DIV");
+					row.classList.add("row");
+					var colsm4 = document.createElement("DIV");
+					colsm4.classList.add("col-sm-4");
+					colsm4.classList.add("left-text");
+					var descrip = document.createElement("DIV");
+					descrip.classList.add("descrip");
+					descrip.innerHTML = itemname;
+					var imgmyitem = document.createElement("img");
+					imgmyitem.classList.add("me");
+					imgmyitem.src = srcimg;
+					colsm4.appendChild(descrip);
+					colsm4.appendChild(imgmyitem);
+					row.appendChild(imgmyitem);
+
+					var colsm8 = document.createElement("DIV");
+					colsm8.classList.add("col-sm-8");
+					colsm8.classList.add("offer");
+					colsm8.classList.add("row");
+					var collg4colsm12 = document.createElement("DIV");
+					collg4colsm12.classList.add("col-sm-12");
+					collg4colsm12.classList.add("col-lg-4");
+					var imgme = document.createElement("img");
+					imgme.classList.add("me");
+					imgme.src = "images/t1.jpg";
+					var imgproduct_img = document.createElement("img");
+					imgproduct_img.classList.add("product_img");
+					imgproduct_img.src = "images/desktop.png";
+					collg4colsm12.appendChild(imgme);
+					collg4colsm12.appendChild(imgproduct_img);
+					colsm8.appendChild(collg4colsm12);
+
+					var name2 = document.createElement("h1");
+					//name2.classList.add("product_img");
+					name2.innerHTML = 'ชื่อคนเสนอ';
+					colsm8.appendChild(name2);
+
+
+					var collg4 = document.createElement("div");
+					collg4.classList.add("col-lg-4");
+					collg4.innerHTML = 'สนใจแลกค่าา';
+					colsm8.appendChild(collg4);
+
+					collg4.innerHTML = "";
+					var buttonprimary = document.createElement("button");
+					buttonprimary.classList.add("btn");
+					buttonprimary.classList.add("btn-primary");
+					buttonprimary.innerHTML = "รับข้อเสนอ";
+					colsm8.appendChild(collg4);
+					var buttondanger = document.createElement("button");
+					buttondanger.classList.add("btn");
+					buttondanger.classList.add("btn-danger");
+					buttondanger.innerHTML = "ปฎิเสธ";
+					collg4.appendChild(buttonprimary);
+					collg4.appendChild(buttondanger);
+					colsm8.appendChild(collg4);
+					row.appendChild(colsm8);
+					return row;
+
+				}
+
+			</script>
+
+			<script type="text/javascript">
+				function readUrl(input) {
+
+					if (input.files && input.files[0]) {
+						let reader = new FileReader();
+						reader.onload = (e) => {
+							let imgData = e.target.result;
+							let imgName = input.files[0].name;
+							input.setAttribute("data-title", imgName);
+							console.log(e.target.result);
+						}
+						reader.readAsDataURL(input.files[0]);
+					}
+
+				}
+			</script>
 </body>
 
 </html>
